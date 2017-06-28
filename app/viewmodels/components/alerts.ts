@@ -29,9 +29,10 @@ public components: KnockoutObservableArray<ViewerComponentModel> = ko.observable
     ),
     new ViewerComponentModel(
       'Dismissible', 
-      `<div  class="alert alert-warning alert-dismissible fade in">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>  
-        This message can be dismissed by clicking the close icon.</div>`,
+`<div  class="alert alert-warning alert-dismissible fade in">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>  
+  This message can be dismissed by clicking the close icon.
+</div>`,
       [
         {
           title: 'Modifers',

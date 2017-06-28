@@ -4,5 +4,5 @@ bower_components/
 jspm_packages/
 .DS_Store
 npm-debug.log
-dist/
+dist/*
 typings/

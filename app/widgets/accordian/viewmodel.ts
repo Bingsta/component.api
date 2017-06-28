@@ -29,6 +29,7 @@ class Accordian {
           return { 'controlsDescendantBindings': true };
         },
         'update': function (element: HTMLElement, valueAccessor, allBindings: KnockoutAllBindingsAccessor, viewModel, bindingContext) {
+          console.log("odsk");
           console.log(valueAccessor().template());
           console.log(valueAccessor().viewmodel);
           element.innerHTML = valueAccessor().template();

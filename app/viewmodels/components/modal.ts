@@ -50,9 +50,27 @@ public components: KnockoutObservableArray<ViewerComponentModel> = ko.observable
           ]
         }
       ],
-      function() {
-        $
-      }
+      undefined,
+      `<!-- ko widget: { kind: 'Modal', configuration: modal }--><!-- /ko -->`,
+      [
+        {
+          title: "size",
+          options: [
+            {
+              name: "default",
+              value: "default"
+            },
+            {
+              name: "large",
+              value: "large"
+            },
+            {
+              name: "small",
+              value: "small"
+            }
+          ]
+        }
+      ]
     )
   ]);
 

@@ -47,7 +47,11 @@ class CodeViewer {
         },
         body: {
           template: ko.observable(`
-            <ul class="list-unstyled" data-bind="foreach: items"><li class="radio"><label><input type="radio" name="options-variants" data-bind="checkedValue: $data, checked: $parent.selectedItem"> <span data-bind="text:name"></span></label></li>
+            <ul class="list-unstyled" data-bind="foreach: items">
+              <li class="radio">
+                <label><input type="radio" name="options-variants" data-bind="checkedValue: $data, checked: $parent.selectedItem"> <span data-bind="text:name"></span></label>
+              </li>
+            </ul>
           `),
           viewmodel: {
             items: this._components(),

@@ -1,0 +1,261 @@
+import * as ko from 'knockout';
+import * as system from 'durandal/system';
+import * as app from 'durandal/app';
+import * as Prism from 'prismjs';
+import { 
+  Component, 
+  ComponentVariations, 
+  HTMLComponentVariation,
+  CSSModifiers,
+  CSSModifer,
+  WidgetComponentVariation,
+  WidgetConfiguration,
+  WidgetConfigurationOption,
+  AccordianItem 
+} from '../../interfaces';
+
+enum codeBases {
+    HTML,
+    Widget
+}
+
+class _CodeViewer {
+
+    public component: Component;
+
+    public activeVariation: KnockoutObservable<ComponentVariations> = ko.observable(null);
+
+    public selectedCodeBase: KnockoutObservable<number> = ko.observable(0);
+
+    public previewHTML: KnockoutObservable<string> = ko.observable('');
+
+    public codeHTML: KnockoutObservable<string> = ko.observable('');
+
+    constructor(){
+        let self:_CodeViewer = this;
+        this.activeVariation.subscribe((newVariation) => {
+            if(self.selectedCodeBase() == codeBases.HTML){
+                self.previewHTML(newVariation.HTML.code);
+            }
+            else if(self.selectedCodeBase() == codeBases.Widget) {
+                self.previewHTML(newVariation.Widget.code);
+            }
+        });
+
+        this.selectedCodeBase.subscribe((newCodeBase) => {
+            if(newCodeBase == codeBases.HTML) {
+                self.previewHTML(self.activeVariation().HTML.code);
+            }
+            else if(newCodeBase == codeBases.Widget) {
+                self.previewHTML(self.activeVariation().Widget.code);
+            }
+        });
+
+        this.previewHTML.subscribe((newCode) => {
+            self.codeHTML(Prism.highlight(newCode, Prism.languages.markup));
+        });
+    }
+
+    activate(settings: any) {
+        
+        if(settings.component) {
+            
+            this.component = settings.component as Component;
+
+            console.log("Viewing component: ");
+            console.log(this.component);
+
+            this.activeVariation(this.component.variations[0]);
+
+            console.log("Currently viewing variation:")
+            console.log(this.activeVariation());
+
+        }
+        else {
+            throw "Required settings object missing: 'component";
+        }
+    }
+
+    public getVariationsForAccordian(): KnockoutObservableArray<AccordianItem> {
+        let AccordianItems: KnockoutObservableArray<AccordianItem>;
+        let item: AccordianItem = {
+            open: ko.observable(true),
+            header: {
+                title: "Variations"
+            },
+            body: {
+                template: ko.observable(`
+                    <ul class="list-unstyled" data-bind="foreach: items">
+                    <li class="radio">
+                        <label><input type="radio" name="options-variants" data-bind="checkedValue: $data, checked: $parent.selectedItem"> <span data-bind="text:name"></span></label>
+                    </li>
+                    </ul>
+                `),
+                viewmodel: {
+                    items: this.component.variations,
+                    selectedItem: ko.observable(),
+                    parent: this,
+                    activate: function() {
+                        this.selectedItem(this.items[0]);
+                        this.parent.activeVariation(this.items[0]);
+
+                        this.selectedItem.subscribe((newItem) => {
+                            this.parent.activeVariation(newItem);
+                            console.log(this.parent.activeVariation());
+                        });
+                    }
+                }
+            }
+        };
+        AccordianItems = ko.observableArray([item]);
+        return AccordianItems;
+    }
+
+    public getCodeBaseAccordianItems(): KnockoutObservableArray<AccordianItem> {
+        let AccordianItems: KnockoutObservableArray<AccordianItem>;
+
+        AccordianItems = ko.observableArray([
+            {
+                open: ko.observable(true),
+                header: {
+                    title: "Code base"
+                },
+                body: {
+                    template: ko.observable(`
+                    <ul class="list-unstyled" data-bind="foreach: items">
+                        <li class="radio">
+                            <label><input type="radio" name="options-code-base" data-bind="checkedValue: $data, checked: $parent.selectedItem"> <span data-bind="text:name"></span></label>
+                        </li>
+                    </ul>
+                    `),
+                    viewmodel: {
+                        items: [
+                            {
+                                name: "HTML",
+                                base: codeBases.HTML
+                            },
+                            {
+                                name: "Widget",
+                                base: codeBases.Widget
+                            }
+                        ],
+                        selectedItem: ko.observable(),
+                        parent: this,
+                        activate: function() {
+                            console.log(">>>>>>>>>>>>>>")
+                            this.selectedItem(this.items[0]);
+
+                            this.selectedItem.subscribe((newItem) => {
+                                this.parent.selectedCodeBase(newItem.base);
+                                console.log("code base changed: " + this.parent.selectedCodeBase());
+                            });
+                        }
+                    }
+                }
+            }
+        ]);
+
+        return AccordianItems;
+    }
+
+    public getHTMLModifiersAccordianItems(): KnockoutObservableArray<AccordianItem> {
+        let AccordianItems: KnockoutObservableArray<AccordianItem> = ko.observableArray([]);
+        console.log(">>>>>>>>>>>>>>>>>this.activeVariation()");
+        console.log(this.activeVariation());
+
+        this.activeVariation().HTML.modifiers.forEach((modifierGroup) => {
+            AccordianItems().push({
+                open: ko.observable(true),
+                header: {
+                    title: modifierGroup.name
+                },
+                body: {
+                    template: ko.observable(`
+                    <ul class="list-unstyled" data-bind="foreach: items">
+                        <li class="radio">
+                            <label><input type="radio" data-bind="attr: { name: 'options-' + $parent.name }, checkedValue: $data, checked: $parent.selectedItem"> <span data-bind="text:name"></span></label>
+                        </li>
+                    </ul>
+                    `),
+                    viewmodel: {
+                        name: modifierGroup.name,
+                        items: modifierGroup.modifiers,
+                        selectedItem: ko.observable(),
+                        parent: this,
+                        activate: function() {
+                            console.log(">>>>>>>>>>>>>>");
+                            this.selectedItem(this.items[0]);
+
+                            this.selectedItem.subscribe((newItem) => {
+                                console.log(">>>> modifier changed")
+                                this.parent.renderModifierStyles(this.items, newItem, this.parent);
+                            });
+                        }
+                    }
+                }
+            })
+        });
+
+        return AccordianItems;
+    }
+
+    public getWidgetModifiersAccordianItems(): KnockoutObservableArray<AccordianItem> {
+        let AccordianItems: KnockoutObservableArray<AccordianItem> = ko.observableArray([]);
+        console.log(">>>>>>>>>>>>>>>>>this.activeVariation()");
+        console.log(this.activeVariation());
+
+        this.activeVariation().Widget.config.forEach((config) => {
+            AccordianItems().push({
+                open: ko.observable(true),
+                header: {
+                    title: config.name
+                },
+                body: {
+                    template: ko.observable(`
+                    <ul class="list-unstyled" data-bind="foreach: items">
+                        <li class="radio">
+                            <label><input type="radio" data-bind="attr: { name: 'options-' + $parent.name }, checkedValue: $data, checked: $parent.selectedItem"> <span data-bind="text:name"></span></label>
+                        </li>
+                    </ul>
+                    `),
+                    viewmodel: {
+                        name: config.name,
+                        items: config.options,
+                        selectedItem: ko.observable(),
+                        parent: this,
+                        activate: function() {
+                            console.log(">>>>>>>>>>>>>>");
+                            this.selectedItem(this.items[0]);
+
+                            this.selectedItem.subscribe((newItem) => {
+                                console.log(">>>> config changed")
+                            });
+                        }
+                    }
+                }
+            })
+        });
+
+        return AccordianItems;
+    }
+
+    public renderModifierStyles(items: Array<CSSModifer>, option: CSSModifer, model: _CodeViewer) {
+        var item:HTMLButtonElement = document.getElementById("preview").children[0] as HTMLButtonElement;
+        
+        items.forEach((_option: any) => {
+            if(_option.css != ""){
+                item.classList.remove(_option.css);
+            }
+        });
+        
+        if(option.css != "") {
+            item.classList.add(option.css);
+        }
+
+        model.previewHTML(item.outerHTML);
+    }
+
+
+}
+
+export = _CodeViewer;

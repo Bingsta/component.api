@@ -2,12 +2,12 @@ import * as ko from 'knockout';
 import * as system from 'durandal/system';
 import * as app from 'durandal/app';
 import { 
-  ModalComponent
+  ModalComponentConfiguration
 } from '../../interfaces';
 
 class Modal {
 
-  public component: ModalComponent;
+  public configuration: ModalComponentConfiguration;
   public labelledBy: KnockoutObservable<string>;
 
   constructor() {
@@ -17,16 +17,16 @@ class Modal {
   
   activate(settings:any) {
     
-    if(settings.component) {
+    if(settings.configuration) {
 
-      this.component = settings.component;
-      if(!this.component.id){
-        this.component.id = ko.observable('modal-default-id');
+      this.configuration = settings.configuration;
+      if(!this.configuration.id){
+        this.configuration.id = ko.observable('modal-default-id');
       }
-      this.labelledBy = ko.observable(this.component.id() + '-label');
+      this.labelledBy = ko.observable(this.configuration.id() + '-label');
     }
     else {
-      throw `Missing required object: 'component'`;
+      throw `Missing required object: 'configuration'`;
     }
 
 

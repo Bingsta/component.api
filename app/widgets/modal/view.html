@@ -1,15 +1,15 @@
-<div class="modal fade" tabindex="-1" role="dialog" data-bind="attr: { id: component.id, 'aria-labelledby': labelledBy }">
+<div class="modal fade" tabindex="-1" role="dialog" data-bind="attr: { id: configuration.id, 'aria-labelledby': labelledBy }">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title"  data-bind="text:component.title, attr: { id: labelledBy }">Modal title</h4>
+        <h4 class="modal-title"  data-bind="text:configuration.title, attr: { id: labelledBy }">Modal title</h4>
       </div>
-      <div class="modal-body" data-bind="htmlWithBinding: component.body">
+      <div class="modal-body" data-bind="htmlWithBinding: configuration.body">
           
       </div>
-      <!-- ko if: component.footer -->
-      <div class="modal-footer" data-bind="htmlWithBinding: component.footer">
+      <!-- ko if: configuration.footer -->
+      <div class="modal-footer" data-bind="htmlWithBinding: configuration.footer">
         
       </div>
       <!-- /ko -->
