@@ -1,0 +1,170 @@
+//
+// Grid system
+// --------------------------------------------------
+
+
+// Container widths
+//
+// Set the container width, and override it for fixed navbars in media queries.
+
+.container {
+  .container-fixed();
+
+  @media (min-width: @screen-sm-min) {
+    width: @container-sm;
+  }
+  @media (min-width: @screen-md-min) {
+    width: @container-md;
+  }
+  @media (min-width: @screen-lg-min) {
+    width: @container-lg;
+  }
+}
+
+
+// Fluid container
+//
+// Utilizes the mixin meant for fixed width containers, but without any defined
+// width for fluid, full width layouts.
+
+.container-fluid {
+  .container-fixed();
+}
+
+
+// Row
+//
+// Rows contain and clear the floats of your columns.
+
+.row {
+  .make-row();
+}
+
+
+// Columns
+//
+// Common styles for small and large grid columns
+
+.make-grid-columns();
+
+
+// Extra small grid
+//
+// Columns, offsets, pushes, and pulls for extra small devices like
+// smartphones.
+
+.make-grid(xs);
+
+
+// Small grid
+//
+// Columns, offsets, pushes, and pulls for the small device range, from phones
+// to tablets.
+
+@media (min-width: @screen-sm-min) {
+  .make-grid(sm);
+}
+
+
+// Medium grid
+//
+// Columns, offsets, pushes, and pulls for the desktop device range.
+
+@media (min-width: @screen-md-min) {
+  .make-grid(md);
+}
+
+
+// Large grid
+//
+// Columns, offsets, pushes, and pulls for the large desktop device range.
+
+@media (min-width: @screen-lg-min) {
+  .make-grid(lg);
+}
+
+
+//Custom flexbox grid
+//
+
+.grid {
+  display:flex;
+  //width:100%;
+  align-items: stretch;
+}
+
+.grid--column {
+  flex-direction: column;
+}
+
+.grid-equals{
+  > .grid__item{
+    flex:1;
+  }
+}
+
+.grid--padded:not(.grid--column){
+  > .grid__item + .grid__item{
+    padding-left:@padding-large-horizontal;
+  }
+}
+.grid--padded.grid--column {
+  > .grid__item + .grid__item{
+    padding-top:@padding-large-vertical;
+  }
+}
+
+.grid--padded-sm:not(.grid--column){
+  > .grid__item + .grid__item{
+    padding-left:@padding-small-horizontal;
+  }
+}
+
+.grid--padded-sm.grid--column {
+  > .grid__item + .grid__item{
+    padding-top:@padding-small-vertical;
+  }
+}
+
+.grid-row{
+  flex-direction: row;
+  align-items:center;
+}
+
+
+.grid-row.grid--padded{
+  .grid__item + .grid__item{
+    padding-top:@padding-large-vertical;
+  }
+}
+
+.grid-row.grid--padded-sm{
+  .grid__item + .grid__item{
+    padding-top:@padding-base-vertical;
+  }
+}
+
+ .grid-row--fill{
+
+ }
+.grid-row--align-right{
+  justify-content: flex-end;
+}
+
+.grid-row--center {
+  align-items: center;
+}
+.grid-row--center-center {
+  align-items: center;
+  justify-content: center;
+}
+.grid__item--fill {
+  flex:1;
+}
+
+.grid-item__footer, .grid-item__header {
+  padding:@padding-base-vertical 0;
+  > .grid__item + .grid__item{
+    padding-left:@padding-base-vertical;
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "amd",
+    "target": "es5",
+    "types": [
+      "jquery", 
+      "knockout", 
+      "durandal",
+      "bootstrap"
+      ],
+    "lib" : ["es2015", "dom"]
+  },
+  "files":[
+    "./app/**/*.ts"
+  ]
+}

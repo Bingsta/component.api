@@ -1,0 +1,13 @@
+<div class="cl-accordian" data-bind="foreach: items()">
+  <div class="cl-accordian__item" data-bind="css: { 'cl-accordian__item--open' : open() }">
+    <div class="cl-accordian__header  grid  grid__row--center" data-bind="click: $parent.handleHeaderClick.bind($parent)">
+
+      <div class="cl-accordian-header__title  grid__item  grid__item--fill" data-bind="text: header.title"></div>
+
+      <div class="cl-accordian-header__icon  grid__item" data-bind="html: header.icon ? header.icon : '<i class=\'caret\'><i>'"></div>
+    </div>
+    <div class="cl-accordian__body" data-bind="htmlWithBinding: body">
+
+    </div>
+  </div>
+</div>

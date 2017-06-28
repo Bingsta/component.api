@@ -1,0 +1,36 @@
+<div class="cl-app">
+  <nav class="cl-menubar" role="menubar">
+    <div class="cl-menubar__header">
+
+    </div>
+    <div class="cl-menubar__body" data-bind="foreach: navigationSection">
+      <div class="cl-accordian__item"  data-bind="css:{ 'cl-accordian__item--open': open() }">
+        <div class="cl-accordian__header  grid  grid__row--center"  data-bind="click: function(){open(!open());}">
+          <div class="cl-accordian-header__title  grid__item  grid__item--fill"  data-bind="text: title">
+            
+          </div>
+          <div class="cl-accordian-header__icon  grid__item">
+            <i class="caret"></i>
+          </div>
+        </div>
+        <div class="cl-accordian__body">
+          <ul class="cl-menu" role="menu" data-bind="foreach:items">
+            <li class="cl-menu__menuitem" data-bind="css:{ active: isActive }" role="menuitem"><a data-bind="text:title, attr: { href: hash }"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </nav>
+
+  <main class="cl-main">
+    
+    <div class="cl-loader" data-bind="visible: router.isNavigating">
+      Loading...
+    </div>
+
+    <div class="cl-main__content" data-bind="router: { transition:'entrance', cacheViews:true }"></div>
+
+  </main>
+
+</div>
