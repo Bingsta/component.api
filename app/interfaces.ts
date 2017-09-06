@@ -133,3 +133,25 @@ export interface AlertComponentConfiguration {
   theme?: string,
   dismissable: boolean
 }
+
+export interface LabelsComponentConfiguration {
+  content: string,
+  theme?: string
+}
+
+export interface BadgeComponentConfiguration {
+  content: string
+}
+
+export interface MenuItemComponentConfiguration {
+  content: string
+}
+
+export interface MenuComponentConfiguration {
+  items: Array<MenuItemComponentConfiguration>
+}
+
+export interface DropdownButtonComponentConfiguration {
+  button: ButtonComponentConfiguration,
+  menu: MenuComponentConfiguration
+}

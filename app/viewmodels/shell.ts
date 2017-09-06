@@ -30,7 +30,9 @@ export class Shell {
       { route: '',                        moduleId: 'viewmodels/style/styleguide',      title: "Styleguide",          nav: true },
       //{ route: 'style/styleguide',        moduleId: 'viewmodels/style/styleguide',      title: "Styleguide",    nav: true },
       { route: 'components/buttons',      moduleId: 'viewmodels/components/buttons',    title: "Buttons",       nav: true },
-      { route: 'components/alerts',       moduleId: 'viewmodels/components/alerts',     title: "Alerts",        nav: true }
+      { route: 'components/alerts',       moduleId: 'viewmodels/components/alerts',     title: "Alerts",        nav: true },
+      { route: 'components/labels',       moduleId: 'viewmodels/components/labels',     title: "Labels",        nav: true },
+      { route: 'components/badges',       moduleId: 'viewmodels/components/badges',     title: "Badges",        nav: true }
     ]).buildNavigationModel();;
 
   activate() {
