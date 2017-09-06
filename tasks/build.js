@@ -45,3 +45,14 @@ export function fonts() {
   console.log(`${paths.less.toolkit.dest}fonts`);
   return gulp.src(paths.fonts).pipe(gulp.dest(`${paths.less.toolkit.dest}fonts`));
 }
+
+//package images
+export function images() {
+  const copyImages = function(imagePath) {
+    
+  console.log(imagePath.src)
+  console.log(imagePath.dest)
+    return gulp.src(imagePath.src).pipe(gulp.dest(imagePath.dest));
+  }
+  return mergeStream(copyImages(paths.images.framework), copyImages(paths.images.toolkit));
+}

@@ -1,57 +1,55 @@
-
-<article class="cl-article" >
-  <div class="cl-article__content" >
+<article class="cl-article">
+  <div class="cl-article__content">
     <section class="cls-article__section  cl-preview">
-      <h2>Preview <small></small></h2>
-      
-      <div class="cl-preview__item" id="preview" data-bind="html: previewHTML">
-        
+      <h2 class="cl-heading">PREVIEW <small></small></h2>
+      <div class="" id="preview" data-bind="html: previewHTML">
+
       </div>
     </section>
+
+    <h2 class="cl-heading">CODE <small></small></h2>
 
     <section class="cls-article__section  cl-article__guide">
-      <ul class="nav nav-tabs  cl-article-guide__tabs" role="tablist">
-        <li role="presentation" class="active"> <a href="#code"   aria-controls="code"  role="tab" data-toggle="tab">Component code</a></li>
-        <li role="presentation">                <a href="#guide"  aria-controls="guide" role="tab" data-toggle="tab">Design guide</a></li>
-        <li role="presentation">                <a href="#notes"  aria-controls="notes" role="tab" data-toggle="tab">Implementation notes</a></li>
-      </ul>
+      <pre class="language-css"><code class="language-css" data-bind="html: codeHTML">
 
-      <div class="tab-content">
-        <div role="tabpanel" class="tab-pane  fade  in  active  cl-code-preview" id="code">
-          
-          <pre class="language-css"><code class="language-css" data-bind="html: codeHTML">
-
-            
-          </code></pre>
-
-        </div>
-        <div role="tabpanel" class="tab-pane  fade  in" id="guide">
-          guide
-        </div>
-        <div role="tabpanel" class="tab-pane  fade  in" id="notes">
-          notes
-        </div>
-      </div>
-      
+        
+      </code></pre>
     </section>
+
+
+    <h2 class="cl-heading">DESIGN GUIDE <small></small></h2>
+
+    <section class="cls-article__section  cl-article__guide">
+      guide
+    </section>
+
+
+    <h2 class="cl-heading">IMPLEMENTATION NOTES <small></small></h2>
+
+    <section class="cls-article__section  cl-article__guide">
+      notes
+    </section>
+  </div>
+
+  </section>
   </div>
 
   <aside class="cl-article__aside">
 
     <section class="cl-article-aside__section" data-bind="widget: { kind: 'accordian', items: getVariationsForAccordian() }">
-        
+
     </section>
 
     <!-- ko if: activeVariation -->
     <section class="cl-article-aside__section">
-        <div data-bind="widget:{ kind: 'accordian', items: getCodeBaseAccordianItems() }"></div>
+      <div data-bind="widget:{ kind: 'accordian', items: getCodeBaseAccordianItems() }"></div>
     </section>
     <section class="cl-article-aside__section" data-bind="visible:selectedCodeBase() == 0">
-        <div data-bind="widget:{ kind: 'accordian', items: getHTMLModifiersAccordianItems($parent) }"></div>
+      <div data-bind="widget:{ kind: 'accordian', items: getHTMLModifiersAccordianItems($parent) }"></div>
     </section>
 
-    <section  class="cl-article-aside__section" data-bind="visible:selectedCodeBase() == 1">
-       <div data-bind="widget:{ kind: 'accordian', items: getWidgetModifiersAccordianItems() }"></div>
+    <section class="cl-article-aside__section" data-bind="visible:selectedCodeBase() == 1">
+      <div data-bind="widget:{ kind: 'accordian', items: getWidgetModifiersAccordianItems() }"></div>
     </section>
     <!-- /ko -->
 

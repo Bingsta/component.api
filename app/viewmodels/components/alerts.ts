@@ -2,62 +2,172 @@ import * as ko from 'knockout';
 import * as system from 'durandal/system';
 import * as app from 'durandal/app';
 import { 
-  ViewerComponentModel, 
-  ComponentStyle, 
-  ComponentStyleCollection,
-  AccordianItem 
+  Component,
+  ComponentVariations,
+  HTMLComponentVariation,
+  CSSModifiers,
+  CSSModifer,
+  WidgetComponentVariation,
+  WidgetConfiguration,
+  WidgetConfigurationOption
 } from '../../interfaces';
 
-class Alerts {
+class Buttons {
 
-public components: KnockoutObservableArray<ViewerComponentModel> = ko.observableArray([
-    new ViewerComponentModel(
-      'Base', 
-      '<div  class="alert alert-warning">This is used to display important messages!</div>',
-      [
-        {
-          title: 'Modifers',
-          open: ko.observable(true),
-          items: [
-            {     name:    "Warning",       className:   "alert-warning",      applied: ko.observable(true)     },
-            {     name:    "Success",       className:   "alert-success",      applied: ko.observable(false)         },
-            {     name:    "Danger",        className:   "alert-danger",       applied: ko.observable(false)         },
-            {     name:    "Info",          className:   "alert-info",         applied: ko.observable(false)        }
-          ]
-        }
-      ]
-    ),
-    new ViewerComponentModel(
-      'Dismissible', 
-`<div  class="alert alert-warning alert-dismissible fade in">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>  
-  This message can be dismissed by clicking the close icon.
-</div>`,
-      [
-        {
-          title: 'Modifers',
-          open: ko.observable(true),
-          items: [
-            {     name:    "Warning",       className:   "alert-warning",      applied: ko.observable(true)     },
-            {     name:    "Success",       className:   "alert-success",      applied: ko.observable(false)         },
-            {     name:    "Danger",        className:   "alert-danger",       applied: ko.observable(false)         },
-            {     name:    "Info",          className:   "alert-info",         applied: ko.observable(false)        }
-          ]
-        }
-      ],
-      function() {
-        $().alert();
-      }
-    )
-  ]);
+    public component: Component;
 
-  constructor() {
+    constructor() {
 
-  }
+        this.component = new Component("Alert", 
+        [
+            {
+                name: "Base",
+                HTML: {
+                    code: `<div class="alert alert-warning"><strong>Alert example.</strong> This is and example of an alert.</div>`,
+                    modifiers: [
+                        {
+                            name: "Theme",
+                            modifiers:[
+                                {
+                                    name:   "warning",
+                                    css:    "alert-warning"
+                                },
+                                {
+                                    name:   "success",
+                                    css:    "alert-success"
+                                },
+                                {
+                                    name:   "danger",
+                                    css:    "alert-danger"
+                                },
+                                {
+                                    name:   "info",
+                                    css:    "alert-info"
+                                }
+                            ]
+                        }
+                    ]   
+                },
+                Widget: {
+                    code: `
+                     <!-- ko widget: { 
+                      kind: 'alert', 
+                      config: #widgetConfiguration#
+                    } --> <!-- /ko -->
+                    `,
+                    defaultOptions: [
+                      {
+                        name: "content",
+                        value: "<strong>Alert example.</strong> This is and example of an alert."
+                      }
+                    ],
+                    config: [
+                        {
+                            name: "Theme",
+                            options: [
+                                {
+                                  name: "warning",
+                                  value: "alert-warning"
+                                },
+                                {
+                                  name: "success",
+                                  value: "alert-success"
+                                },
+                                {
+                                  name: "danger",
+                                  value: "alert-danger"
+                                },
+                                {
+                                  name: "info",
+                                  value: "alert-info"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            { 
+              name: "Dismissable",
+              HTML: {
+                  code: `
+                  <div class="alert  alert-warning  alert-dismissable">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Alert example.</strong> This is and example of an alert.
+                  </div>
+                  `,
+                  modifiers: [
+                      {
+                          name: "Theme",
+                          modifiers:[
+                              {
+                                  name:   "warning",
+                                  css:    "alert-warning"
+                              },
+                              {
+                                  name:   "success",
+                                  css:    "alert-success"
+                              },
+                              {
+                                  name:   "danger",
+                                  css:    "alert-danger"
+                              },
+                              {
+                                  name:   "info",
+                                  css:    "alert-info"
+                              }
+                          ]
+                      }
+                  ]   
+              },
+              Widget: {
+                  code: `
+                   <!-- ko widget: { 
+                    kind: 'alert', 
+                    config: #widgetConfiguration#
+                  } --> <!-- /ko -->
+                  `,
+                  defaultOptions: [
+                    {
+                      name: "content",
+                      value: "<strong>Alert example.</strong> This is and example of an alert."
+                    },
+                    {
+                      name: "dismissable",
+                      value: true
+                    }
+                  ],
+                  config: [
+                      {
+                          name: "Theme",
+                          options: [
+                              {
+                                name: "warning",
+                                value: "alert-warning"
+                              },
+                              {
+                                name: "success",
+                                value: "alert-success"
+                              },
+                              {
+                                name: "danger",
+                                value: "alert-danger"
+                              },
+                              {
+                                name: "info",
+                                value: "alert-info"
+                              }
+                          ]
+                      }
+                  ]
+              }
+            }
+        ]);
 
-  activate() {
-    
-  }
+    }
+
+    activate() {
+        
+    }
 }
 
-export = Alerts;
+export = Buttons;

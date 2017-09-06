@@ -62,7 +62,7 @@ class CodeViewer {
               this.selectedItem(this.items[0]);
               this.parent.selectedVariant(this.items[0]);
 
-              this.selectedItem.subscribe((newItem) => {
+              this.selectedItem.subscribe((newItem: any) => {
                 this.parent.selectedVariant(newItem);
               });
             }
@@ -122,7 +122,7 @@ class CodeViewer {
             parent: this,
             activate: function() {
               this.selectedItem(this.items[0]);
-              this.selectedItem.subscribe((newValue) => {
+              this.selectedItem.subscribe((newValue: any) => {
                 //console.log(this.parent);
                 this.parent.renderModifierStyles(this.items, newValue, this.parent);
               });

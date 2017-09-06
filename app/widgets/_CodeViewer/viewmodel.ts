@@ -2,6 +2,7 @@ import * as ko from 'knockout';
 import * as system from 'durandal/system';
 import * as app from 'durandal/app';
 import * as Prism from 'prismjs';
+import * as serialize from 'serialize-javascript';
 import { 
   Component, 
   ComponentVariations, 
@@ -19,6 +20,8 @@ enum codeBases {
     Widget
 }
 
+console.log();
+
 class _CodeViewer {
 
     public component: Component;
@@ -31,14 +34,23 @@ class _CodeViewer {
 
     public codeHTML: KnockoutObservable<string> = ko.observable('');
 
+    public widgetConfiguration: any = null;
+
+    public previewNode: HTMLElement;
+
     constructor(){
         let self:_CodeViewer = this;
+        
+        console.log(">>>>>>>>>>>>> serialize");
+        console.log(serialize);
+
         this.activeVariation.subscribe((newVariation) => {
             if(self.selectedCodeBase() == codeBases.HTML){
                 self.previewHTML(newVariation.HTML.code);
             }
             else if(self.selectedCodeBase() == codeBases.Widget) {
-                self.previewHTML(newVariation.Widget.code);
+              this.setWidgetConfigOptions();
+              //self.renderWidgetAndApplyBindings();
             }
         });
 
@@ -47,7 +59,10 @@ class _CodeViewer {
                 self.previewHTML(self.activeVariation().HTML.code);
             }
             else if(newCodeBase == codeBases.Widget) {
-                self.previewHTML(self.activeVariation().Widget.code);
+              //add widget code to page
+              this.setWidgetConfigOptions();
+              //self.renderWidgetAndApplyBindings();
+                
             }
         });
 
@@ -59,7 +74,6 @@ class _CodeViewer {
     activate(settings: any) {
         
         if(settings.component) {
-            
             this.component = settings.component as Component;
 
             console.log("Viewing component: ");
@@ -74,6 +88,10 @@ class _CodeViewer {
         else {
             throw "Required settings object missing: 'component";
         }
+    }
+
+    public compositionComplete() {
+        this.previewNode = document.getElementById("preview");
     }
 
     public getVariationsForAccordian(): KnockoutObservableArray<AccordianItem> {
@@ -99,7 +117,7 @@ class _CodeViewer {
                         this.selectedItem(this.items[0]);
                         this.parent.activeVariation(this.items[0]);
 
-                        this.selectedItem.subscribe((newItem) => {
+                        this.selectedItem.subscribe((newItem: any) => {
                             this.parent.activeVariation(newItem);
                             console.log(this.parent.activeVariation());
                         });
@@ -145,7 +163,7 @@ class _CodeViewer {
                             console.log(">>>>>>>>>>>>>>")
                             this.selectedItem(this.items[0]);
 
-                            this.selectedItem.subscribe((newItem) => {
+                            this.selectedItem.subscribe((newItem: any) => {
                                 this.parent.selectedCodeBase(newItem.base);
                                 console.log("code base changed: " + this.parent.selectedCodeBase());
                             });
@@ -186,7 +204,7 @@ class _CodeViewer {
                             console.log(">>>>>>>>>>>>>>");
                             this.selectedItem(this.items[0]);
 
-                            this.selectedItem.subscribe((newItem) => {
+                            this.selectedItem.subscribe((newItem: any) => {
                                 console.log(">>>> modifier changed")
                                 this.parent.renderModifierStyles(this.items, newItem, this.parent);
                             });
@@ -201,10 +219,13 @@ class _CodeViewer {
 
     public getWidgetModifiersAccordianItems(): KnockoutObservableArray<AccordianItem> {
         let AccordianItems: KnockoutObservableArray<AccordianItem> = ko.observableArray([]);
-        console.log(">>>>>>>>>>>>>>>>>this.activeVariation()");
-        console.log(this.activeVariation());
+        let selectedModifiers: Array<any> = [];
 
-        this.activeVariation().Widget.config.forEach((config) => {
+        this.activeVariation().Widget.config.forEach((config, index) => {
+          selectedModifiers.push({
+            name: config.name,
+            selected: null
+          });
             AccordianItems().push({
                 open: ko.observable(true),
                 header: {
@@ -223,12 +244,15 @@ class _CodeViewer {
                         items: config.options,
                         selectedItem: ko.observable(),
                         parent: this,
+                        selectedModifiers: selectedModifiers,
                         activate: function() {
                             console.log(">>>>>>>>>>>>>>");
                             this.selectedItem(this.items[0]);
-
-                            this.selectedItem.subscribe((newItem) => {
-                                console.log(">>>> config changed")
+                            
+                            this.selectedItem.subscribe((newItem: any) => {
+                                this.selectedModifiers[index].selected = newItem;
+                                console.log(">>>> config changed");
+                                this.parent.setWidgetConfigOptions(this.selectedModifiers);
                             });
                         }
                     }
@@ -255,7 +279,52 @@ class _CodeViewer {
         model.previewHTML(item.outerHTML);
     }
 
+    public setWidgetConfigOptions(selectedModifiers?: Array<any>) {
+      //build config string from selectedModifer
+      var str: string = '{';
 
+      //set default options
+      this.activeVariation().Widget.defaultOptions.forEach((option) => {
+          str += `"${option.name.toLowerCase()}": "${option.value}",`;
+      });
+
+      //set user selected config options
+      if(selectedModifiers) {
+        selectedModifiers.forEach((modifier) => {
+          if(modifier.selected) {
+            str += `"${modifier.name.toLowerCase()}": "${modifier.selected.value}",`;
+          }
+        });
+      }
+
+      //remove trailing comma
+      str = str.substring(0, (str.length - 1));
+
+      str += `}`;
+      
+      let obj = this.parseWidgetOptions(str);
+
+      this.widgetConfiguration = obj;
+      
+      this.renderWidgetAndApplyBindings();
+    }
+
+    public renderWidgetAndApplyBindings() {
+      const HTML = this.activeVariation().Widget.code.replace('#widgetConfiguration#', this.stringifyOptions(this.widgetConfiguration));
+      
+      this.previewHTML(HTML);
+      //process widget bindings
+      ko.applyBindingsToDescendants({
+      }, document.getElementById("preview"));
+    }
+
+    public parseWidgetOptions(strToParse: string): any {
+      return JSON.parse(strToParse);
+    }
+
+    public stringifyOptions(objToStringify: any): string {
+      return JSON.stringify(objToStringify);
+    }
 }
 
 export = _CodeViewer;

@@ -59,7 +59,8 @@ export interface CSSModifer {
 
 export interface WidgetComponentVariation {
   code: string,
-  config: Array<WidgetConfiguration>
+  config: Array<WidgetConfiguration>,
+  defaultOptions: Array<WidgetConfigurationOption>
 }
 
 export interface WidgetConfiguration {
@@ -69,7 +70,7 @@ export interface WidgetConfiguration {
 
 export interface WidgetConfigurationOption {
   name: string,
-  value: string
+  value: any
 }
 
 export interface ComponentStyleCollection {
@@ -118,4 +119,17 @@ export interface ModalComponentConfiguration {
   body: ViewModel;
   footer?: ViewModel;
   size?: KnockoutObservable<string>;
+}
+
+export interface ButtonComponentConfiguration {
+  content: string,
+  theme?: string,
+  size?: string,
+  state?: string
+}
+
+export interface AlertComponentConfiguration {
+  content: string,
+  theme?: string,
+  dismissable: boolean
 }

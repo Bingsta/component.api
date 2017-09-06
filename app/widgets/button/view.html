@@ -1,1 +1,3 @@
-<button class="btn" data-bind="html: content"></button>
+<button class="btn" data-bind="
+text: config().content, 
+attr:{ class: 'btn ' + config().theme + ' ' + config().size + ' ' + config().state} "></button>
