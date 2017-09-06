@@ -1,8 +1,8 @@
 var appRoot     = '/app';
 var assetRoot   = '/assets';
 var outputRoot  = '/dist';
-var framework   = '/framework/styles';
-var toolkit     = '/toolkit/styles';
+var framework   = '/framework';
+var toolkit     = '/toolkit';
 
 module.exports = {
   root:         `.${appRoot}/`,
@@ -11,14 +11,25 @@ module.exports = {
   html:         `.${appRoot}/**/*.html`,
   less: {
     toolkit: {
-      src:      `.${assetRoot + toolkit}/*.less`,
-      dest:     `.${outputRoot + assetRoot + toolkit}/`
+      src:      `.${assetRoot + toolkit}/styles/*.less`,
+      dest:     `.${outputRoot + assetRoot + toolkit}/styles`
     },
     framework: {
-      src:      `.${assetRoot + framework}/*.less`,
-      dest:     `.${outputRoot + assetRoot + framework}/`
+      src:      `.${assetRoot + framework}/styles/*.less`,
+      dest:     `.${outputRoot + assetRoot + framework}/styles`
     },
     watch:      `.${assetRoot}/**/*.less`,
   },
-  fonts: `.${assetRoot + toolkit}/fonts/**/*`
+  fonts: `.${assetRoot + toolkit}/fonts/**/*`,
+  images: {
+    toolkit: {
+      src:      `.${assetRoot + toolkit}/images/**/*`,
+      dest:     `.${outputRoot + assetRoot + toolkit}/images/`
+    },
+    framework: {
+      src:      `.${assetRoot + framework}/images/**/*`,
+      dest:     `.${outputRoot + assetRoot + framework}/images/`
+    },
+    watch:      `.${assetRoot}/**/images/*`,
+  }
 };

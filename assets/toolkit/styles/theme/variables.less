@@ -7,20 +7,61 @@
 //
 //## Gray and brand colors for use across Bootstrap.
 
-@gray-base:              #000;
-@gray-darker:            lighten(@gray-base, 13.5%); // #222
-@gray-dark:              lighten(@gray-base, 20%);   // #333
-@gray:                   lighten(@gray-base, 33.5%); // #555
-@gray-light:             lighten(@gray-base, 46.7%); // #777
-@gray-lighter:           lighten(@gray-base, 93.5%); // #eee
+@primary-dark:  #093b58;
+@primary:       #13547a;
+@primary-light:  #b4c3cc;
+@primary-alpha: hsla(202, 84%, 48%, 0.3);
 
-@brand-primary:         #13547a;
-@brand-accent:          #fe4d01;
+@accent-dark:   #872901;
+@accent:        #fe4d01;
+@accent-light:  #ffc9b2;
+@accent-alpha:  hsla(18, 100%, 100%, 0.3);
 
-@brand-success:         #33cc99;
-@brand-info:            #5692d6;
-@brand-warning:         #ffb64a;
-@brand-danger:          #f95d61;
+@success-dark:  #0f8860;
+@success:       #33cc99;
+@success-light: #c1f0e0;
+@success-alpha: hsla(160, 75%, 80%, 0.3);
+
+@warning-dark:  #af7622;
+@warning:       #ffb64a;
+@warning-light: #ffe9c8;
+@warning-alpha: hsla(36, 71%, 100%, 0.3);
+
+@error-dark:    #b04648;
+@error:         #f95d61;
+@error-light:   #fdcecf;
+@error-alpha:   hsla(358, 63%, 98%, 0.3);
+
+@info-dark:     #406a9a;
+@info:          #5692d6;
+@info-light:    #ccdef3;
+@info-alpha:    hsla(212, 60%, 84%, 0.3);
+
+@grey-darkest-alpha: hsla(0, 0%, 0%, 0.65);
+@grey-dark:     #898989;
+@grey-dark-alpha: hsla(0, 0%, 0%, 0.47);
+@grey:          #cccccc;
+@grey-alpha:    hsla(0, 0%, 0%, 0.2);
+@grey-light:    #ebebeb;
+@grey-light-alpha: hsla(0, 0%, 0%, 0.08);
+@grey-lightest: #f2f2f2;
+@grey-lightest-alpha: hsla(0, 0%, 0%, 0.05);
+
+
+@gray-base:              @grey;
+@gray-darker:            @grey-darkest-alpha; // #222
+@gray-dark:              @grey-dark-alpha;   // #333
+@gray:                   @grey-alpha; // #555
+@gray-light:             @grey-light-alpha; // #777
+@gray-lighter:           @grey-lightest-alpha; // #eee
+
+@brand-primary:         @primary;
+@brand-accent:          @accent;
+
+@brand-success:         @success;
+@brand-info:            @info;
+@brand-warning:         @warning;
+@brand-danger:          @error;
 
 
 //== Scaffolding
@@ -30,10 +71,18 @@
 //** Background color for `<body>`.
 @body-bg:               #fff;
 //** Global text color on `<body>`.
-@text-color:            @gray-dark;
+@text-color:            hsla(0, 0%, 0%, 0.85);
+
+@subtle-text: hsla(0,0%,0%, 0.35);
+@faded-text: hsla(0,0%,0%, 0.5);
+
+@inverse-text-color:  hsla(0, 0%, 100%, 0.85);
+@inverse-subtle-text: hsla(0, 0%, 100%, 0.35);
+@inverse-faded-text: hsla(0, 0%, 100%, 0.5);
 
 //** Global textual link color.
-@link-color:            @brand-primary;
+@link:   #0c5fa4;
+@link-color:            @link;
 //** Link hover color set via `darken()` function.
 @link-hover-color:      darken(@link-color, 15%);
 //** Link hover decoration.
@@ -58,29 +107,31 @@
 @font-size-large:         (@font-scale * 1) + @font-size-base; // ~16px
 @font-size-small:         (@font-scale * -1) + @font-size-base; // ~16px
 
-@font-size-h1:            (@font-scale * 5) + @font-size-base;// ~30px
-@font-size-h2:            (@font-scale * 4) + @font-size-base; // ~24px
-@font-size-h3:            (@font-scale * 3) + @font-size-base; // ~20px
-@font-size-h4:            (@font-scale * 1) + @font-size-base; // ~16px
-@font-size-h5:            @font-size-base;
+@font-size-h1:            (@font-scale * 3) + @font-size-base;// ~20px
+@font-size-h2:            (@font-scale * 1) + @font-size-base; // ~16px
+@font-size-h3:            @font-size-base;// ~14px
+@font-size-h4:            (@font-scale * -1) + @font-size-base; // ~12px
+@font-size-h5:            (@font-scale * -1) + @font-size-base; // ~12px
 @font-size-h6:            (@font-scale * -1) + @font-size-base; // ~12px
 
+@icon-scale:              0.2;        //m
 @icon-font-size-base: @font-size-base;
-@icon-font-size-down-1: (@font-scale * -1) + @icon-font-size-base;
-@icon-font-size-up-1: (@font-scale * 1) + @icon-font-size-base;
-@icon-font-size-up-2: (@font-scale * 2) + @icon-font-size-base;
-@icon-font-size-up-3: (@font-scale * 3) + @icon-font-size-base;
-@icon-font-size-up-4: (@font-scale * 4) + @icon-font-size-base;
-@icon-font-size-up-5: (@font-scale * 5) + @icon-font-size-base;
-@icon-font-size-up-6: (@font-scale * 6) + @icon-font-size-base;
-@icon-font-size-up-7: (@font-scale * 7) + @icon-font-size-base;
-@icon-font-size-up-8: (@font-scale * 8) + @icon-font-size-base;
-@icon-font-size-up-9: (@font-scale * 9) + @icon-font-size-base;
-@icon-font-size-up-10: (@font-scale * 10) + @icon-font-size-base;
+@icon-font-size-down-1: (@icon-scale * -1) + @icon-font-size-base;
+@icon-font-size-up-1: (@icon-scale * 1) + @icon-font-size-base;
+@icon-font-size-up-2: (@icon-scale * 3) + @icon-font-size-base;
+@icon-font-size-up-3: (@icon-scale * 5) + @icon-font-size-base;
+@icon-font-size-up-4: (@icon-scale * 8) + @icon-font-size-base;
+@icon-font-size-up-5: (@icon-scale * 12) + @icon-font-size-base;
+@icon-font-size-up-6: (@icon-scale * 17) + @icon-font-size-base;
+@icon-font-size-up-7: (@icon-scale * 23) + @icon-font-size-base;
+@icon-font-size-up-8: (@icon-scale * 30) + @icon-font-size-base;
+@icon-font-size-up-9: (@icon-scale * 40) + @icon-font-size-base;
+@icon-font-size-up-10: (@icon-scale * 38) + @icon-font-size-base;
 
 @light:     300;
 @semi-bold: 600;
 @bold:      700;
+
 
 //** Unit-less `line-height` for use in components like buttons.
 @line-height-base:        1.428571429; // 20/14
