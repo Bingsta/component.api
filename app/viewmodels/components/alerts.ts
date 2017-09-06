@@ -23,7 +23,7 @@ class Buttons {
             {
                 name: "Base",
                 HTML: {
-                    code: `<div class="alert alert-warning"><strong>Alert example.</strong> This is and example of an alert.</div>`,
+                    code: `<div class="alert alert-warning"><strong>Alert example.</strong> This is an example of an alert.</div>`,
                     modifiers: [
                         {
                             name: "Theme",
@@ -58,7 +58,7 @@ class Buttons {
                     defaultOptions: [
                       {
                         name: "content",
-                        value: "<strong>Alert example.</strong> This is and example of an alert."
+                        value: "<strong>Alert example.</strong> This is an example of an alert."
                       }
                     ],
                     config: [
@@ -92,7 +92,7 @@ class Buttons {
                   code: `
                   <div class="alert  alert-warning  alert-dismissable">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    <strong>Alert example.</strong> This is and example of an alert.
+                    <strong>Alert example.</strong> This is an example of an alert.
                   </div>
                   `,
                   modifiers: [
@@ -129,7 +129,7 @@ class Buttons {
                   defaultOptions: [
                     {
                       name: "content",
-                      value: "<strong>Alert example.</strong> This is and example of an alert."
+                      value: "<strong>Alert example.</strong> This is an example of an alert."
                     },
                     {
                       name: "dismissable",

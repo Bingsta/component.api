@@ -27,8 +27,8 @@ export class Shell {
   }
 
   public router = router.map([
-      { route: '',                        moduleId: 'viewmodels/home',                  title: "Home",          nav: true },
-      { route: 'style/styleguide',        moduleId: 'viewmodels/style/styleguide',      title: "Styleguide",    nav: true },
+      { route: '',                        moduleId: 'viewmodels/style/styleguide',      title: "Styleguide",          nav: true },
+      //{ route: 'style/styleguide',        moduleId: 'viewmodels/style/styleguide',      title: "Styleguide",    nav: true },
       { route: 'components/buttons',      moduleId: 'viewmodels/components/buttons',    title: "Buttons",       nav: true },
       { route: 'components/alerts',       moduleId: 'viewmodels/components/alerts',     title: "Alerts",        nav: true }
     ]).buildNavigationModel();;

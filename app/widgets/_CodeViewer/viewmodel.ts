@@ -2,6 +2,7 @@ import * as ko from 'knockout';
 import * as system from 'durandal/system';
 import * as app from 'durandal/app';
 import * as Prism from 'prismjs';
+import * as Clipboard from 'clipboard';
 import * as serialize from 'serialize-javascript';
 import { 
   Component, 
@@ -73,6 +74,11 @@ class _CodeViewer {
 
     activate(settings: any) {
         
+        let clip = new Clipboard("#copy-button");
+    
+        console.log("clip>>>>>>>>");
+    
+        console.log(clip);
         if(settings.component) {
             this.component = settings.component as Component;
 
