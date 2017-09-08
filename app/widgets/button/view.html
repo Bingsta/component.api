@@ -1,3 +1,7 @@
 <button class="btn" data-bind="
-text: config().content, 
-attr:{ class: 'btn ' + config().theme + ' ' + config().size + ' ' + config().state} "></button>
+attr:{ class: 'btn ' + config().theme + ' ' + config().size + ' ' + config().state} ">
+<span data-bind="text: config().content"></span>
+<!--ko if: config().badge -->
+<span class="badge" data-bind="text: config().badge"></span>
+<!-- /ko -->
+</button>

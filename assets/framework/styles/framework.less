@@ -118,7 +118,7 @@ body{
   width:@cl-menubar-width;
   min-width:@cl-menubar-width;
 
-  background-color:@grey-lightest-alpha;
+  background-color:@grey-light-alpha;
 }
 .cl-menu{
   margin:0;
@@ -237,6 +237,7 @@ body{
   height:100%;
   align-items: stretch;
   padding-bottom:@padding-base-vertical;
+  
 }
 
 .cl-notes {
@@ -355,6 +356,12 @@ h4.cl-heading{
   width: @cl-article-aside-width;
   border-left:2px solid rgba(0,0,0,0.13);
   height:100%;
+  padding: 2rem 1rem;
+}
+
+
+.cl-article-aside__section + .cl-article-aside__section {
+  margin-top:2.4rem;
 }
 
 .colour-pallet-item{

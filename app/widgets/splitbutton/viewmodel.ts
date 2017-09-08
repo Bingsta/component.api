@@ -3,7 +3,7 @@ import * as system from 'durandal/system';
 import * as app from 'durandal/app';
 import { DropdownButtonComponentConfiguration } from '../../interfaces';
 
-class Dropdown_button {
+class Splitbutton {
 
     public config: KnockoutObservable<DropdownButtonComponentConfiguration>;
 
@@ -27,4 +27,4 @@ class Dropdown_button {
 
 }
 
-export = Dropdown_button;
+export = Splitbutton;

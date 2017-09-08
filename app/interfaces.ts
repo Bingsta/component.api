@@ -27,75 +27,37 @@ export class ViewerComponentModel {
 
 }
 
-export class Component {
-  public variations: Array<ComponentVariations>;
+export class Component2 {
+  public variations: Array<ComponentVariations2>;
   public name: string;
 
-  constructor(_name:string, _variations: Array<ComponentVariations>) {
+  constructor(_name:string, _variations: Array<ComponentVariations2>) {
     this.variations = _variations;
   }
 }
 
-export interface ComponentVariations {
+export interface ComponentVariations2 {
   name: string;
-  HTML?: HTMLComponentVariation;
-  Widget?: WidgetComponentVariation
+  codeBases: Array<ComponentCodeBase>;
+  modifiers: Array<ComponentModifier>;
 }
 
-export interface HTMLComponentVariation {
-  code: string,
-  modifiers: Array<CSSModifiers>
-}
-
-export interface CSSModifiers {
-  name: string,
-  modifiers: Array<CSSModifer>
-}
-
-export interface CSSModifer {
-  name: string,
-  css: string
-}
-
-export interface WidgetComponentVariation {
-  code: string,
-  config: Array<WidgetConfiguration>,
-  defaultOptions: Array<WidgetConfigurationOption>
-}
-
-export interface WidgetConfiguration {
-  name: string,
-  options: Array<WidgetConfigurationOption>
-}
-
-export interface WidgetConfigurationOption {
-  name: string,
-  value: any
-}
-
-export interface ComponentStyleCollection {
-  title:string;
-  open: KnockoutObservable<boolean>;
-  items: Array<ComponentStyle>; 
-}
-
-export interface ComponentStyle {
+export interface ComponentCodeBase {
   name: string;
-  className: string;
-  applied: KnockoutObservable<boolean>;
+  code: string;
 }
 
-
-export interface ComponentWidgetConfigurationCollection {
-  title:string;
-  options: Array<ComponentWidgetConfiguration>; 
-}
-
-export interface ComponentWidgetConfiguration {
+export interface ComponentModifier {
   name: string;
-  value: string;
+  mergeField: string;
+  selectedOption: KnockoutObservable<ComponentModifierOption>;
+  options: Array<ComponentModifierOption>;
 }
 
+export interface ComponentModifierOption {
+  name: string;
+  modifier: string;
+}
 
 export interface AccordianItemHeader {
   title: string;
@@ -144,7 +106,8 @@ export interface BadgeComponentConfiguration {
 }
 
 export interface MenuItemComponentConfiguration {
-  content: string
+  content: string,
+  action: Function
 }
 
 export interface MenuComponentConfiguration {

@@ -2,112 +2,67 @@ import * as ko from 'knockout';
 import * as system from 'durandal/system';
 import * as app from 'durandal/app';
 import { 
-  Component,
-  ComponentVariations,
-  HTMLComponentVariation,
-  CSSModifiers,
-  CSSModifer,
-  WidgetComponentVariation,
-  WidgetConfiguration,
-  WidgetConfigurationOption
+  Component2,
+  ComponentVariations2,
+  ComponentCodeBase,
+  ComponentModifier,
+  ComponentModifierOption
 } from '../../interfaces';
 
 class Labels {
 
-    public component: Component;
+    public component: Component2;
 
     constructor() {
-
-        this.component = new Component("Label", 
-        [
+ 
+      this.component = new Component2("label", [
+        {
+          name: "Base",
+          codeBases: [
             {
-                name: "Base",
-                HTML: {
-                    code: `<span class="label label-default">LABEL EXAMPLE</span>`,
-                    modifiers: [
-                        {
-                            name: "Theme",
-                            modifiers:[
-                                {
-                                    name:   "default",
-                                    css:    "label-default"
-                                },
-                                {
-                                    name:   "primary",
-                                    css:    "label-primary"
-                                },
-                                {
-                                    name:   "accent",
-                                    css:    "label-accent"
-                                },
-                                {
-                                    name:   "warning",
-                                    css:    "label-warning"
-                                },
-                                {
-                                    name:   "success",
-                                    css:    "label-success"
-                                },
-                                {
-                                    name:   "danger",
-                                    css:    "label-danger"
-                                },
-                                {
-                                    name:   "info",
-                                    css:    "label-info"
-                                }
-                            ]
-                        }
-                    ]   
-                },
-                Widget: {
-                    code: `
-                     <!-- ko widget: { 
-                      kind: 'label', 
-                      config: #widgetConfiguration#
-                    } --> <!-- /ko -->
-                    `,
-                    defaultOptions: [
-                      {
-                        name: "content",
-                        value: "LABEL EXAMPLE"
-                      }
-                    ],
-                    config: [
-                        {
-                            name: "Theme",
-                            options: [
-                                {
-                                  name: "default",
-                                  value: "label-default"
-                                },
-                                {
-                                  name: "primary",
-                                  value: "label-primary"
-                                },
-                                {
-                                  name: "accent",
-                                  value: "label-accent"
-                                },
-                                {
-                                  name: "warning",
-                                  value: "label-warning"
-                                },
-                                {
-                                  name: "success",
-                                  value: "label-success"
-                                },
-                                {
-                                  name: "danger",
-                                  value: "label-danger"
-                                }
-                            ]
-                        }
-                    ]
-                }
+              name: "HTML",
+              code: `<span class="label#theme#">Label example</span>`
             }
-        ]);
-
+          ],
+          modifiers: [
+            {
+              name: "Theme",
+              mergeField: "#theme#",
+              selectedOption: ko.observable(),
+              options: [
+                {
+                  name: "Default",
+                  modifier: "label-default"
+                },
+                {
+                  name: "Primary",
+                  modifier: "label-primary"
+                },
+                {
+                  name: "Accent",
+                  modifier: "label-accent"
+                },
+                {
+                  name: "Warning",
+                  modifier: "label-warning"
+                },
+                {
+                  name: "Success",
+                  modifier: "label-success"
+                },
+                {
+                  name: "Danger",
+                  modifier: "label-danger"
+                },
+                {
+                  name: "Info",
+                  modifier: "label-info"
+                }
+              ]
+            }
+          ]
+        }
+      ])
     }
 
     activate() {

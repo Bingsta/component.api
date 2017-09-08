@@ -1,0 +1,74 @@
+<article class="cl-article">
+  <div class="cl-article__content">
+    <section class="cls-article__section  cl-preview">
+      <h2 class="cl-heading">PREVIEW <small></small></h2>
+      <div class="" id="preview" data-bind="html:previewStr">
+
+      </div>
+    </section>
+
+    <h2 class="cl-heading">CODE <small></small></h2>
+
+    <section class="cls-article__section  cl-article__guide">
+      <pre class="language-css"><code class="language-css" data-bind="html:codeStr" id="codeView" >
+        </code></pre>
+        <button class="btn btn-primary" id="copy-button" data-clipboard-target="#codeView"><i class="icon icon-embed2"></i> Copy code</button>
+    </section>
+
+
+    <h2 class="cl-heading">DESIGN GUIDE <small></small></h2>
+
+    <section class="cls-article__section  cl-article__guide">
+      guide
+    </section>
+
+
+    <h2 class="cl-heading">IMPLEMENTATION NOTES <small></small></h2>
+
+    <section class="cls-article__section  cl-article__guide">
+      notes
+    </section>
+
+    
+  </div>
+
+  </section>
+
+
+  </div>
+
+  <aside class="cl-article__aside">
+
+    <section class="cl-article-aside__section">
+      <h3 class="cl-heading">Component variations</h3>
+      <ul class="list-unstyled" data-bind="foreach: component.variations">
+        <li class="radio">
+          <label><input type="radio" name="options-variants" data-bind="checkedValue: $data, checked: $parent.selectedVariation"> <span data-bind="text:name"></span></label>
+        </li>
+      </ul>
+    </section>
+
+    <section class="cl-article-aside__section">
+        <h3 class="cl-heading">Code base</h3>
+      <ul class="list-unstyled" data-bind="foreach: selectedVariation().codeBases">
+        <li class="radio">
+          <label><input type="radio" name="options-codebase" data-bind="checkedValue: $data, checked: $parent.selectedCodeBase"> <span data-bind="text:name"></span></label>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ko foreach: selectedVariation().modifiers -->
+    <section class="cl-article-aside__section">
+    
+      <h3 class="cl-heading" data-bind="text:name"></h3>
+
+      <ul class="list-unstyled" data-bind="foreach: $data.options">
+        <li class="radio">
+          <label><input type="radio" data-bind="checkedValue: $data, checked: $parent.selectedOption, attr: { name: 'option-modifier-' + $parent.name }"> <span data-bind="text:name"></span></label>
+        </li>
+      </ul>
+    </section>
+    <!-- /ko -->
+  </aside>
+
+</article>
