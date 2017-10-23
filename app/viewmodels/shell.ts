@@ -32,7 +32,8 @@ export class Shell {
       { route: 'components/buttons',      moduleId: 'viewmodels/components/buttons',    title: "Buttons",       nav: true },
       { route: 'components/alerts',       moduleId: 'viewmodels/components/alerts',     title: "Alerts",        nav: true },
       { route: 'components/labels',       moduleId: 'viewmodels/components/labels',     title: "Labels",        nav: true },
-      { route: 'components/badges',       moduleId: 'viewmodels/components/badges',     title: "Badges",        nav: true }
+      { route: 'components/badges',       moduleId: 'viewmodels/components/badges',     title: "Badges",        nav: true },
+      //{ route: 'components/tabs',       moduleId: 'viewmodels/components/tabs',     title: "Tabs",        nav: true }
     ]).buildNavigationModel();;
 
   activate() {

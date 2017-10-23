@@ -1,31 +1,4 @@
-export class ViewerComponentModel {
-  public name: string;
-  public html: string;
-  public widget: string;
-  public styles: Array<ComponentStyleCollection>;
-  public initialise: Function;
 
-  constructor(
-      _name:string,
-      _html:string, 
-      _styles:Array<ComponentStyleCollection>, 
-      _initialise?:Function, 
-      _widget?:string,
-      _widgetStyles?:Array<ComponentWidgetConfigurationCollection>
-    ) {
-
-    this.name = _name;
-
-    this.html = _html;
-    this.styles = _styles;
-
-    this.widget = _widget;
-
-    this.initialise = _initialise;
-
-  }
-
-}
 
 export class Component2 {
   public variations: Array<ComponentVariations2>;
@@ -117,4 +90,15 @@ export interface MenuComponentConfiguration {
 export interface DropdownButtonComponentConfiguration {
   button: ButtonComponentConfiguration,
   menu: MenuComponentConfiguration
+}
+
+export interface TabItemComponentConfiguration {
+  title: string,
+  view: string,
+  viewmodel: any,
+  active: KnockoutObservable<boolean>
+}
+
+export interface TabComponentConfiguration {
+  items: Array<TabItemComponentConfiguration>
 }
