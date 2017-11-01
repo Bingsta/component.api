@@ -64,19 +64,9 @@ class CodeViewer {
 
       //on selected component variation change
       this.selectedVariation.subscribe((newValue) => {
-        console.log(newValue);
         
         self.selectedCodeBase(newValue.codeBases[0]);
         
-        // newValue.modifiers.forEach((modifier) => {
-        //   modifier.selectedOption.subscribe((_newValue) => {
-            
-        //     self.createCodeStr();
-            
-        //   });
-        //   modifier.selectedOption(modifier.options[0]);
-        // });
-
       });
 
 
@@ -115,7 +105,7 @@ class CodeViewer {
 
         //set html string for component preview section
         self.previewStr(tempStr);
-
+        
         //if widget - process widget bindings
         ko.applyBindingsToDescendants({
         }, document.getElementById("preview"));
@@ -127,19 +117,19 @@ class CodeViewer {
         //replace modifier merge fields
         self.selectedVariation().modifiers.forEach((_modifier:ComponentModifier) => {
           if(_modifier.selectedOption()) {
-            tempStr = tempStr.replace(new RegExp(_modifier.mergeField, 'g'), _modifier.selectedOption().modifier == "" ? '' : ` ${_modifier.selectedOption().modifier}`);
+            tempStr = tempStr.replace(new RegExp(_modifier.mergeField, 'g'), _modifier.selectedOption().modifier == "" ? '' : `${_modifier.selectedOption().modifier}`);
           }
         });
 
         //set html string for component preview section
         self.previewStr(tempStr);
+        
       }
 
 
       //add code highlighting for code view section
       self.codeStr(Prism.highlight(tempStr, Prism.languages.markup));
 
-      console.log(self.codeStr());
     }
   }
 

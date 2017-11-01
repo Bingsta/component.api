@@ -20,31 +20,31 @@ class Badges {
         options: [
           {
             name: "Default",
-            modifier: "btn-default"
+            modifier: " btn-default"
           },
           {
             name: "Primary",
-            modifier: "btn-primary"
+            modifier: " btn-primary"
           },
           {
             name: "Accent",
-            modifier: "btn-accent"
+            modifier: " btn-accent"
           },
           {
             name: "Warning",
-            modifier: "btn-warning"
+            modifier: " btn-warning"
           },
           {
             name: "Success",
-            modifier: "btn-success"
+            modifier: " btn-success"
           },
           {
             name: "Danger",
-            modifier: "btn-danger"
+            modifier: " btn-danger"
           },
           {
             name: "Info",
-            modifier: "btn-info"
+            modifier: " btn-info"
           }
         ]
       },
@@ -59,15 +59,15 @@ class Badges {
           },
           {
             name: "Large",
-            modifier: "btn-lg"
+            modifier: " btn-lg"
           },
           {
             name: "Small",
-            modifier: "btn-sm"
+            modifier: " btn-sm"
           },
           {
             name: "Extra small",
-            modifier: "btn-xs"
+            modifier: " btn-xs"
           }
         ]
       },
@@ -82,11 +82,11 @@ class Badges {
           },
           {
             name: "Active",
-            modifier: "active"
+            modifier: " active"
           },
           {
             name: "Disabled",
-            modifier: "disabled"
+            modifier: " disabled"
           }
         ]
       }

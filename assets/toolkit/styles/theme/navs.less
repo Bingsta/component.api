@@ -18,8 +18,14 @@
 
     > a {
       position: relative;
-      display: block;
-      padding: @nav-link-padding;
+      display: flex;
+      justify-content: center;
+      align-items:center;
+      height: 3rem;
+      padding:0 1rem;
+      >*{
+        margin-left:0.5rem;
+      }
       &:hover,
       &:focus {
         text-decoration: none;
@@ -74,20 +80,20 @@
 
 // Give the tabs something to sit on
 .nav-tabs {
-  border-bottom: 1px solid @nav-tabs-border-color;
-  > li {
-    float: left;
-    // Make the list-items overlay the bottom border
-    margin-bottom: -1px;
 
-    // Actual tabs (as links)
-    > a {
-      margin-right: 2px;
-      line-height: @line-height-base;
-      border: 1px solid transparent;
+  display: flex;
+  border-bottom:1px solid @nav-tabs-border-color;
+
+  > li {
+    bottom:-1px;
+
+    > a{
+      border:1px solid transparent;
       border-radius: @border-radius-base @border-radius-base 0 0;
-      &:hover {
-        border-color: @nav-tabs-link-hover-border-color @nav-tabs-link-hover-border-color @nav-tabs-border-color;
+      color:@nav-tabs-link-hover-color;
+      margin-top:1px;
+      .badge {
+        background-color:@grey-alpha;
       }
     }
 
@@ -96,19 +102,51 @@
       &,
       &:hover,
       &:focus {
-        color: @nav-tabs-active-link-hover-color;
+        color:@nav-tabs-active-link-hover-color;
         background-color: @nav-tabs-active-link-hover-bg;
         border: 1px solid @nav-tabs-active-link-hover-border-color;
-        border-bottom-color: transparent;
+        border-bottom: 0px;
         cursor: default;
+        .badge {
+          background-color:@brand-accent;
+        }
+      }
+
+    }
+  
+  }
+  
+  >li + li {
+    margin-left:2px;
+  }
+}
+
+// Secondary tabs
+.nav-tabs--secondary {
+  border-bottom:2px solid @nav-tabs-border-color;
+  >li {
+    bottom:-2px;
+    
+    >a {
+      border:0px;
+      border-bottom:2px solid transparent;
+      padding:0 1rem 0 0;
+      &:hover {
+        border-bottom:2px solid @grey-alpha;
+        background-color: transparent;
+        color:@faded-text;
+      }
+    }
+    &.active > a {
+      &,
+      &:hover,
+      &:hover {
+        border: 0px;
+        border-bottom: 2px solid @brand-accent;
       }
     }
   }
-  // pulling this in mainly for less shorthand
-  &.nav-justified {
-    .nav-justified();
-    .nav-tabs-justified();
-  }
+
 }
 
 

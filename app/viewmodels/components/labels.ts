@@ -32,31 +32,31 @@ class Labels {
               options: [
                 {
                   name: "Default",
-                  modifier: "label-default"
+                  modifier: " label-default"
                 },
                 {
                   name: "Primary",
-                  modifier: "label-primary"
+                  modifier: " label-primary"
                 },
                 {
                   name: "Accent",
-                  modifier: "label-accent"
+                  modifier: " label-accent"
                 },
                 {
                   name: "Warning",
-                  modifier: "label-warning"
+                  modifier: " label-warning"
                 },
                 {
                   name: "Success",
-                  modifier: "label-success"
+                  modifier: " label-success"
                 },
                 {
                   name: "Danger",
-                  modifier: "label-danger"
+                  modifier: " label-danger"
                 },
                 {
                   name: "Info",
-                  modifier: "label-info"
+                  modifier: " label-info"
                 }
               ]
             }

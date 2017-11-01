@@ -1,0 +1,74 @@
+@tag-height: 2.4rem;
+@tag-border-radius: calc(@tag-height/2);
+@tag-padding: 1rem;
+@tag-font-size: 1.2rem;
+
+.tags{
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size:1.2rem;
+    height:@tag-height;
+    border-radius: @tag-border-radius;
+    color:@faded-text;
+    background-color:@grey-light-alpha;
+    padding:0 @tag-padding;
+
+    > * + * {
+        padding-left:0.5rem;
+    }
+
+    .icon {
+        font-size:1.4rem;
+    }
+
+    &.tags-dismissable .icon:last-child {
+        color:@subtle-text;
+        cursor: pointer;
+        &:hover {
+            color:@faded-text;
+        }
+    }
+}
+
+.tags-primary{
+    background-color:@brand-primary;
+    color:@inverse-text-color;
+}
+
+.tags-accent {
+    background-color:@brand-accent;
+    color:@inverse-text-color;
+}
+
+.tags-success {
+    background-color:@brand-success;
+    color:@inverse-text-color;
+}
+
+.tags-warning {
+    background-color:@brand-warning;
+    color:@inverse-text-color;
+}
+
+.tags-info {
+    background-color:@brand-info;
+    color:@inverse-text-color;
+}
+
+.tags-danger {
+    background-color: @brand-danger;
+    color:@inverse-text-color;
+}
+
+.tags-danger, .tags-info, .tags-warning, .tags-success, .tags-accent, .tags-primary {
+    color:@inverse-text-color;
+
+    &.tags-dismissable .icon:last-child {
+        color:@inverse-faded-text;
+        cursor: pointer;
+        &:hover {
+            color:@inverse-text-color;
+        }
+    }
+}

@@ -20,19 +20,19 @@ class Alerts {
       options: [
         {
           name: "Warning",
-          modifier: "alert-warning"
+          modifier: " alert-warning"
         },
         {
           name: "Success",
-          modifier: "alert-success"
+          modifier: " alert-success"
         },
         {
           name: "Danger",
-          modifier: "alert-danger"
+          modifier: " alert-danger"
         },
         {
           name: "Info",
-          modifier: "alert-info"
+          modifier: " alert-info"
         }
       ]
     }
