@@ -94,39 +94,39 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
-@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+@font-family-sans-serif:    'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:         Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
-@font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
-@font-family-base:        @font-family-sans-serif;
+@font-family-monospace:     Menlo, Monaco, Consolas, "Courier New", monospace;
+@font-family-base:          @font-family-sans-serif;
 
-@font-scaling:            62.5%; //
+@font-scaling:              62.5%; //
 //calculate font scale y = mx + c
-@font-scale:              0.2;        //m
-@font-size-base:          1.4rem;     //c
-@font-size-large:         (@font-scale * 1) + @font-size-base; // ~16px
-@font-size-small:         (@font-scale * -1) + @font-size-base; // ~16px
+@font-scale:                0.2;        //m
+@font-size-base:            1.4rem;     //c
+@font-size-large:           (@font-scale * 1) + @font-size-base; // ~16px
+@font-size-small:           (@font-scale * -1) + @font-size-base; // ~16px
 
-@font-size-h1:            (@font-scale * 3) + @font-size-base;// ~20px
-@font-size-h2:            (@font-scale * 1) + @font-size-base; // ~16px
-@font-size-h3:            @font-size-base;// ~14px
-@font-size-h4:            (@font-scale * -1) + @font-size-base; // ~12px
-@font-size-h5:            (@font-scale * -1) + @font-size-base; // ~12px
-@font-size-h6:            (@font-scale * -1) + @font-size-base; // ~12px
+@font-size-h1:              (@font-scale * 3) + @font-size-base;// ~20px
+@font-size-h2:              (@font-scale * 1) + @font-size-base; // ~16px
+@font-size-h3:              @font-size-base;// ~14px
+@font-size-h4:              (@font-scale * -1) + @font-size-base; // ~12px
+@font-size-h5:              (@font-scale * -1) + @font-size-base; // ~12px
+@font-size-h6:              (@font-scale * -1) + @font-size-base; // ~12px
 
-@icon-scale:              0.2;        //m
-@icon-font-size-base: @font-size-base;
-@icon-font-size-down-1: (@icon-scale * -1) + @icon-font-size-base;
-@icon-font-size-up-1: (@icon-scale * 1) + @icon-font-size-base;
-@icon-font-size-up-2: (@icon-scale * 3) + @icon-font-size-base;
-@icon-font-size-up-3: (@icon-scale * 5) + @icon-font-size-base;
-@icon-font-size-up-4: (@icon-scale * 8) + @icon-font-size-base;
-@icon-font-size-up-5: (@icon-scale * 12) + @icon-font-size-base;
-@icon-font-size-up-6: (@icon-scale * 17) + @icon-font-size-base;
-@icon-font-size-up-7: (@icon-scale * 23) + @icon-font-size-base;
-@icon-font-size-up-8: (@icon-scale * 30) + @icon-font-size-base;
-@icon-font-size-up-9: (@icon-scale * 40) + @icon-font-size-base;
-@icon-font-size-up-10: (@icon-scale * 38) + @icon-font-size-base;
+@icon-scale:                0.2;        //m
+@icon-font-size-base:       @font-size-base;
+@icon-font-size-down-1:     (@icon-scale * -1) + @icon-font-size-base;
+@icon-font-size-up-1:       (@icon-scale * 1) + @icon-font-size-base;
+@icon-font-size-up-2:       (@icon-scale * 3) + @icon-font-size-base;
+@icon-font-size-up-3:       (@icon-scale * 5) + @icon-font-size-base;
+@icon-font-size-up-4:       (@icon-scale * 8) + @icon-font-size-base;
+@icon-font-size-up-5:       (@icon-scale * 12) + @icon-font-size-base;
+@icon-font-size-up-6:       (@icon-scale * 17) + @icon-font-size-base;
+@icon-font-size-up-7:       (@icon-scale * 23) + @icon-font-size-base;
+@icon-font-size-up-8:       (@icon-scale * 30) + @icon-font-size-base;
+@icon-font-size-up-9:       (@icon-scale * 40) + @icon-font-size-base;
+@icon-font-size-up-10:      (@icon-scale * 38) + @icon-font-size-base;
 
 @light:     300;
 @semi-bold: 600;
@@ -262,7 +262,7 @@
 @input-bg-disabled:              @gray-lighter;
 
 //** Text color for `<input>`s
-@input-color:                    @gray;
+@input-color:                    rgba(0,0,0,0.65);
 //** `<input>` border color
 @input-border:                   #ccc;
 
@@ -279,10 +279,10 @@
 @input-border-focus:             #66afe9;
 
 //** Placeholder text color
-@input-color-placeholder:        #999;
+@input-color-placeholder:        @subtle-text;
 
 //** Default `.form-control` height
-@input-height-base:              (@line-height-computed + (@padding-base-vertical * 2) + 0.2);
+@input-height-base:              3rem;//(@line-height-computed + (@padding-base-vertical * 2) + 0.2);
 //** Large `.form-control` height
 @input-height-large:             (@font-size-large * @line-height-large + (@padding-large-vertical * 2) + 0.2);
 //** Small `.form-control` height
@@ -503,15 +503,24 @@
 
 //=== Shared nav styles
 @nav-link-padding:                          .5rem 1.5rem;
+<<<<<<< HEAD
 @nav-link-hover-bg:                         @gray-light;
+=======
+@nav-link-hover-bg:                         @grey-lightest-alpha;
+>>>>>>> 986e991f0b48aef8684585ebd5dd7184fa57b69c
 
-@nav-disabled-link-color:                   @gray-light;
-@nav-disabled-link-hover-color:             @gray-light;
+@nav-disabled-link-color:                   @grey-light-alpha;
+@nav-disabled-link-hover-color:             @grey-light-alpha;
 
 //== Tabs
+<<<<<<< HEAD
 @nav-tabs-border-color:                     @grey;
+=======
+@nav-tabs-border-color:                     @grey-alpha;
+@nav-tabs-link-hover-color:                 @subtle-text;
+>>>>>>> 986e991f0b48aef8684585ebd5dd7184fa57b69c
 
-@nav-tabs-link-hover-border-color:          @gray-lighter;
+@nav-tabs-link-hover-border-color:          @grey-light-alpha;
 
 @nav-tabs-active-link-hover-bg:             @body-bg;
 @nav-tabs-active-link-hover-color:          @text-color;

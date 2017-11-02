@@ -27,13 +27,19 @@ export class Shell {
   }
 
   public router = router.map([
-      { route: '',                        moduleId: 'viewmodels/style/styleguide',      title: "Styleguide",          nav: true },
+      { route: '',                        moduleId: 'viewmodels/style/styleguide',      title: "Styleguide",    nav: true },
       //{ route: 'style/styleguide',        moduleId: 'viewmodels/style/styleguide',      title: "Styleguide",    nav: true },
       { route: 'components/buttons',      moduleId: 'viewmodels/components/buttons',    title: "Buttons",       nav: true },
       { route: 'components/alerts',       moduleId: 'viewmodels/components/alerts',     title: "Alerts",        nav: true },
       { route: 'components/labels',       moduleId: 'viewmodels/components/labels',     title: "Labels",        nav: true },
       { route: 'components/badges',       moduleId: 'viewmodels/components/badges',     title: "Badges",        nav: true },
+<<<<<<< HEAD
       //{ route: 'components/tabs',       moduleId: 'viewmodels/components/tabs',     title: "Tabs",        nav: true }
+=======
+      { route: 'components/tabs',         moduleId: 'viewmodels/components/tabs',       title: "Tabs",          nav: true },
+      { route: 'components/tags',         moduleId: 'viewmodels/components/tags',       title: "Tags",          nav: true },
+      { route: 'components/inputs',       moduleId: 'viewmodels/components/inputs',     title: "Inputs",        nav: true }
+>>>>>>> 986e991f0b48aef8684585ebd5dd7184fa57b69c
     ]).buildNavigationModel();;
 
   activate() {

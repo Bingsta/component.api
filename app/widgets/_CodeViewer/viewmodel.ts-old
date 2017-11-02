@@ -46,6 +46,7 @@ class _CodeViewer {
         console.log(serialize);
 
         this.activeVariation.subscribe((newVariation) => {
+            alert(newVariation);
             if(self.selectedCodeBase() == codeBases.HTML){
                 self.previewHTML(newVariation.HTML.code);
             }
