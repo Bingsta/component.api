@@ -1,15 +1,18 @@
 <div>
-  
     <!-- Nav tabs -->
-    <ul class="nav nav-tabs" role="tablist" data-bind="foreach: config().items">
-      <li role="presentation" data-bind="css: {active: active()}"><a data-bind="attr:{ href: '#' + title, 'aria-controls': title }, text: title" role="tab" data-toggle="tab"></a></li>
+    <ul class="nav nav-tabs" role="tablist" data-bind="foreach: config().items, css: config().theme">
+      <li role="presentation" data-bind="css: {active: active()}">
+        <a data-bind="click: $parent.handleTabClicked.bind($parent), attr:{ href: '#' + title, 'aria-controls': title }" role="tab">
+          <span class="nav-tab__title" data-bind="text: title"></span>
+          <span class="badge" data-bind="text:badge, visible: !(badge == 0 || badge == '')"></span>
+        </a>
+      </li>
     </ul>
   
-    <!-- Tab panes -->
-    <div class="tab-content" data-bind="foreach: config().items">
-      <div role="tabpanel" class="tab-pane" id="home" data-bind="css: { active: active() }, attr:{ id: title }, html: view">
+    <!-- Tab panes (get the active tab item) -->
+    <!-- ko with: config().items.find((item) => {return item.active();}) -->
+      <div class="tab-content" data-bind="compose: contentView">
         
       </div>
-    </div>
-  
+    <!-- /ko -->
   </div>

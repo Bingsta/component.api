@@ -103,22 +103,22 @@
 @font-scaling:              62.5%; //
 //calculate font scale y = mx + c
 @font-scale:                0.2;        //m
-@font-size-base:            1.4rem;     //c
-@font-size-large:           (@font-scale * 1) + @font-size-base; // ~16px
-@font-size-small:           (@font-scale * -1) + @font-size-base; // ~16px
+@font-size-base:            1.2rem;     //c
+@font-size-large:           (@font-scale * 1) + @font-size-base; // ~14px
+@font-size-small:           (@font-scale * -1) + @font-size-base; // ~14px
 
-@font-size-h1:              (@font-scale * 3) + @font-size-base;// ~20px
-@font-size-h2:              (@font-scale * 1) + @font-size-base; // ~16px
-@font-size-h3:              @font-size-base;// ~14px
-@font-size-h4:              (@font-scale * -1) + @font-size-base; // ~12px
+@font-size-h1:              (@font-scale * 4) + @font-size-base;// ~20px
+@font-size-h2:              (@font-scale * 2) + @font-size-base; // ~16px
+@font-size-h3:              (@font-scale * 1) + @font-size-base; // ~14px
+@font-size-h4:              @font-size-base; // ~12px
 @font-size-h5:              (@font-scale * -1) + @font-size-base; // ~12px
-@font-size-h6:              (@font-scale * -1) + @font-size-base; // ~12px
+@font-size-h6:              (@font-scale * -2) + @font-size-base; // ~12px
 
 @icon-scale:                0.2;        //m
 @icon-font-size-base:       @font-size-base;
 @icon-font-size-down-1:     (@icon-scale * -1) + @icon-font-size-base;
 @icon-font-size-up-1:       (@icon-scale * 1) + @icon-font-size-base;
-@icon-font-size-up-2:       (@icon-scale * 3) + @icon-font-size-base;
+@icon-font-size-up-2:       (@icon-scale * 2) + @icon-font-size-base;
 @icon-font-size-up-3:       (@icon-scale * 5) + @icon-font-size-base;
 @icon-font-size-up-4:       (@icon-scale * 8) + @icon-font-size-base;
 @icon-font-size-up-5:       (@icon-scale * 12) + @icon-font-size-base;
@@ -159,20 +159,22 @@
 //
 //## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
 
-@padding-base-vertical:     0.6rem;
-@padding-base-horizontal:   1.2rem;
+@padding-base-vertical:     0.4rem;
+@padding-base-horizontal:   1rem;
 
-@padding-large-vertical:    1.0rem;
-@padding-large-horizontal:  1.6rem;
+@padding-large-vertical:    0.6rem;
+@padding-large-horizontal:  1.2rem;
 
-@padding-small-vertical:    0.5rem;
-@padding-small-horizontal:  1rem;
+@padding-small-vertical:    0.3rem;
+@padding-small-horizontal:  0.8rem;
 
 @padding-xs-vertical:       0.1rem;
 @padding-xs-horizontal:     0.5rem;
 
 @line-height-large:         1.3333333; // extra decimals for Win 8.1 Chrome
-@line-height-small:         1.5;
+@line-height-small:         1.4;
+
+@line-height-smallforbase:  1.7;
 
 @border-radius-base:        0.4rem;
 @border-radius-large:       0.6rem;
@@ -263,6 +265,7 @@
 
 //** Text color for `<input>`s
 @input-color:                    rgba(0,0,0,0.65);
+@input-addon-color:              @subtle-text;
 //** `<input>` border color
 @input-border:                   #ccc;
 
@@ -503,22 +506,14 @@
 
 //=== Shared nav styles
 @nav-link-padding:                          .5rem 1.5rem;
-<<<<<<< HEAD
-@nav-link-hover-bg:                         @gray-light;
-=======
 @nav-link-hover-bg:                         @grey-lightest-alpha;
->>>>>>> 986e991f0b48aef8684585ebd5dd7184fa57b69c
 
 @nav-disabled-link-color:                   @grey-light-alpha;
 @nav-disabled-link-hover-color:             @grey-light-alpha;
 
 //== Tabs
-<<<<<<< HEAD
-@nav-tabs-border-color:                     @grey;
-=======
 @nav-tabs-border-color:                     @grey-alpha;
 @nav-tabs-link-hover-color:                 @subtle-text;
->>>>>>> 986e991f0b48aef8684585ebd5dd7184fa57b69c
 
 @nav-tabs-link-hover-border-color:          @grey-light-alpha;
 

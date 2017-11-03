@@ -1,0 +1,20 @@
+<div class="input-field" data-bind="with: config">
+  <label class="input-field__label" data-bind="text:label, attr: { for: id }"></label>
+  <div class="input-field__input">
+    <input class="form-control" type="text" data-bind="attr:{
+      value: value, 
+      placeholder: placeholder,
+      name: name,
+      form: form,
+      tabindex: tabindex,
+      spellcheck: spellcheck,
+      autofocus: autofocus,
+      id: id,
+      disabled: disabled,
+      required: required,
+      maxlength: maxlength,
+      pattern: pattern,
+      readonly: readonly
+    }" >
+  </div>
+</div>

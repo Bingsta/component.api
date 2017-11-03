@@ -94,11 +94,79 @@ export interface DropdownButtonComponentConfiguration {
 
 export interface TabItemComponentConfiguration {
   title: string,
-  view: string,
-  viewmodel: any,
+  badge: string,
+  contentView: {
+    view: any,
+    model: any
+  },
   active: KnockoutObservable<boolean>
 }
 
 export interface TabComponentConfiguration {
+  theme: string,
   items: Array<TabItemComponentConfiguration>
+}
+
+export interface InputFieldConfiguration {
+  id:string,
+  label: string,
+  value: string,
+  placeholder: string,
+  name:string,
+  form: string,
+  tabindex:number,
+  spellcheck?: boolean,
+  autofocus?: boolean,
+  disabled?: boolean,
+  required?: boolean,
+  maxlength?: number,
+  pattern?: string,
+  readonly?: boolean
+}
+
+export interface TextAreaFieldConfiguration {
+  id:string,
+  label: string,
+  value: string,
+  placeholder: string,
+  rows: number,
+  name: string,
+  form: string,
+  tabindex:number,
+  autofocus?: boolean,
+  disabled?: boolean,
+  required?: boolean,
+  spellcheck?: boolean,
+  maxlength?: number,
+  readonly?:boolean
+}
+
+export interface SelectFieldConfiguration {
+  id:string,
+  label: string,
+  name: string,
+  form: string,
+  tabindex:number,
+  size?: number,
+  disabled?: boolean,
+  required?: boolean,
+  multiple?: boolean,
+  autofocus?: boolean
+}
+
+export interface CheckboxConfiguarion {
+  id: string,
+  label: string,
+  tabindex: number,
+  autofocus?: boolean,
+  checked?: boolean,
+  disabled?: boolean
+}
+
+export interface CheckboxGroupFieldConfiguration {
+  label: string,
+  name: string,
+  form: string,
+  options: Array<CheckboxConfiguarion>,
+  disabled?: boolean
 }

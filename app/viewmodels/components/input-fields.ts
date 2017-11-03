@@ -9,9 +9,10 @@ import {
   ComponentModifierOption
 } from '../../interfaces';
 
-class Inputs {
+class InputFields {
 
     public component: Component2;
+
 
     constructor() {
  
@@ -21,7 +22,12 @@ class Inputs {
           codeBases: [
             {
               name: "HTML",
-              code: `<input type="#type#" class="form-control" placeholder="Hint text">`
+              code: `<div class="input-field">
+  <label class="input-field__label">Form label (#type# input example)</label>
+  <div class="input-field__input">
+    <input type="#type#" class="form-control" placeholder="Hint text">
+  </div>
+</div>`
             }
           ],
           modifiers: [
@@ -33,14 +39,6 @@ class Inputs {
                 {
                   name: "Text input",
                   modifier: "text"
-                },
-                {
-                  name: "Checkbox input",
-                  modifier: "checkbox"
-                },
-                {
-                  name: "Radio input",
-                  modifier: "radio"
                 },
                 {
                   name: "Email input",
@@ -106,7 +104,12 @@ class Inputs {
           codeBases: [
             {
               name: "HTML",
-              code: `<textarea class="form-control" rows="4">`
+              code: `<div class="input-field">
+  <label class="input-field__label">Form label (textarea example)</label>
+  <div class="input-field__input">
+    <textarea class="form-control" placeholder="Hint text" rows="4"></textarea>
+  </div>
+</div>`
             }
           ],
           modifiers: [
@@ -116,13 +119,18 @@ class Inputs {
             codeBases: [
               {
                 name: "HTML",
-                code: `<select #type# class="form-control">
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
-    <option>4</option>
-    <option>5</option>
-</select>`
+                code: `<div class="input-field">
+  <label class="input-field__label">Form label (#type# select input example)</label>
+    <div class="input-field__input">
+      <select #type# class="form-control">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
+  </div>
+</div>`
               }
             ],
             modifiers: [
@@ -144,62 +152,24 @@ class Inputs {
             ]
           },
           {
-            name: "Stacked checkbox/radio groups",
-            codeBases: [
-              {
-                name: "HTML",
-                code: `<div class="#type#">
-  <label>
-    <input type="#type#" name="options#type#s" id="options#type#s1" value="option1" class="form-control" checked>
-    Option one is this and that&mdash;be sure to include why it's great
-  </label>
-</div>
-<div class="#type#">
-  <label>
-    <input type="#type#" name="options#type#s" id="options#type#s2" value="option2" class="form-control">
-    Option two can be something else also as awesome
-  </label>
-</div>
-<div class="#type# disabled">
-  <label>
-    <input type="#type#" name="options#type#s" id="options#type#s3" value="option3" class="form-control" disabled>
-    Option three is disabled
-  </label>
-</div>`
-              }
-            ],
-            modifiers: [
-              {
-                name: "Type",
-                mergeField: "#type#",
-                selectedOption: ko.observable(),
-                options: [
-                  {
-                    name: "Radios",
-                    modifier: "radio"
-                  },
-                  {
-                    name: "Checkboxes",
-                    modifier: "checkbox"
-                  }
-                ]
-              }
-            ]
-          },
-          {
             name: "Inline checkbox/radio groups",
             codeBases: [
               {
                 name: "HTML",
-                code: `<label class="#type#-inline">
-  <input type="#type#" name="inline#type#Options" id="inline#type#1" class="form-control" value="option1"> Option 1
-</label>
-<label class="#type#-inline">
-  <input type="#type#" name="inline#type#Options" id="inline#type#2" class="form-control" value="option2"> Option 2
-</label>
-<label class="#type#-inline">
-  <input type="#type#" name="inline#type#Options" id="inline#type#3" class="form-control" value="option3"> Option 3
-</label>`
+                code: `<div class="input-field">
+  <div class="input-field__label">Form label (#type# select input example)</div>
+  <div class="input-field__input">
+    <label>
+      <input type="#type#" name="inline#type#Options" id="inline#type#1" class="form-control" value="option1"> Option 1
+    </label>
+    <label>
+      <input type="#type#" name="inline#type#Options" id="inline#type#2" class="form-control" value="option2"> Option 2
+    </label>
+    <label>
+      <input type="#type#" name="inline#type#Options" id="inline#type#3" class="form-control" value="option3"> Option 3
+    </label>
+  </div>
+</div>`
               }
             ],
             modifiers: [
@@ -216,42 +186,6 @@ class Inputs {
                     name: "Checkboxes",
                     modifier: "checkbox"
                   }
-                ]
-              }
-            ]
-          },
-          {
-            name: "Input icon add ons",
-            codeBases: [
-              {
-                name: "HTML",
-                code: `<div class="input-group">
-    #content#
-</div>`
-              }
-            ],
-            modifiers: [
-              {
-                name: "Alignment",
-                mergeField: "#content#",
-                selectedOption: ko.observable(),
-                options: [
-                    {
-                      name: "Left",
-                      modifier: ` <span class="input-group-addon" id="sizing-addon1"><i class="icon icon-pencil"></i></span>
-  <input type="text" class="form-control" placeholder="Hint text" aria-describedby="sizing-addon1">`
-                    },
-                    {
-                      name: "Right",
-                      modifier: ` <input type="search" class="form-control" placeholder="Hint text" aria-describedby="sizing-addon1">
-  <span class="input-group-addon" id="sizing-addon1"><i class="icon icon-search3"></i></span>`
-                    },
-                    {
-                      name: "Both",
-                      modifier: ` <span class="input-group-addon" id="sizing-addon1">£</span>
-  <input type="number" class="form-control" placeholder="Hint text" aria-describedby="sizing-addon1">
-  <span class="input-group-addon" id="sizing-addon1">.00</span>`
-                    }
                 ]
               }
             ]
@@ -263,4 +197,4 @@ class Inputs {
     }
 }
 
-export = Inputs;
+export = InputFields;

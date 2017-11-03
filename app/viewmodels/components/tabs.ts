@@ -6,70 +6,124 @@ import {
   ComponentVariations2,
   ComponentCodeBase,
   ComponentModifier,
-  ComponentModifierOption
+  ComponentModifierOption,
+  TabComponentConfiguration,
+  TabItemComponentConfiguration
 } from '../../interfaces';
 
 class Tabs {
 
     public component: Component2;
 
+    public tabConfig: TabComponentConfiguration;
+
     constructor() {
  
-<<<<<<< HEAD
-      this.component = new Component2("label", [
-=======
+      this.tabConfig = {
+            theme: 'primary',
+        items: [
+          {
+            title: 'tab 1',
+            badge: '',
+            contentView: {
+              view: $(`<div><h2>Example</h2><p data-bind='html: content'></p></div>`).get(0),
+              model: {
+                content: '<h3>Databinding</h3><p>This is bound from a view model</p>'
+              }
+            },
+            active: ko.observable(true)
+          },
+          {
+            title: 'tab 2',
+            badge: '',
+            contentView: {
+              view:  $(`<div><h2>Tab 2</h2><p>This has no binding</p></div>`).get(0),
+              model: {}
+            },
+            active: ko.observable(false)
+          },
+          {
+            title: 'tab 3',
+            badge: '',
+            contentView: {
+              view:  $(`<div><h2>Tab 3</h2><p>This has no binding</p></div>`).get(0),
+              model: {}
+            },
+            active: ko.observable(false)
+          },
+          {
+            title: 'tab 4',
+            badge: '',
+            contentView: {
+              view:  $(`<div><h2>Tab 4</h2><p>This has no binding</p></div>`).get(0),
+              model: {}
+            },
+            active: ko.observable(false)
+          }
+        ]
+      };
+
       this.component = new Component2("tabs", [
->>>>>>> 986e991f0b48aef8684585ebd5dd7184fa57b69c
         {
           name: "Base",
           codeBases: [
             {
               name: "HTML",
-<<<<<<< HEAD
-              code: `<span class="label#theme#">Label example</span>`
-            },{
-              name: "widget",
-              code: `<!-- ko widget: { kind: 'tabs', 
-              config: {
-                items: [
-                  {
-                    title: "home",
-                    view: '<h3 class="cl-heading">Home content</h3><p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>',
-                    viewmodel: {},
-                    active: ko.observable(true)
-                  },
-                  {
-                    title: "profile",
-                    view: '<h3 class="cl-heading">Profile content</h3><p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>',
-                    viewmodel: {},
-                    active: ko.observable(false)
-                  },
-                  {
-                    title: "messages",
-                    view: '<h3 class="cl-heading">Messages content</h3><p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>',
-                    viewmodel: {},
-                    active: ko.observable(false)
-                  },
-                  {
-                    title: "settings",
-                    view: '<h3 class="cl-heading">Settings content</h3><p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>',
-                    viewmodel: {},
-                    active: ko.observable(false)
-                  }
-                ]
-              }
-            } --> <!-- /ko -->`
-            }
-          ],
-          modifiers:[]
-        }
-=======
               code: `<ul class="nav nav-tabs #theme#">
-    <li class="active"><a href="#">Home</a></li>
-    <li><a href="#">Menu 1</a></li>
-    <li><a href="#">Menu 2</a></li>
-    <li><a href="#">Menu 3</a></li>
+  <li class="active"><a href="#"><span class="nav-tabs__title">Home</span></a></li>
+  <li><a href="#"><span class="nav-tabs__title">Menu 1</span></a></li>
+  <li><a href="#"><span class="nav-tabs__title">Menu 2</span></a></li>
+  <li><a href="#"><span class="nav-tabs__title">Menu 3</span></a></li>
 </ul>`
+            },
+            {
+              name: "widget",
+              code: `
+<!-- ko widget: { kind: 'tabs', config: 
+  {
+    items: [
+      {
+        title: 'Home',
+        badge: '',
+        contentView: {
+          view: $("<div><h2>Example tab content</h2><p data-bind='html: content'></p></div>").get(0),
+          model: {
+            content: '<h3>Databinding</h3><p>This text is bound from a view model</p>'
+          }
+        },
+        active: ko.observable(true)
+      },
+      {
+        title: 'Menu 1',
+        badge: '',
+        contentView: {
+          view:  $("<div><h2>Example tab content</h2><p>Tab content for tab 2... This example has no binding just a HTML string.</p></div>").get(0),
+          model: {}
+        },
+        active: ko.observable(false)
+      },
+      {
+        title: 'Menu 2',
+        badge: '',
+        contentView: {
+          view:  $("<div><h2>Tab 3</h2><p>Tab content for tab 2... This example has no binding just a HTML string.</p></div>").get(0),
+          model: {}
+        },
+        active: ko.observable(false)
+      },
+      {
+        title: 'Menu 3',
+        badge: '',
+        contentView: {
+          view:  $("<div><h2>Tab 4</h2><p>Tab content for tab 2... This example has no binding just a HTML string.</p></div>").get(0),
+          model: {}
+        },
+        active: ko.observable(false)
+      }
+    ]
+    #theme#
+  }
+}--><!--/ko-->`
             }
           ],
           modifiers: [
@@ -96,11 +150,60 @@ class Tabs {
               {
                 name: "HTML",
                 code: `<ul class="nav nav-tabs #theme#">
-      <li class="active"><a href="#">Home  <span class="badge">4</span></a></li>
-      <li><a href="#">Menu 1  <span class="badge">4</span></a></li>
-      <li><a href="#">Menu 2  <span class="badge">4</span></a></li>
-      <li><a href="#">Menu 3  <span class="badge">4</span></a></li>
+      <li class="active"><a href="#"><span class="nav-tabs__title">Home</span>  <span class="badge">4</span></a></li>
+      <li><a href="#"><span class="nav-tabs__title">Menu 1</span>  <span class="badge">4</span></a></li>
+      <li><a href="#"><span class="nav-tabs__title">Menu 2</span>  <span class="badge">4</span></a></li>
+      <li><a href="#"><span class="nav-tabs__title">Menu 3</span>  <span class="badge">4</span></a></li>
   </ul>`
+              },
+              {
+                name: "widget",
+                code: `
+  <!-- ko widget: { kind: 'tabs', config: 
+    {
+      items: [
+        {
+          title: 'Home',
+          badge: '42',
+          contentView: {
+            view: $("<div><h2>Example</h2><p data-bind='html: content'></p></div>").get(0),
+            model: {
+              content: '<h3>Databinding</h3><p>This is bound from a view model</p>'
+            }
+          },
+          active: ko.observable(true)
+        },
+        {
+          title: 'Menu 1',
+          badge: '42',
+          contentView: {
+            view:  $("<div><h2>Tab 2</h2><p>This has no binding</p></div>").get(0),
+            model: {}
+          },
+          active: ko.observable(false)
+        },
+        {
+          title: 'Menu 2',
+          badge: 'New!',
+          contentView: {
+            view:  $("<div><h2>Tab 3</h2><p>This has no binding</p></div>").get(0),
+            model: {}
+          },
+          active: ko.observable(false)
+        },
+        {
+          title: 'Menu 3',
+          badge: 0,
+          contentView: {
+            view:  $("<div><h2>Tab 4</h2><p>This has no binding</p></div>").get(0),
+            model: {}
+          },
+          active: ko.observable(false)
+        }
+      ]
+      #theme#
+    }
+  }--><!--/ko-->`
               }
             ],
             modifiers: [
@@ -121,7 +224,6 @@ class Tabs {
               }
             ]
           }
->>>>>>> 986e991f0b48aef8684585ebd5dd7184fa57b69c
       ])
     }
 

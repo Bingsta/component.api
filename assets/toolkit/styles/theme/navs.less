@@ -23,7 +23,8 @@
       align-items:center;
       height: 3rem;
       padding:0 1rem;
-      >*{
+      font-size:@font-size-large;
+      >* + *{
         margin-left:0.5rem;
       }
       &:hover,
@@ -140,7 +141,8 @@
     &.active > a {
       &,
       &:hover,
-      &:hover {
+      &:focus {
+        font-weight:@semi-bold;
         border: 0px;
         border-bottom: 2px solid @brand-accent;
       }

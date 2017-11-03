@@ -1,0 +1,20 @@
+<div class="input-field" data-bind="with: config">
+    <label class="input-field__label" data-bind="text:label, attr: { for: id }"></label>
+    <div class="input-field__input">
+      <textarea class="form-control"
+      data-bind="attr:{
+        value: value, 
+        placeholder: placeholder, 
+        rows: rows,
+        form: form,
+        name: name,
+        tabindex: tabindex,
+        id: id,
+        autofocus: autofocus,
+        required: required,
+        spellcheck: spellcheck,
+        readonly: readonly,
+        maxlength: maxlength
+      }, disable: disabled" ></textarea>
+    </div>
+  </div>

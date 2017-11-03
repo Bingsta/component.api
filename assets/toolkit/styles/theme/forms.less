@@ -32,8 +32,8 @@ legend {
 label {
   display: inline-block;
   max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
-  margin-bottom: 5px;
-  font-weight: bold;
+  //margin-bottom: 5px;
+  //font-weight: bold;
 }
 
 
@@ -51,7 +51,9 @@ input[type="search"] {
 // Position radios and checkboxes better
 input[type="radio"],
 input[type="checkbox"] {
-  margin: 4px 0 0;
+  margin: 2px 0 0;
+  width:14px;
+  height:14px;
   margin-top: 1px \9; // IE8-9
   line-height: normal;
 }
@@ -158,6 +160,7 @@ output {
   // Reset height for `textarea`s
   textarea& {
     height: auto;
+    padding:@padding-base-vertical @padding-base-horizontal;
   }
 
   &[type="file"], &[type="range"], &[type="color"] {
@@ -165,8 +168,8 @@ output {
     padding:0;
   }
   &[type="checkbox"], &[type="radio"] {
-    width:16px;
-    height:16px;
+    width:14px;
+    height:14px;
   }
 }
 
@@ -634,4 +637,41 @@ input[type="checkbox"] {
       }
     }
   }
+}
+
+
+
+.input-field {
+  display:flex;
+  align-items: flex-start;
+
+  width:100%;
+  padding:0.3rem 0;
+}
+
+.input-field__input {
+  flex:1;
+  margin-left:20px;
+  display:flex;
+  color:@faded-text;
+  label {
+    display:flex;
+    line-height:@line-height-smallforbase;
+    padding:@padding-base-vertical 0;
+    > input[type="radio"], 
+    > input[type="checkbox"] {
+      margin-right: 0.5rem;
+    }
+  }
+  label + label {
+    margin-left:1.5rem;
+  }
+}
+
+
+.input-field__label {
+  line-height:@line-height-smallforbase;
+  padding:@padding-base-vertical 0;
+  width:(2/7 * 100%);
+  text-align: right;
 }
