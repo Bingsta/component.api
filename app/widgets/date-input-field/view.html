@@ -1,6 +1,9 @@
 <div class="input-field" data-bind="with: config">
     <label class="input-field__label" data-bind="text:label, attr: { for: input.id }"></label>
     <div class="input-field__input">
-      <!-- ko widget: { kind: 'textarea-input', config: input }--><!-- /ko-->
+      <!-- ko widget: {
+        kind: 'date-input',
+        config: input
+      } --> <!-- /ko -->
     </div>
   </div>

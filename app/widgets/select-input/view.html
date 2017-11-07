@@ -1,0 +1,15 @@
+<span class="input-field__wrapper" data-bind="with:config">
+    <select  class="form-control" data-bind="attr: { 
+      name: name,
+      form: form,
+      size: size,
+      tabindex: tabindex,
+      disabled: disabled,
+      required: required,
+      multiple: multiple,
+      autofocus: autofocus,
+      id: id
+    }, foreach: options">
+      <option data-bind="attr:{value:value}, text:title"></option>
+  </select>
+</span>

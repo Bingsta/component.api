@@ -14,29 +14,11 @@ class TextInputField {
   activate(settings: any) {
     //add configuration file
     if (settings.config) {
-      console.log("Tabs component>>>");
+      console.log("Textarea component>>>");
       console.log(settings.config);
       
       this.config = ko.observable(settings.config);
 
-      if(this.config().autofocus==null) {
-        this.config().autofocus=false;
-      }
-      if(this.config().disabled==null) {
-        this.config().disabled=false;
-      }
-      if(this.config().required==null) {
-        this.config().required=false;
-      }
-      if(this.config().spellcheck==null) {
-        this.config().spellcheck=false;
-      }
-      if(this.config().readonly==null) {
-        this.config().readonly=false;
-      }
-      if(this.config().maxlength==null) {
-        this.config().maxlength=null;
-      }
     }
     else {
       throw "Missing configuration file"

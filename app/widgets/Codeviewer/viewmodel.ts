@@ -24,6 +24,7 @@ class CodeViewer {
   public selectedCodeBase: KnockoutObservable<ComponentCodeBase> = ko.observable();
   public codeStr: KnockoutObservable<string> = ko.observable("");
   public previewStr: KnockoutObservable<string> = ko.observable("");
+  public codeViewOpen: KnockoutObservable<boolean> = ko.observable(false);
 
   constructor() {
     let self: CodeViewer = this;
@@ -131,6 +132,10 @@ class CodeViewer {
       self.codeStr(Prism.highlight(tempStr, Prism.languages.markup));
 
     }
+  }
+
+  public toggleCode ():void {
+    this.codeViewOpen(!this.codeViewOpen());
   }
 
 }

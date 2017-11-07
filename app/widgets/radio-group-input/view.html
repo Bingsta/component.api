@@ -1,0 +1,16 @@
+<div class="input-field__wrapper" data-bind="with:config">
+    <div class="input-field__radioCheckGroup" data-bind="foreach:options">
+        <label data-bind="attr: { for : id }">
+          <input type="radio" class="form-control" data-bind="attr: { 
+            name: $parent.name, 
+            id: id, 
+            form: $parent.form,
+            tabindex: tabindex,
+            value: value,
+            autofocus: autofocus,
+            checked: checked,
+            disabled: disabled
+          }"> <span data-bind="text: title"></span>
+        </label>
+    </div>
+</div>

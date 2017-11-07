@@ -107,46 +107,62 @@ export interface TabComponentConfiguration {
   items: Array<TabItemComponentConfiguration>
 }
 
-export interface InputFieldConfiguration {
+export interface BaseInputConfiguration {
   id:string,
-  label: string,
-  value: string,
-  placeholder: string,
   name:string,
   form: string,
   tabindex:number,
-  spellcheck?: boolean,
+  placeholder?: string,
+  value?: string,
   autofocus?: boolean,
   disabled?: boolean,
   required?: boolean,
-  maxlength?: number,
-  pattern?: string,
   readonly?: boolean
 }
 
-export interface TextAreaFieldConfiguration {
-  id:string,
+export interface InputConfiguration extends BaseInputConfiguration {
+  type: string,
+  spellcheck?: boolean,
+  maxlength?: number,
+  pattern?: string
+}
+
+export interface InputFieldConfiguration {
   label: string,
-  value: string,
-  placeholder: string,
+  input: InputConfiguration
+}
+
+export interface TextAreaConfiguration extends BaseInputConfiguration {
   rows: number,
   name: string,
   form: string,
-  tabindex:number,
-  autofocus?: boolean,
-  disabled?: boolean,
-  required?: boolean,
   spellcheck?: boolean,
-  maxlength?: number,
-  readonly?:boolean
+  maxlength?: number
 }
 
-export interface SelectFieldConfiguration {
-  id:string,
+export interface TextAreaFieldConfiguration {
   label: string,
+  input: TextAreaConfiguration
+}
+
+export interface DateInputConfiguration extends BaseInputConfiguration {
+  type: string,
+  max?: Date,
+  min?: Date,
+  step?: string
+}
+
+export interface DateFieldConfiguration {
+  label: string,
+  input: DateInputConfiguration
+}
+
+export interface SelectInputConfiguration {
+  id:string,
   name: string,
   form: string,
   tabindex:number,
+  options: Array<optionConfiguration>,
   size?: number,
   disabled?: boolean,
   required?: boolean,
@@ -154,19 +170,31 @@ export interface SelectFieldConfiguration {
   autofocus?: boolean
 }
 
-export interface CheckboxConfiguarion {
-  id: string,
+export interface SelectFieldConfiguration {
   label: string,
+  input: SelectInputConfiguration
+}
+export interface optionConfiguration {
+  title: string,
+  value: string
+}
+
+export interface CheckboxRadioGroupConfiguration{
+  name: string,
+  form: string,
+  options: Array<CheckboxRadioConfiguarion>
+}
+
+export interface CheckboxRadioGroupFieldConfiguration  {
+  label: string,
+  input: CheckboxRadioGroupConfiguration
+}
+
+export interface CheckboxRadioConfiguarion {
+  id: string,
+  title: string,
   tabindex: number,
   autofocus?: boolean,
   checked?: boolean,
-  disabled?: boolean
-}
-
-export interface CheckboxGroupFieldConfiguration {
-  label: string,
-  name: string,
-  form: string,
-  options: Array<CheckboxConfiguarion>,
   disabled?: boolean
 }

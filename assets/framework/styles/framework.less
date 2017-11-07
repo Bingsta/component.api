@@ -463,3 +463,23 @@ h4.cl-heading{
 .cl-modifiers--open {
   display:block;
 }
+
+
+//#CODE VIEW
+.cls-article__code {
+  overflow:auto;
+  transition: max-height 0.2s ease-in-out;
+}
+
+.cls-article__code--closed {
+  max-height:200px;
+}
+
+.cls-article__code-controls{
+  display:flex;
+  align-items:center;
+}
+
+.code-controls__copy-button{
+  flex:1;
+}

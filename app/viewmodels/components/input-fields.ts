@@ -18,7 +18,7 @@ class InputFields {
  
       this.component = new Component2("inputs", [
         {
-          name: "Inputs",
+          name: "Text inputs",
           codeBases: [
             {
               name: "HTML",
@@ -28,6 +28,25 @@ class InputFields {
     <input type="#type#" class="form-control" placeholder="Hint text">
   </div>
 </div>`
+            },
+            {
+              name: "widget",
+              code: `<!-- ko widget: { kind: 'text-input-field', config: {
+    label: "Text input example (for short text entries)",
+    input: {
+      id:'test_text',
+      value: "",
+      placeholder: "Hint text" ,
+      name: 'textInputExample',
+      form: 'inputtest',
+      tabindex: 1,
+      autofocus: true,
+      disabled:false,
+      required:false,
+      spellcheck: true,
+      readonly:false
+    }
+  }}--><!-- /ko-->`
             }
           ],
           modifiers: [

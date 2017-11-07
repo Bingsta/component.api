@@ -1,22 +1,10 @@
 <div class="input-field" data-bind="with: config">
-    <label class="input-field__label" data-bind="text:label, attr:{ for:id }"></label>
+    <label class="input-field__label" data-bind="text:label, attr:{ for:input.id }"></label>
       <div class="input-field__input">
-        <select  class="form-control" data-bind="attr: { 
-          name: name,
-          form: form,
-          size: size,
-          tabindex: tabindex,
-          disabled: disabled,
-          required: required,
-          multiple: multiple,
-          autofocus: autofocus,
-          id: id
-        }">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
+        <!-- ko widget: {
+          kind: 'select-input',
+          config: input
+        } --><!-- /ko -->
       </select>
     </div>
   </div>

@@ -1,11 +1,11 @@
 import * as ko from 'knockout';
 import * as system from 'durandal/system';
 import * as app from 'durandal/app';
-import { InputFieldConfiguration } from '../../interfaces';
+import { DateFieldConfiguration } from '../../interfaces';
 
-class TextInputField {
+class DateInputField {
 
-  public config: KnockoutObservable<InputFieldConfiguration>;
+  public config: KnockoutObservable<DateFieldConfiguration>;
 
   constructor() {
 
@@ -14,12 +14,12 @@ class TextInputField {
   activate(settings: any) {
     //add configuration file
     if (settings.config) {
-      console.log("Text component>>>");
+      console.log("week component>>>");
       console.log(settings.config);
 
       this.config = ko.observable(settings.config);
-      
-      this.config().input.type = "text";
+
+      this.config().input.type = "week";
 
     }
     else {
@@ -28,4 +28,4 @@ class TextInputField {
   }
 }
 
-export = TextInputField;
+export = DateInputField;

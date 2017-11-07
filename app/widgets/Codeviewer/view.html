@@ -10,9 +10,19 @@
     <h2 class="cl-heading">Code <small></small></h2>
 
     <section class="cls-article__section  cl-article__guide">
-      <pre class="language-css"><code class="language-css" data-bind="html:codeStr" id="codeView" >
+      <pre class="language-css  cls-article__code" data-bind="css:{ 'cls-article__code--closed': !codeViewOpen() }"><code class="language-css" data-bind="html:codeStr" id="codeView" >
         </code></pre>
-        <button class="btn btn-primary" id="copy-button" data-clipboard-target="#codeView"><i class="icon icon-embed2"></i> Copy code</button>
+        <div class="cls-article__code-controls">
+          <div class="code-controls__copy-button">
+              <button class="btn btn-primary" id="copy-button" data-clipboard-target="#codeView"><i class="icon icon-embed2"></i> Copy code</button>
+          </div>
+          <div class="code-controls__height-toggle">
+              <a href="#" javascript="return void(0);" data-bind="click:toggleCode">
+                <!-- ko if:codeViewOpen() --><i class="icon-arrow-up3"></i> Show less<!-- /ko -->
+                <!-- ko if:!codeViewOpen() --><i class="icon-arrow-down3"></i> Show more<!-- /ko -->
+              </a>
+          </div>
+        </div>
     </section>
 
 
