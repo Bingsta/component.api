@@ -3,7 +3,7 @@ import * as system from 'durandal/system';
 import * as app from 'durandal/app';
 import { 
   ModalComponentConfiguration
-} from '../../interfaces';
+} from 'interfaces';
 
 class Modal {
 

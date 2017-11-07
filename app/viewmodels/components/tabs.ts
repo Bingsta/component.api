@@ -9,7 +9,7 @@ import {
   ComponentModifierOption,
   TabComponentConfiguration,
   TabItemComponentConfiguration
-} from '../../interfaces';
+} from 'interfaces';
 
 class Tabs {
 

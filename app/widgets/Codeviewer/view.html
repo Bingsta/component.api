@@ -58,26 +58,28 @@
       </ul>
     </section>
 
-    <section class="cl-article-aside__section">
-        <h3 class="cl-heading">Code base</h3>
-      <ul class="list-unstyled" data-bind="foreach: selectedVariation().codeBases">
-        <li class="radio">
-          <label><input type="radio" name="options-codebase" data-bind="checkedValue: $data, checked: $parent.selectedCodeBase"> <span data-bind="text:name"></span></label>
-        </li>
-      </ul>
-    </section>
+    <!-- ko if: selectedVariation() -->
+      <section class="cl-article-aside__section">
+          <h3 class="cl-heading">Code base</h3>
+        <ul class="list-unstyled" data-bind="foreach: selectedVariation().codeBases">
+          <li class="radio">
+            <label><input type="radio" name="options-codebase" data-bind="checkedValue: $data, checked: $parent.selectedCodeBase"> <span data-bind="text:name"></span></label>
+          </li>
+        </ul>
+      </section>
 
-    <!-- ko foreach: selectedVariation().modifiers -->
-    <section class="cl-article-aside__section">
-    
-      <h3 class="cl-heading" data-bind="text:name"></h3>
+      <!-- ko foreach: selectedVariation().modifiers -->
+      <section class="cl-article-aside__section">
+      
+        <h3 class="cl-heading" data-bind="text:name"></h3>
 
-      <ul class="list-unstyled" data-bind="foreach: $data.options">
-        <li class="radio">
-          <label><input type="radio" data-bind="checkedValue: $data, checked: $parent.selectedOption, attr: { name: 'option-modifier-' + $parent.name }"> <span data-bind="text:name"></span></label>
-        </li>
-      </ul>
-    </section>
+        <ul class="list-unstyled" data-bind="foreach: $data.options">
+          <li class="radio">
+            <label><input type="radio" data-bind="checkedValue: $data, checked: $parent.selectedOption, attr: { name: 'option-modifier-' + $parent.name }"> <span data-bind="text:name"></span></label>
+          </li>
+        </ul>
+      </section>
+      <!-- /ko -->
     <!-- /ko -->
   </aside>
 

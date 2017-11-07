@@ -14,7 +14,7 @@ import {
   WidgetConfiguration,
   WidgetConfigurationOption,
   AccordianItem 
-} from '../../interfaces';
+} from 'interfaces';
 
 enum codeBases {
     HTML,

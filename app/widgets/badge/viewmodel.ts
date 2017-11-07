@@ -1,7 +1,7 @@
 import * as ko from 'knockout';
 import * as system from 'durandal/system';
 import * as app from 'durandal/app';
-import { BadgeComponentConfiguration } from '../../interfaces';
+import { BadgeComponentConfiguration } from 'interfaces';
 
 class Badge {
 

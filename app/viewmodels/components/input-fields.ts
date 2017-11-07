@@ -7,7 +7,7 @@ import {
   ComponentCodeBase,
   ComponentModifier,
   ComponentModifierOption
-} from '../../interfaces';
+} from 'interfaces';
 
 class InputFields {
 
@@ -21,17 +21,10 @@ class InputFields {
           name: "Text inputs",
           codeBases: [
             {
-              name: "HTML",
-              code: `<div class="input-field">
-  <label class="input-field__label">Form label (#type# input example)</label>
-  <div class="input-field__input">
-    <input type="#type#" class="form-control" placeholder="Hint text">
-  </div>
-</div>`
-            },
-            {
               name: "widget",
-              code: `<!-- ko widget: { kind: 'text-input-field', config: {
+              code: `<!-- ko widget: { 
+  kind: 'inputs/text-input-field',
+  config: {
     label: "Text input example (for short text entries)",
     input: {
       id:'test_text',
@@ -46,169 +39,533 @@ class InputFields {
       spellcheck: true,
       readonly:false
     }
-  }}--><!-- /ko-->`
+  }
+}--><!-- /ko-->`
             }
           ],
-          modifiers: [
-            {
-              name: "Input type",
-              mergeField: "#type#",
-              selectedOption: ko.observable(),
-              options: [
-                {
-                  name: "Text input",
-                  modifier: "text"
-                },
-                {
-                  name: "Email input",
-                  modifier: "email"
-                },
-                {
-                  name: "Search input",
-                  modifier: "search"
-                },
-                {
-                  name: "Number input",
-                  modifier: "number"
-                },
-                {
-                  name: "Range input",
-                  modifier: "range"
-                },
-                {
-                  name: "Date input",
-                  modifier: "date"
-                },
-                {
-                  name: "Month input",
-                  modifier: "month"
-                },
-                {
-                  name: "Week input",
-                  modifier: "week"
-                },
-                {
-                  name: "Time input",
-                  modifier: "time"
-                },
-                {
-                  name: "Date & time input",
-                  modifier: "datetime-local"
-                },
-                {
-                  name: "Password input",
-                  modifier: "password"
-                },
-                {
-                  name: "Telephone input",
-                  modifier: "tel"
-                },
-                {
-                  name: "URL input",
-                  modifier: "url"
-                },
-                {
-                  name: "Colour input",
-                  modifier: "color"
-                },
-                {
-                  name: "File picker",
-                  modifier: "file"
-                }
-              ]
-            }
-          ]
-        },{
-          name: "Text area",
+          modifiers: []
+        },
+        {
+          name: "Number inputs",
           codeBases: [
             {
-              name: "HTML",
-              code: `<div class="input-field">
-  <label class="input-field__label">Form label (textarea example)</label>
-  <div class="input-field__input">
-    <textarea class="form-control" placeholder="Hint text" rows="4"></textarea>
-  </div>
-</div>`
+              name: "widget",
+              code: `<!-- ko widget: { 
+  kind: 'inputs/number-input-field',
+  config: {
+    label: "Number input example",
+    input: {
+      id:'test_text',
+      value: "",
+      placeholder: "Hint text" ,
+      name: 'textInputExample',
+      form: 'inputtest',
+      tabindex: 1,
+      autofocus: true,
+      disabled:false,
+      required:false,
+      spellcheck: true,
+      readonly:false
+    }
+  }
+}--><!-- /ko-->`
+            }
+          ],
+          modifiers: []
+        },
+        {
+          name: "Email inputs",
+          codeBases: [
+            {
+              name: "widget",
+              code: `<!-- ko widget: { 
+  kind: 'inputs/email-input-field',
+  config: {
+    label: "Email input example",
+    input: {
+      id:'test_text',
+      value: "",
+      placeholder: "Hint text" ,
+      name: 'textInputExample',
+      form: 'inputtest',
+      tabindex: 1,
+      autofocus: true,
+      disabled:false,
+      required:false,
+      spellcheck: true,
+      readonly:false
+    }
+  }
+}--><!-- /ko-->`
+            }
+          ],
+          modifiers: []
+        },
+        {
+          name: "Search inputs",
+          codeBases: [
+            {
+              name: "widget",
+              code: `<!-- ko widget: { 
+  kind: 'inputs/search-input-field',
+  config: {
+    label: "Search input example",
+    input: {
+      id:'test_text',
+      value: "",
+      placeholder: "Hint text" ,
+      name: 'textInputExample',
+      form: 'inputtest',
+      tabindex: 1,
+      autofocus: true,
+      disabled:false,
+      required:false,
+      spellcheck: true,
+      readonly:false
+    }
+  }
+}--><!-- /ko-->`
+            }
+          ],
+          modifiers: []
+        },
+        {
+          name: "Telephone inputs",
+          codeBases: [
+            {
+              name: "widget",
+              code: `<!-- ko widget: { 
+  kind: 'inputs/telephone-input-field',
+  config: {
+    label: "Telephone input example",
+    input: {
+      id:'test_text',
+      value: "",
+      placeholder: "Hint text" ,
+      name: 'textInputExample',
+      form: 'inputtest',
+      tabindex: 1,
+      autofocus: true,
+      disabled:false,
+      required:false,
+      spellcheck: true,
+      readonly:false
+    }
+  }
+}--><!-- /ko-->`
+            }
+          ],
+          modifiers: []
+        },
+        {
+          name: "Password inputs",
+          codeBases: [
+            {
+              name: "widget",
+              code: `<!-- ko widget: { 
+  kind: 'inputs/password-input-field',
+  config: {
+    label: "Password input example",
+    input: {
+      id:'test_text',
+      value: "",
+      placeholder: "Hint text" ,
+      name: 'textInputExample',
+      form: 'inputtest',
+      tabindex: 1,
+      autofocus: true,
+      disabled:false,
+      required:false,
+      spellcheck: true,
+      readonly:false
+    }
+  }
+}--><!-- /ko-->`
+            }
+          ],
+          modifiers: []
+        },
+        {
+          name: "Range inputs",
+          codeBases: [
+            {
+              name: "widget",
+              code: `<!-- ko widget: { 
+  kind: 'inputs/range-input-field',
+  config: {
+    label: "Range input example",
+    input: {
+      id:'test_text',
+      value: "",
+      placeholder: "Hint text" ,
+      name: 'textInputExample',
+      form: 'inputtest',
+      tabindex: 1,
+      autofocus: true,
+      disabled:false,
+      required:false,
+      spellcheck: true,
+      readonly:false
+    }
+  }
+}--><!-- /ko-->`
+            }
+          ],
+          modifiers: []
+        },
+        {
+          name: "File inputs",
+          codeBases: [
+            {
+              name: "widget",
+              code: `<!-- ko widget: { 
+  kind: 'inputs/file-input-field',
+  config: {
+    label: "File input example",
+    input: {
+      id:'test_text',
+      value: "",
+      placeholder: "Hint text" ,
+      name: 'textInputExample',
+      form: 'inputtest',
+      tabindex: 1,
+      autofocus: true,
+      disabled:false,
+      required:false,
+      spellcheck: true,
+      readonly:false
+    }
+  }
+}--><!-- /ko-->`
+            }
+          ],
+          modifiers: []
+        },
+        {
+          name: "Colour inputs",
+          codeBases: [
+            {
+              name: "widget",
+              code: `<!-- ko widget: { 
+  kind: 'inputs/colour-input-field',
+  config: {
+    label: "Colour input example",
+    input: {
+      id:'test_text',
+      value: "",
+      placeholder: "Hint text" ,
+      name: 'textInputExample',
+      form: 'inputtest',
+      tabindex: 1,
+      autofocus: true,
+      disabled:false,
+      required:false,
+      spellcheck: true,
+      readonly:false
+    }
+  }
+}--><!-- /ko-->`
+            }
+          ],
+          modifiers: []
+        },
+        {
+          name: "Textarea inputs",
+          codeBases: [
+            {
+              name: "widget",
+              code: `<!-- ko widget: { 
+  kind: 'inputs/textarea-input-field', 
+  config: {
+    label: "Textarea input example (for long text entries)",
+    input: {
+      id:'test_textarea',
+      value: "",
+      placeholder: "Hint text" ,
+      rows: 4,
+      name: 'textareaExample',
+      form: 'inputtest',
+      tabindex: 5
+    }
+  }
+}--><!-- /ko-->`
             }
           ],
           modifiers: [
           ]
-        },{
-            name: "Selects",
-            codeBases: [
-              {
-                name: "HTML",
-                code: `<div class="input-field">
-  <label class="input-field__label">Form label (#type# select input example)</label>
-    <div class="input-field__input">
-      <select #type# class="form-control">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-    </select>
-  </div>
-</div>`
-              }
-            ],
-            modifiers: [
-              {
-                name: "Input type",
-                mergeField: "#type#",
-                selectedOption: ko.observable(),
-                options: [
-                  {
-                    name: "Single select",
-                    modifier: ""
-                  },
-                  {
-                    name: "Multiple select",
-                    modifier: "multiple"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            name: "Inline checkbox/radio groups",
-            codeBases: [
-              {
-                name: "HTML",
-                code: `<div class="input-field">
-  <div class="input-field__label">Form label (#type# select input example)</div>
-  <div class="input-field__input">
-    <label>
-      <input type="#type#" name="inline#type#Options" id="inline#type#1" class="form-control" value="option1"> Option 1
-    </label>
-    <label>
-      <input type="#type#" name="inline#type#Options" id="inline#type#2" class="form-control" value="option2"> Option 2
-    </label>
-    <label>
-      <input type="#type#" name="inline#type#Options" id="inline#type#3" class="form-control" value="option3"> Option 3
-    </label>
-  </div>
-</div>`
-              }
-            ],
-            modifiers: [
-              {
-                name: "Type",
-                mergeField: "#type#",
-                selectedOption: ko.observable(),
-                options: [
-                  {
-                    name: "Radios",
-                    modifier: "radio"
-                  },
-                  {
-                    name: "Checkboxes",
-                    modifier: "checkbox"
-                  }
-                ]
-              }
-            ]
-          }
+        },
+        {
+          name: "Date inputs",
+          codeBases: [
+            {
+              name: "widget",
+              code: `  <!-- ko 
+  widget: { kind: 'inputs/date-input-field', 
+  config: {
+    label: "Date input example (for date entries)",
+    input: {
+      id:'date_text',
+      value: '1975-05-19',
+      name: 'dateInputExample',
+      form: 'inputtest',
+      tabindex: 6,
+      autofocus: true,
+      disabled:false,
+      required:false,
+      readonly:false
+    }
+  }
+}--><!-- /ko-->`
+            }
+          ],
+          modifiers: []
+        },
+        {
+          name: "Date & time input",
+          codeBases: [
+            {
+              name: "widget",
+              code: `  <!-- ko 
+  widget: { kind: 'inputs/date-time-input-field', 
+  config: {
+    label: "Date & time input example",
+    input: {
+      id:'date_text',
+      value: '1975-05-19',
+      name: 'dateInputExample',
+      form: 'inputtest',
+      tabindex: 6,
+      autofocus: true,
+      disabled:false,
+      required:false,
+      readonly:false
+    }
+  }
+}--><!-- /ko-->`
+            }
+          ],
+          modifiers: []
+        },
+        {
+          name: "Time inputs",
+          codeBases: [
+            {
+              name: "widget",
+              code: `  <!-- ko 
+  widget: { kind: 'inputs/time-input-field', 
+  config: {
+    label: "Time input example",
+    input: {
+      id:'date_text',
+      value: '15:30',
+      name: 'dateInputExample',
+      form: 'inputtest',
+      tabindex: 6,
+      autofocus: true,
+      disabled:false,
+      required:false,
+      readonly:false
+    }
+  }
+}--><!-- /ko-->`
+            }
+          ],
+          modifiers: []
+        },
+        {
+          name: "Month inputs",
+          codeBases: [
+            {
+              name: "widget",
+              code: `  <!-- ko 
+  widget: { kind: 'inputs/month-input-field', 
+  config: {
+    label: "Month input example",
+    input: {
+      id:'date_text',
+      value: '2017-10',
+      name: 'dateInputExample',
+      form: 'inputtest',
+      tabindex: 6,
+      autofocus: true,
+      disabled:false,
+      required:false,
+      readonly:false
+    }
+  }
+}--><!-- /ko-->`
+            }
+          ],
+          modifiers: []
+        },
+        {
+          name: "Week inputs",
+          codeBases: [
+            {
+              name: "widget",
+              code: `  <!-- ko 
+  widget: { kind: 'inputs/week-input-field', 
+  config: {
+    label: "Week input example",
+    input: {
+      id:'date_text',
+      value: '2017-W23',
+      name: 'dateInputExample',
+      form: 'inputtest',
+      tabindex: 6,
+      autofocus: true,
+      disabled:false,
+      required:false,
+      readonly:false
+    }
+  }
+}--><!-- /ko-->`
+            }
+          ],
+          modifiers: []
+        },
+        {
+          name: "Select inputs",
+          codeBases: [
+            {
+              name: "widget",
+              code: `<!-- ko widget: { 
+  kind: 'inputs/select-input-field', 
+  config: {
+    label: "Select input example (for single option select)",
+    input: {
+      id:'test_selectbox',
+      name: 'selectExample',
+      form: 'inputtest',
+      tabindex: 8,
+      disabled:false,
+      required:false,
+      multiple:false,
+      autofocus: false,
+      options: [
+        { value: '1', title: 'Option 1' },
+        { value: '2', title: 'Option 2' },
+        { value: '3', title: 'Option 3' },
+        { value: '4', title: 'Option 4' },
+        { value: '5', title: 'Option 5' },
+      ]
+    }
+  }
+}--><!-- /ko-->`
+            }
+          ],
+          modifiers: []
+        },
+        {
+          name: "Multiple select inputs",
+          codeBases: [
+            {
+              name: "widget",
+              code: `<!-- ko widget: { 
+  kind: 'inputs/select-input-field', 
+  config: {
+    label: "Multiple select input example (for multiple option selection)",
+    input: {
+      id:'test_selectbox',
+      name: 'selectExample',
+      form: 'inputtest',
+      tabindex: 8,
+      disabled:false,
+      required:false,
+      multiple:true,
+      autofocus: false,
+      options: [
+        { value: '1', title: 'Option 1' },
+        { value: '2', title: 'Option 2' },
+        { value: '3', title: 'Option 3' },
+        { value: '4', title: 'Option 4' },
+        { value: '5', title: 'Option 5' },
+      ]
+    }
+  }
+}--><!-- /ko-->`
+            }
+          ],
+          modifiers: []
+        },
+        {
+          name: "Radio group input",
+          codeBases: [
+            {
+              name: "widget",
+              code: `<!-- ko widget: { 
+  kind: 'inputs/radio-group-input-field', 
+  config: {
+    label: "Radio group example",
+    input: {
+      name: 'radioExample',
+      form: 'inputtest',
+      options: [
+        {
+          id: 'radio1',
+          title: 'Option 1',
+          value: '1',
+          tabindex: 9
+        },
+        {
+          id: 'radio2',
+          title: 'Option 2',
+          value: '2',
+          tabindex: 10
+        },
+        {
+          id: 'radio3',
+          title: 'Option 3',
+          value: '3',
+          tabindex: 11
+        }
+      ]
+    }
+  }
+}--><!-- /ko-->`
+            }
+          ],
+          modifiers: []
+        },
+        {
+          name: "Checkbox group input",
+          codeBases: [
+            {
+              name: "widget",
+              code: `<!-- ko widget: { 
+  kind: 'inputs/checkbox-group-input-field', 
+  config: {
+    label: "Checkbox group example",
+    input: {
+      name: 'checkExample',
+      form: 'inputtest',
+      options: [
+        {
+          id: 'check1',
+          title: 'Option 1',
+          value: '1',
+          tabindex: 9
+        },
+        {
+          id: 'check2',
+          title: 'Option 2',
+          value: '2',
+          tabindex: 10
+        },
+        {
+          id: 'check3',
+          title: 'Option 3',
+          value: '3',
+          tabindex: 11
+        }
+      ]
+    }
+  }
+}--><!-- /ko-->`
+            }
+          ],
+          modifiers: []
+        }
       ])
     }
 

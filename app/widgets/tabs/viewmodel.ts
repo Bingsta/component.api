@@ -1,7 +1,7 @@
 import * as ko from 'knockout';
 import * as system from 'durandal/system';
 import * as app from 'durandal/app';
-import { TabComponentConfiguration, TabItemComponentConfiguration } from '../../interfaces';
+import { TabComponentConfiguration, TabItemComponentConfiguration } from 'interfaces';
 
 class Tabs {
 

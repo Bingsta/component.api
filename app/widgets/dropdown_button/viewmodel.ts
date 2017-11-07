@@ -1,7 +1,7 @@
 import * as ko from 'knockout';
 import * as system from 'durandal/system';
 import * as app from 'durandal/app';
-import { DropdownButtonComponentConfiguration } from '../../interfaces';
+import { DropdownButtonComponentConfiguration } from 'interfaces';
 
 class Dropdown_button {
 

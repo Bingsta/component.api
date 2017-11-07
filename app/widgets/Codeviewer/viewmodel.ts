@@ -10,7 +10,7 @@ import {
   ComponentCodeBase,
   ComponentModifier,
   ComponentModifierOption
-} from '../../interfaces';
+} from 'interfaces';
 
 enum codeBases {
   HTML,
@@ -71,9 +71,6 @@ class CodeViewer {
       });
 
 
-      //set intitial selection
-      this.selectedVariation(this.component.variations[0]);
-
     }
     else {
       throw "Required settings object missing: 'component";
@@ -82,6 +79,9 @@ class CodeViewer {
   }
 
   public compositionComplete() {
+
+      //set intitial selection
+      this.selectedVariation(this.component.variations[0]);
   }
 
   //generate the component code string

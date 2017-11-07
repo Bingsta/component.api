@@ -7,7 +7,7 @@ import {
   ComponentCodeBase,
   ComponentModifier,
   ComponentModifierOption
-} from '../../interfaces';
+} from 'interfaces';
 
 class Buttons {
 

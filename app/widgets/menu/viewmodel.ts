@@ -1,7 +1,7 @@
 import * as ko from 'knockout';
 import * as system from 'durandal/system';
 import * as app from 'durandal/app';
-import { MenuComponentConfiguration, MenuItemComponentConfiguration } from '../../interfaces';
+import { MenuComponentConfiguration, MenuItemComponentConfiguration } from 'interfaces';
 
 class Menu {
 
