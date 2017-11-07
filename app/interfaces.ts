@@ -198,3 +198,21 @@ export interface CheckboxRadioConfiguarion {
   checked?: boolean,
   disabled?: boolean
 }
+
+export interface FromToInputFieldConfiguration {
+  label: string,
+  input: FromToInputConfiguration
+}
+
+export interface FromToInputConfiguration {
+  from: FromToItem,
+  to: FromToItem
+}
+
+export interface FromToItem {
+  label: string,
+  input: {
+    kind: string,
+    config: DateFieldConfiguration
+  }
+}

@@ -425,6 +425,51 @@ class InputFields {
           modifiers: []
         },
         {
+          name: "From - to date inputs",
+          codeBases: [
+            {
+              name: "widget",
+              code: `<!-- ko widget: {
+  kind: 'inputs/from-to-input-field',
+  config: {
+    label: 'From - to example',
+    input: {
+      from: {
+        label: "From",
+        input: {
+          id:'date_from_text',
+          value: '1975-05-19',
+          name: 'dateFromInputExample',
+          form: 'inputtest',
+          tabindex: 6,
+          autofocus: true,
+          disabled:false,
+          required:false,
+          readonly:false
+        }
+      },
+      to: {
+        label: "To",
+        input: {
+          id:'date_to_text',
+          value: '2017-05-19',
+          name: 'dateToInputExample',
+          form: 'inputtest',
+          tabindex: 7,
+          autofocus: true,
+          disabled:false,
+          required:false,
+          readonly:false
+        }
+      }
+    }
+  }
+}--><!-- /ko -->`
+            }
+          ],
+          modifiers: []
+        },
+        {
           name: "Select inputs",
           codeBases: [
             {

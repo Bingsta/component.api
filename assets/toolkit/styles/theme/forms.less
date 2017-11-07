@@ -672,8 +672,24 @@ input[type="checkbox"] {
   display:flex;
 }
 
+//nested input fields
 .input-field__wrapper {
   flex:1;
+  display:flex;
+  > .input-field {
+    width:auto;
+    flex: 1;
+    padding:0;
+    > .input-field__input{
+      flex: 1;
+    }
+    > .input-field__label{
+      width:auto;
+    }
+  }
+  > .input-field + .input-field {
+    margin-left: 2rem;
+  }
 }
 
 
