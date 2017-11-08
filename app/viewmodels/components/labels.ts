@@ -32,31 +32,38 @@ class Labels {
               options: [
                 {
                   name: "Default",
-                  modifier: " label-default"
+                  HTML: " label-default",
+                  widget: `"label-default"`
                 },
                 {
                   name: "Primary",
-                  modifier: " label-primary"
+                  HTML: " label-primary",
+                  widget: `"label-primary"`
                 },
                 {
                   name: "Accent",
-                  modifier: " label-accent"
+                  HTML: " label-accent",
+                  widget: `"label-accent"`
                 },
                 {
                   name: "Warning",
-                  modifier: " label-warning"
+                  HTML: " label-warning",
+                  widget: `"label-warning"`
                 },
                 {
                   name: "Success",
-                  modifier: " label-success"
+                  HTML: " label-success",
+                  widget: `"label-success"`
                 },
                 {
                   name: "Danger",
-                  modifier: " label-danger"
+                  HTML: " label-danger",
+                  widget: `"label-danger"`
                 },
                 {
                   name: "Info",
-                  modifier: " label-info"
+                  HTML: " label-info",
+                  widget: `"label-info"`
                 }
               ]
             }

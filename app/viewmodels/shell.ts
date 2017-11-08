@@ -22,6 +22,13 @@ export class Shell {
           return /components/i.test(route.moduleId);
         }),
         open: ko.observable(true)
+      },
+      { 
+        title: "Patterns",  
+        items: this.router.navigationModel().filter((route) => {
+          return /patterns/i.test(route.moduleId);
+        }),
+        open: ko.observable(true)
       }
     ]);
   }
@@ -37,7 +44,8 @@ export class Shell {
       { route: 'components/tags',         moduleId: 'viewmodels/components/tags',         title: "Tags",          nav: true },
       { route: 'components/inputs',       moduleId: 'viewmodels/components/inputs',       title: "Inputs",        nav: true },
       { route: 'components/input-fields', moduleId: 'viewmodels/components/input-fields', title: "Input fields",  nav: true },
-      { route: 'components/pagination',   moduleId: 'viewmodels/components/pagination',   title: "Pagination",    nav: true }
+      { route: 'components/pagination',   moduleId: 'viewmodels/components/pagination',   title: "Pagination",    nav: true },
+      { route: 'patterns/forms',   moduleId: 'viewmodels/patterns/forms',   title: "Forms",    nav: true }
     ]).buildNavigationModel();;
 
   activate() {

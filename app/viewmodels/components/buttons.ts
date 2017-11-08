@@ -20,31 +20,38 @@ class Buttons {
       options: [
         {
           name: "Default",
-          modifier: " btn-default"
+          HTML: " btn-default",
+          widget: `"btn-default"`
         },
         {
           name: "Primary",
-          modifier: " btn-primary"
+          HTML: " btn-primary",
+          widget: `"btn-primary"`
         },
         {
           name: "Accent",
-          modifier: " btn-accent"
+          HTML: " btn-accent",
+          widget: `"btn-accent"`
         },
         {
           name: "Warning",
-          modifier: " btn-warning"
+          HTML: " btn-warning",
+          widget: `"btn-warning"`
         },
         {
           name: "Success",
-          modifier: " btn-success"
+          HTML: " btn-success",
+          widget: `"btn-success"`
         },
         {
           name: "Danger",
-          modifier: " btn-danger"
+          HTML: " btn-danger",
+          widget: `"btn-danger"`
         },
         {
           name: "Info",
-          modifier: " btn-info"
+          HTML: " btn-info",
+          widget: `"btn-info"`
         }
       ]
     },
@@ -55,19 +62,23 @@ class Buttons {
       options: [
         {
           name: "Default",
-          modifier: ""
+          HTML: "",
+          widget: ""
         },
         {
           name: "Large",
-          modifier: " btn-lg"
+          HTML: " btn-lg",
+          widget: `"btn-lg"`
         },
         {
           name: "Small",
-          modifier: " btn-sm"
+          HTML: " btn-sm",
+          widget: `"btn-sm"`
         },
         {
           name: "Extra small",
-          modifier: " btn-xs"
+          HTML: " btn-xs",
+          widget: `"btn-xs"`
         }
       ]
     },
@@ -78,15 +89,18 @@ class Buttons {
       options: [
         {
           name: "Default",
-          modifier: ""
+          HTML: "",
+          widget: ""
         },
         {
           name: "Active",
-          modifier: " active"
+          HTML: " active",
+          widget: `"active"`
         },
         {
           name: "Disabled",
-          modifier: " disabled"
+          HTML: " disabled",
+          widget: `"disabled"`
         }
       ]
     }

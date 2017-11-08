@@ -32,31 +32,38 @@ class Tags {
               options: [
                 {
                   name: "Default",
-                  modifier: "tags-default"
+                  HTML: "tags-default",
+                  widget: `"tags-default"`
                 },
                 {
                   name: "Primary",
-                  modifier: "tags-primary"
+                  HTML: "tags-primary",
+                  widget: `"tags-primary"`
                 },
                 {
                   name: "Accent",
-                  modifier: "tags-accent"
+                  HTML: "tags-accent",
+                  widget: `"tags-accent"`
                 },
                 {
                   name: "Success",
-                  modifier: "tags-success"
+                  HTML: "tags-success",
+                  widget: `"tags-success"`
                 },
                 {
                   name: "Warning",
-                  modifier: "tags-warning"
+                  HTML: "tags-warning",
+                  widget: `"tags-warning"`
                 },
                 {
                   name: "Danger",
-                  modifier: "tags-danger"
+                  HTML: "tags-danger",
+                  widget: `"tags-danger"`
                 },
                 {
                   name: "Info",
-                  modifier: "tags-info"
+                  HTML: "tags-info",
+                  widget: `"tags-info"`
                 }
               ]
             }
@@ -78,31 +85,38 @@ class Tags {
                 options: [
                     {
                       name: "Default",
-                      modifier: "tags-default"
+                      HTML: "tags-default",
+                      widget: `"tags-default"`
                     },
                     {
                       name: "Primary",
-                      modifier: "tags-primary"
+                      HTML: "tags-primary",
+                      widget: `"tags-primary"`
                     },
                     {
                       name: "Accent",
-                      modifier: "tags-accent"
+                      HTML: "tags-accent",
+                      widget: `"tags-accent"`
                     },
                     {
                       name: "Success",
-                      modifier: "tags-success"
+                      HTML: "tags-success",
+                      widget: `"tags-success"`
                     },
                     {
                       name: "Warning",
-                      modifier: "tags-warning"
+                      HTML: "tags-warning",
+                      widget: `"tags-warning"`
                     },
                     {
                       name: "Danger",
-                      modifier: "tags-danger"
+                      HTML: "tags-danger",
+                      widget: `"tags-danger"`
                     },
                     {
                       name: "Info",
-                      modifier: "tags-info"
+                      HTML: "tags-info",
+                      widget: `"tags-info"`
                     }
                 ]
               }
@@ -124,31 +138,38 @@ class Tags {
                   options: [
                       {
                         name: "Default",
-                        modifier: "tags-default"
+                        HTML: "tags-default",
+                        widget: `"tags-default"`
                       },
                       {
                         name: "Primary",
-                        modifier: "tags-primary"
+                        HTML: "tags-primary",
+                        widget: `"tags-primary"`
                       },
                       {
                         name: "Accent",
-                        modifier: "tags-accent"
+                        HTML: "tags-accent",
+                        widget: `"tags-accent"`
                       },
                       {
                         name: "Success",
-                        modifier: "tags-success"
+                        HTML: "tags-success",
+                        widget: `"tags-success"`
                       },
                       {
                         name: "Warning",
-                        modifier: "tags-warning"
+                        HTML: "tags-warning",
+                        widget: `"tags-warning"`
                       },
                       {
                         name: "Danger",
-                        modifier: "tags-danger"
+                        HTML: "tags-danger",
+                        widget: `"tags-danger"`
                       },
                       {
                         name: "Info",
-                        modifier: "tags-info"
+                        HTML: "tags-info",
+                        widget: `"tags-info"`
                       }
                   ]
                 }

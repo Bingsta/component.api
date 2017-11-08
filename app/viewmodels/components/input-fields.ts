@@ -432,7 +432,7 @@ class InputFields {
               code: `<!-- ko widget: {
   kind: 'inputs/from-to-input-field',
   config: {
-    label: 'From - to example',
+    label: 'From - to date range example',
     input: {
       from: {
         label: "From",
@@ -605,6 +605,22 @@ class InputFields {
         }
       ]
     }
+  }
+}--><!-- /ko-->`
+            }
+          ],
+          modifiers: []
+        },
+        {
+          name: "Fixed text field",
+          codeBases: [
+            {
+              name: "widget",
+              code: `<!-- ko widget: { 
+  kind: 'inputs/fixed-text-field', 
+  config: {
+    label: "Fixed text field example",
+    text: "Fixed text"
   }
 }--><!-- /ko-->`
             }

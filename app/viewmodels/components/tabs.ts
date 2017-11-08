@@ -134,11 +134,13 @@ class Tabs {
               options: [
                 {
                   name: "Primary",
-                  modifier: ""
+                  HTML: "",
+                  widget: ""
                 },
                 {
                   name: "Secondary",
-                  modifier: "nav-tabs--secondary"
+                  HTML: "nav-tabs--secondary",
+                  widget: `"nav-tabs--secondary"`
                 }
               ]
             }
@@ -214,11 +216,13 @@ class Tabs {
                 options: [
                   {
                     name: "Primary",
-                    modifier: ""
+                    HTML: "",
+                    widget: ""
                   },
                   {
                     name: "Secondary",
-                    modifier: "nav-tabs--secondary"
+                    HTML: "nav-tabs--secondary",
+                    widget: `"nav-tabs--secondary"`
                   }
                 ]
               }

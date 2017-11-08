@@ -20,11 +20,12 @@ fieldset {
 legend {
   display: block;
   width: 100%;
-  padding: 0;
+  padding: @padding-base-vertical 0;
   margin-bottom: @line-height-computed;
-  font-size: (@font-size-base * 1.5);
+  font-size: @font-size-h3;
   line-height: inherit;
   color: @legend-color;
+  font-weight:@semi-bold;
   border: 0;
   border-bottom: 1px solid @legend-border-color;
 }
@@ -166,6 +167,9 @@ output {
   &[type="file"], &[type="range"], &[type="color"] {
     border:0px;
     padding:0;
+  }
+  &[type="file"] {
+    padding:0.5rem 0;
   }
   &[type="checkbox"], &[type="radio"] {
     width:14px;
@@ -643,7 +647,7 @@ input[type="checkbox"] {
 
 .input-field {
   display:flex;
-  align-items: flex-start;
+  align-items: stretch;
 
   width:100%;
   padding:0.3rem 0;
@@ -653,8 +657,18 @@ input[type="checkbox"] {
   flex:1;
   margin-left:20px;
   display:flex;
+  align-items: center;
   color:@faded-text;
   label {
+    display:flex;
+    line-height:@line-height-smallforbase;
+    padding:@padding-base-vertical 0;
+  }
+}
+
+.input-field__radioCheckGroup {
+  display:flex;
+  > label {
     display:flex;
     line-height:@line-height-smallforbase;
     padding:@padding-base-vertical 0;
@@ -663,13 +677,9 @@ input[type="checkbox"] {
       margin-right: 0.5rem;
     }
   }
-  label + label {
+  > label + label {
     margin-left:2rem;
   }
-}
-
-.input-field__radioCheckGroup {
-  display:flex;
 }
 
 //nested input fields
@@ -691,7 +701,6 @@ input[type="checkbox"] {
     margin-left: 2rem;
   }
 }
-
 
 .input-field__label {
   line-height:@line-height-smallforbase;

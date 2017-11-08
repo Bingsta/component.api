@@ -29,7 +29,8 @@ export interface ComponentModifier {
 
 export interface ComponentModifierOption {
   name: string;
-  modifier: string;
+  HTML?: any;
+  widget?: any;
 }
 
 export interface AccordianItemHeader {
@@ -215,4 +216,9 @@ export interface FromToItem {
     kind: string,
     config: DateFieldConfiguration
   }
+}
+
+export interface FixedTextFieldConfiguration {
+  label: string,
+  text: string
 }

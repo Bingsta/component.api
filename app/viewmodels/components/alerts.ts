@@ -20,19 +20,23 @@ class Alerts {
       options: [
         {
           name: "Warning",
-          modifier: " alert-warning"
+          HTML: " alert-warning",
+          widget: `"alert-warning"`
         },
         {
           name: "Success",
-          modifier: " alert-success"
+          HTML: " alert-success",
+          widget: `"alert-success"`
         },
         {
           name: "Danger",
-          modifier: " alert-danger"
+          HTML: " alert-danger",
+          widget: `"alert-danger"`
         },
         {
           name: "Info",
-          modifier: " alert-info"
+          HTML: " alert-info",
+          widget: `"alert-info"`
         }
       ]
     }

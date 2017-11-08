@@ -99,9 +99,9 @@ class CodeViewer {
 
         //replace modifier merge fields
         self.selectedVariation().modifiers.forEach((_modifier:ComponentModifier) => {
-          if(_modifier.selectedOption()) {
-            tempStr = tempStr.replace(new RegExp(_modifier.mergeField, 'g'), _modifier.selectedOption().modifier == "" ? '' : `, "${_modifier.name.toLowerCase()}": "${_modifier.selectedOption().modifier}"`);
-          }
+            tempStr = tempStr.replace(new RegExp(_modifier.mergeField, 'g'), _modifier.selectedOption().widget == "" ? '' : `, 
+    ${_modifier.name.toLowerCase()}: ${_modifier.selectedOption().widget}`);
+
         });
 
         //set html string for component preview section
@@ -118,7 +118,7 @@ class CodeViewer {
         //replace modifier merge fields
         self.selectedVariation().modifiers.forEach((_modifier:ComponentModifier) => {
           if(_modifier.selectedOption()) {
-            tempStr = tempStr.replace(new RegExp(_modifier.mergeField, 'g'), _modifier.selectedOption().modifier == "" ? '' : `${_modifier.selectedOption().modifier}`);
+            tempStr = tempStr.replace(new RegExp(_modifier.mergeField, 'g'), _modifier.selectedOption().HTML == "" ? '' : `${_modifier.selectedOption().HTML}`);
           }
         });
 
