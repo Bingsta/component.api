@@ -6,6 +6,7 @@ import { InputConfiguration } from 'interfaces';
 class TextInputField {
 
   public config: KnockoutObservable<InputConfiguration>;
+  public addOnHTML: KnockoutObservable<string> = ko.observable('');
 
   constructor() {
 
@@ -47,6 +48,46 @@ class TextInputField {
         this.config().value=null;
       }
 
+      if(this.config().addon) {
+        switch(this.config().type) {
+          case "text":
+          this.addOnHTML(`<i class="icon icon-keyboard"/></i>`);
+          break;
+          case "email":
+          this.addOnHTML(`@`);
+          break;
+          case "search":
+          this.addOnHTML(`<i class="icon icon-search3"/></i>`);
+          break;
+          case "number":
+          this.addOnHTML(`<i class="icon icon-calculator"/></i>`);
+          break;
+          case "range":
+          this.config().addon=false;
+          this.addOnHTML('');
+          break;
+          case "password":
+          this.addOnHTML(`*`);
+          break;
+          case "tel":
+          this.addOnHTML(`<i class="icon icon-phone2"/></i>`);
+          break;
+          case "url":
+          this.addOnHTML(`www`);
+          break;
+          case "color":
+          this.config().addon=false;
+          this.addOnHTML('');
+          break;
+          case "file":
+          this.config().addon=false;
+          this.addOnHTML('');
+          break;
+        }
+      }
+      else {
+        this.config().addon=false;
+      }
     }
     else {
       throw "Missing configuration file"

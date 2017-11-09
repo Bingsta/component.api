@@ -20,6 +20,7 @@ class DateInputField {
       this.config = ko.observable(settings.config);
 
       this.config().input.type = "datetime-local";
+      this.config().input.addon = true;
 
     }
     else {

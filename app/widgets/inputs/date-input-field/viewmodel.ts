@@ -22,6 +22,7 @@ class DateInputField {
       if(this.config().input.type==null) {
         this.config().input.type = "date";
       }
+      this.config().input.addon = true;
     }
     else {
       throw "Missing configuration file"

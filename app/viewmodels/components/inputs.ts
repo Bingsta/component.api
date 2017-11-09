@@ -56,8 +56,8 @@ class Inputs {
           },
           {
             name: "Telephone",
-            HTML: "telephone",
-            widget: `"telephone"`
+            HTML: "tel",
+            widget: `"tel"`
           },
           {
             name: "URL",
@@ -78,6 +78,29 @@ class Inputs {
       }
     ];
     public inputOptions: Array<ComponentModifier> = [
+      {
+        name: "Addon",
+        mergeField: "#addon#",
+        selectedOption: ko.observable(
+          {
+            name: "False",
+            HTML: "",
+            widget: ""
+          }
+        ),
+        options: [
+          {
+            name: "False",
+            HTML: "",
+            widget: ""
+          },
+          {
+            name: "True",
+            HTML: "",
+            widget: true
+          }
+        ]
+      },
       {
         name: "Autofocus",
         mergeField: "#autofocus#",
@@ -330,6 +353,29 @@ class Inputs {
         ]
       },
       {
+        name: "Addon",
+        mergeField: "#addon#",
+        selectedOption: ko.observable(
+          {
+            name: "False",
+            HTML: "",
+            widget: ""
+          }
+        ),
+        options: [
+          {
+            name: "False",
+            HTML: "",
+            widget: ""
+          },
+          {
+            name: "True",
+            HTML: "",
+            widget: true
+          }
+        ]
+      },
+      {
         name: "Autofocus",
         mergeField: "#autofocus#",
         selectedOption: ko.observable(
@@ -439,7 +485,7 @@ class Inputs {
     placeholder: "Hint text" ,
     name: 'textInputExample',
     form: 'inputtest',
-    tabindex: 1#type##autofocus##disabled##required##spellcheck##readonly#
+    tabindex: 1#type##autofocus##disabled##required##spellcheck##readonly##addon#
   } 
 }--><!-- /ko -->`
             },
@@ -493,13 +539,13 @@ class Inputs {
       { value: '3', title: 'Option 3' },
       { value: '4', title: 'Option 4' },
       { value: '5', title: 'Option 5' },
-    ]#type##autofocus##disabled##required##readonly#
+    ]#type##autofocus##disabled##required#
   }
 }--><!-- /ko -->`
             },
             {
               name: "HTML",
-              code: `<select #type# class="form-control"#autofocus##disabled##required##readonly#>
+              code: `<select #type# class="form-control"#autofocus##disabled##required#>
   <option value="1">Option 1</option>
   <option value="2">Option 2</option>
   <option value="3">Option 3</option>
@@ -625,7 +671,7 @@ class Inputs {
     value: '',
     name: 'dateInputExample',
     form: 'inputtest',
-    tabindex: 6#type##autofocus##disabled##required##readonly#
+    tabindex: 6#type##autofocus##disabled##required##readonly##addon#
   }
 }--><!-- /ko -->`
             },
@@ -636,42 +682,6 @@ class Inputs {
           ],
           modifiers: this.dateOptions
         }
-//           ,{
-//             name: "Input icon add ons",
-//             codeBases: [
-//               {
-//                 name: "HTML",
-//                 code: `<div class="input-group">
-//     #content#
-// </div>`
-//               }
-//             ],
-//             modifiers: [
-//               {
-//                 name: "Alignment",
-//                 mergeField: "#content#",
-//                 selectedOption: ko.observable(),
-//                 options: [
-//                     {
-//                       name: "Left",
-//                       modifier: ` <span class="input-group-addon" id="sizing-addon1"><i class="icon icon-pencil"></i></span>
-//   <input type="text" class="form-control" placeholder="Hint text" aria-describedby="sizing-addon1">`
-//                     },
-//                     {
-//                       name: "Right",
-//                       modifier: ` <input type="search" class="form-control" placeholder="Hint text" aria-describedby="sizing-addon1">
-//   <span class="input-group-addon" id="sizing-addon1"><i class="icon icon-search3"></i></span>`
-//                     },
-//                     {
-//                       name: "Both",
-//                       modifier: ` <span class="input-group-addon" id="sizing-addon1">£</span>
-//   <input type="number" class="form-control" placeholder="Hint text" aria-describedby="sizing-addon1">
-//   <span class="input-group-addon" id="sizing-addon1">.00</span>`
-//                     }
-//                 ]
-//               }
-//             ]
-//           }
       ])
     }
 

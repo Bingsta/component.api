@@ -42,8 +42,8 @@ export function ts() {
 //package fonts 
 export function fonts() {
   console.log(paths.fonts);
-  console.log(`${paths.less.toolkit.dest}fonts`);
-  return gulp.src(paths.fonts).pipe(gulp.dest(`${paths.less.toolkit.dest}fonts`));
+  console.log(`${paths.less.toolkit.dest}/fonts`);
+  return gulp.src(paths.fonts).pipe(gulp.dest(`${paths.less.toolkit.dest}/fonts`));
 }
 
 //package images

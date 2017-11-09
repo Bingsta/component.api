@@ -1,4 +1,4 @@
-<span class="input-field__wrapper" data-bind="with:config">
+<span class="input-field__wrapper" data-bind="with:config, css:{ 'input-group' : config().addon }">
     <input class="form-control" data-bind="attr:{
       type: type,
       value: value, 
@@ -14,4 +14,5 @@
       required: required,
       readonly: readonly
     }" >
+    <span class="input-group-addon" id="basic-addon2" data-bind="visible: addon, html: $parent.addOnHTML()"></span>
   </span>

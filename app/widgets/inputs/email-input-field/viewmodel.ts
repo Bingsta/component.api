@@ -20,6 +20,7 @@ class EmailInputField {
       this.config = ko.observable(settings.config);
       
       this.config().input.type = "email";
+      this.config().input.addon = true;
 
     }
     else {

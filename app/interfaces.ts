@@ -125,7 +125,8 @@ export interface InputConfiguration extends BaseInputConfiguration {
   type: string,
   spellcheck?: boolean,
   maxlength?: number,
-  pattern?: string
+  pattern?: string,
+  addon?: boolean
 }
 
 export interface InputFieldConfiguration {
@@ -150,7 +151,8 @@ export interface DateInputConfiguration extends BaseInputConfiguration {
   type: string,
   max?: Date,
   min?: Date,
-  step?: string
+  step?: string,
+  addon?: boolean
 }
 
 export interface DateFieldConfiguration {

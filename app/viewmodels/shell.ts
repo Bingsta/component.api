@@ -24,9 +24,9 @@ export class Shell {
         open: ko.observable(true)
       },
       { 
-        title: "Patterns",  
+        title: "Layouts",  
         items: this.router.navigationModel().filter((route) => {
-          return /patterns/i.test(route.moduleId);
+          return /layouts/i.test(route.moduleId);
         }),
         open: ko.observable(true)
       }
@@ -45,7 +45,8 @@ export class Shell {
       { route: 'components/inputs',       moduleId: 'viewmodels/components/inputs',       title: "Inputs",        nav: true },
       { route: 'components/input-fields', moduleId: 'viewmodels/components/input-fields', title: "Input fields",  nav: true },
       { route: 'components/pagination',   moduleId: 'viewmodels/components/pagination',   title: "Pagination",    nav: true },
-      { route: 'patterns/forms',   moduleId: 'viewmodels/patterns/forms',   title: "Forms",    nav: true }
+      { route: 'components/modals',       moduleId: 'viewmodels/components/modals',       title: "Modals",        nav: true },
+      { route: 'layouts/forms',           moduleId: 'viewmodels/layouts/forms',           title: "Forms",         nav: true }
     ]).buildNavigationModel();;
 
   activate() {

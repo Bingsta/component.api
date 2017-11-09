@@ -6,6 +6,7 @@ import { DateInputConfiguration } from 'interfaces';
 class DateInput {
 
   public config: KnockoutObservable<DateInputConfiguration>;
+  public addOnHTML: KnockoutObservable<string> = ko.observable('scasc');
 
   constructor() {
 
@@ -47,6 +48,22 @@ class DateInput {
         this.config().value=null;
       }
 
+      if(this.config().addon) {
+        switch(this.config().type) {
+          case "date":
+          case "datetime-local":
+          case "month":
+          case "week":
+          this.addOnHTML(`<i class="icon icon-calendar2"/></i>`);
+          break;
+          case "time":
+          this.addOnHTML(`<i class="icon icon-clock"/></i>`);
+          break;
+        }
+      }
+      else {
+        this.config().addon=false;
+      }
     }
     else {
       throw "Missing configuration file"

@@ -20,6 +20,7 @@ class SearchInputField {
       this.config = ko.observable(settings.config);
       
       this.config().input.type = "search";
+      this.config().input.addon = true;
 
     }
     else {

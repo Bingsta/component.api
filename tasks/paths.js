@@ -20,7 +20,7 @@ module.exports = {
     },
     watch:      `.${assetRoot}/**/*.less`,
   },
-  fonts: `.${assetRoot + toolkit}/fonts/**/*`,
+  fonts: `.${assetRoot + toolkit}/styles/fonts/**/*`,
   images: {
     toolkit: {
       src:      `.${assetRoot + toolkit}/images/**/*`,
