@@ -47,6 +47,12 @@ class TextInputField {
       if(this.config().value==null) {
         this.config().value=null;
       }
+      if(this.config().step==null) {
+        this.config().step=null;
+      }
+      if(this.config().datalist==null) {
+        this.config().datalist = null;
+      }
 
       if(this.config().addon) {
         switch(this.config().type) {

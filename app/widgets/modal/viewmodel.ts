@@ -7,7 +7,7 @@ import {
 
 class Modal {
 
-  public configuration: ModalComponentConfiguration;
+  public config: KnockoutObservable<ModalComponentConfiguration>;
   public labelledBy: KnockoutObservable<string>;
 
   constructor() {
@@ -17,37 +17,17 @@ class Modal {
   
   activate(settings:any) {
     
-    if(settings.configuration) {
+    if(settings.config) {
 
-      this.configuration = settings.configuration;
-      if(!this.configuration.id){
-        this.configuration.id = ko.observable('modal-default-id');
+      this.config = ko.observable(settings.config);
+      if(!this.config().id){
+        this.config().id = 'modal-default-id';
       }
-      this.labelledBy = ko.observable(this.configuration.id() + '-label');
+      this.labelledBy = ko.observable(this.config().id + '-label');
     }
     else {
       throw `Missing required object: 'configuration'`;
     }
-
-
-    ko.bindingHandlers.htmlWithBinding = {
-      'init': function() {
-
-        return { 'controlsDescendantBindings': true };
-      },
-      'update': function (element: HTMLElement, valueAccessor, allBindings: KnockoutAllBindingsAccessor, viewModel, bindingContext) {
-
-        console.log(valueAccessor().template());
-        console.log(valueAccessor().viewmodel);
-        element.innerHTML = valueAccessor().template();
-        ko.applyBindingsToDescendants(valueAccessor().viewmodel, element);
-
-        //run the activate function if any
-        if(valueAccessor().viewmodel.activate) {
-          valueAccessor().viewmodel.activate();
-        }
-      }
-    };
 
     console.log(settings);
     

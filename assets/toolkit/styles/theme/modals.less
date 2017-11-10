@@ -84,8 +84,8 @@
 }
 // Close icon
 .modal-header .close {
-  height: 30px;
-  width:30px;
+  height: 3rem;
+  width: 3rem;
   display:flex;
   align-items: center;
   justify-content: center;
@@ -139,8 +139,8 @@
 @media (min-width: @screen-sm-min) {
   // Automatically set modal's width for larger viewports
   .modal-dialog {
-    width: @modal-md;
-    margin: 30px auto;
+    width: 600px;
+    margin: 3rem auto;
   }
   .modal-content {
     .box-shadow(2px 2px 4px rgba(0,0,0,.4));
@@ -150,6 +150,10 @@
   .modal-sm { width: @modal-sm; }
 }
 
-@media (min-width: @screen-md-min) {
-  .modal-lg { width: @modal-lg; }
+@media (min-width: 992px) {
+  .modal-dialog { width: 960px; }
+}
+
+@media (min-width: 1200px) {
+  .modal-dialog { width: 1160px; }
 }

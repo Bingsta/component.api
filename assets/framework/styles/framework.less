@@ -287,6 +287,7 @@ h4.cl-heading{
   border:1px solid rgba(0,0,0,0.13);
   padding:@padding-large-vertical @padding-large-horizontal;
   background-color:rgba(0,0,0,0.01);
+  overflow:auto;
   .modal {
     position: relative;
     top: auto;
@@ -295,6 +296,12 @@ h4.cl-heading{
     left: auto;
     z-index: 1;
     display: block;
+    &.fade{
+      opacity:1;
+      .modal-dialog {
+        transform: translate(0,0);
+      }
+    }
   }
 }
 
@@ -494,3 +501,4 @@ h4.cl-heading{
 .code-controls__copy-button{
   flex:1;
 }
+

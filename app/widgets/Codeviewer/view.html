@@ -1,13 +1,16 @@
 <article class="cl-article">
   <div class="cl-article__content">
+    
+    <section class="cls-article__section  cl-description">
+      <p class="font-up-2">Modals are used to display content in a layer above the app. This paradigm is used in cases such as the creation or editing of a record, as well as various types of messaging and wizards.</p>
+    </section>
+
     <section class="cls-article__section  cl-preview">
-      <h2 class="cl-heading">PREVIEW <small></small></h2>
+      <h2 class="cl-heading">EXAMPLE <small></small></h2>
       <div class="cl-preview__item" id="preview" data-bind="html:previewStr">
 
       </div>
     </section>
-
-    <h2 class="cl-heading">CODE <small></small></h2>
 
     <section class="cls-article__section  cl-article__guide">
       <pre class="language-css  cls-article__code" data-bind="css:{ 'cls-article__code--closed': !codeViewOpen() }"><code class="language-css" data-bind="html:codeStr" id="codeView" >
@@ -26,17 +29,52 @@
     </section>
 
 
-    <h2 class="cl-heading">DESIGN GUIDE <small></small></h2>
+    <h2 class="cl-heading">REFERENCE <small></small></h2>
 
     <section class="cls-article__section  cl-article__guide">
-      guide
-    </section>
-
-
-    <h2 class="cl-heading">IMPLEMENTATION NOTES <small></small></h2>
-
-    <section class="cls-article__section  cl-article__guide">
-      notes
+        <h3>OPTIONS</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Summary</th>
+              <th>Data type</th>
+              <th>Optional/Required</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>id</td>
+              <td>Adds the element ID to the parent element</td>
+              <td>string</td>
+              <td>Optional</td>
+            </tr>
+            <tr>
+              <td>title</td>
+              <td>Will display as the title of the modal in the modal header.</td>
+              <td>string</td>
+              <td>Required</td>
+            </tr>
+            <tr>
+              <td>bodyView</td>
+              <td>A view model which will compose as the view for the main body of the modal</td>
+              <td><a href="http://durandaljs.com/documentation/Using-Composition.html" target="_new">viewmodel</a></td>
+              <td>Required</td>
+            </tr>
+            <tr>
+              <td>footerView</td>
+              <td>A view model which will compose as the view for the footer of the modal</td>
+              <td><a href="http://durandaljs.com/documentation/Using-Composition.html" target="_new">viewmodel</a></td>
+              <td>Optional</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
     </section>
     
     

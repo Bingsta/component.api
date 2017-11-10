@@ -33,28 +33,17 @@ export interface ComponentModifierOption {
   widget?: any;
 }
 
-export interface AccordianItemHeader {
-  title: string;
-  icon?: string;
-}
-
 export interface ViewModel {
-  template: KnockoutObservable<string>;
-  viewmodel: any;
-}
-
-export interface AccordianItem {
-  open?: KnockoutObservable<boolean>;
-  header: AccordianItemHeader;
-  body: ViewModel;
+  view: any,
+  model?: any
 }
 
 export interface ModalComponentConfiguration {
-  id?: KnockoutObservable<string>;
-  title: KnockoutObservable<string>;
-  body: ViewModel;
-  footer?: ViewModel;
-  size?: KnockoutObservable<string>;
+  id?: string;
+  title: string;
+  bodyView: ViewModel;
+  footerView?: ViewModel;
+  size?: string;
 }
 
 export interface ButtonComponentConfiguration {
@@ -96,10 +85,7 @@ export interface DropdownButtonComponentConfiguration {
 export interface TabItemComponentConfiguration {
   title: string,
   badge: string,
-  contentView: {
-    view: any,
-    model: any
-  },
+  contentView: ViewModel,
   active: KnockoutObservable<boolean>
 }
 
@@ -126,7 +112,9 @@ export interface InputConfiguration extends BaseInputConfiguration {
   spellcheck?: boolean,
   maxlength?: number,
   pattern?: string,
-  addon?: boolean
+  addon?: boolean,
+  step?: number,
+  datalist?: DatalistConfiguration
 }
 
 export interface InputFieldConfiguration {
@@ -152,7 +140,8 @@ export interface DateInputConfiguration extends BaseInputConfiguration {
   max?: Date,
   min?: Date,
   step?: string,
-  addon?: boolean
+  addon?: boolean,
+  datalist?: DatalistConfiguration
 }
 
 export interface DateFieldConfiguration {
@@ -223,4 +212,14 @@ export interface FromToItem {
 export interface FixedTextFieldConfiguration {
   label: string,
   text: string
+}
+
+export interface DataListOptionConfiguration {
+  value: string,
+  label: string
+} 
+
+export interface DatalistConfiguration {
+  id: string,
+  options:Array<DataListOptionConfiguration>
 }

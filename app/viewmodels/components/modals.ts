@@ -44,16 +44,32 @@ class Modal {
             {
               name: "widget",
               code: `<!-- ko widget: {
-                kind: 'modal',
-                configuration: {
-                  id: 'test_modal',
-                  title: 'Test modal',
-                  body: {
-                    template: ko.observable('<p>One fine body...</p>'),
-                    viewmodel: {}
-                  }
-                }
-              }--><!-- /ko -->`
+  kind: 'modal',
+  config: {
+    id: 'test_modal',
+    title: 'Test modal',
+    bodyView: {
+      view: $("<article><h2>Example tab content</h2><div data-bind='html: content'></div></article>").get(0),
+      model: {
+        content: '<h3>Databinding</h3><p>This text is bound from a view model</p>'
+      }
+    },
+    footerView: {
+      view: $(\`<div>
+      <button type="button" class="btn btn-default" data-dismiss="modal" data-bind="click: closeAction">Close</button>
+      <button type="button" class="btn btn-primary" data-bind="click: saveAction">Save changes</button>
+      </div>\`).get(0),
+      model: {
+        closeAction: function() {
+          alert("Close me");
+        },
+        saveAction: function() {
+          alert("Save me");
+        }
+      }
+    }
+  }
+}--><!-- /ko -->`
             }
           ],
           modifiers: []

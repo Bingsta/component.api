@@ -497,6 +497,42 @@ class Inputs {
           modifiers: this.textInputTypes.concat(this.inputOptions)
         },
         {
+          name: "Text inputs with datalist",
+          codeBases: [
+            {
+              name: "widget",
+              code: `<!-- ko widget: { 
+  kind: 'inputs/text-input', 
+  config: {
+    id:'test_text',
+    value: "",
+    placeholder: "Hint text" ,
+    name: 'textInputExample',
+    form: 'inputtest',
+    tabindex: 1,
+    datalist: {
+      id:'testy',
+      options: [
+        { value: 'Option 1' },
+        { value: 'Option 2' },
+        { value: 'Option 3' },
+        { value: 'Option 5' },
+        { value: 'Option 4' },
+        { value: 'Option 6' },
+        { value: 'Option 7' }
+      ]
+    }#type##autofocus##disabled##required##spellcheck##readonly##addon#
+  } 
+}--><!-- /ko -->`
+            },
+            {
+              name: "HTML",
+              code: `<input type="#type#"  class="form-control" placeholder="Hint text" #autofocus##disabled##required##spellcheck##readonly#>`
+            }
+          ],
+          modifiers: this.textInputTypes.concat(this.inputOptions)
+        },
+        {
           name: "Textarea inputs",
           codeBases: [
             {
