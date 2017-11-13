@@ -1,0 +1,14 @@
+<div class="btn-group">
+  <button type="button" class="btn btn-danger" data-bind="
+  html: config().button.content,
+  attr: { class: 'btn ' + themeCSS() + ' ' + sizeCSS() },
+  css: { active: active, disabled: disabled }"></button>
+  <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+  data-bind="attr: { class: 'btn ' + themeCSS() + ' ' + sizeCSS() },
+  css: { active: active, disabled: disabled }">
+    <span class="caret"></span>
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <!-- ko widget: { kind: 'menu',  config: config().menu} -->
+<!-- /ko -->
+</div>

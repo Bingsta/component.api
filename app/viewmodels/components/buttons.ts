@@ -21,37 +21,37 @@ class Buttons {
         {
           name: "Default",
           HTML: " btn-default",
-          widget: `"btn-default"`
+          widget: `"default"`
         },
         {
           name: "Primary",
           HTML: " btn-primary",
-          widget: `"btn-primary"`
+          widget: `"primary"`
         },
         {
           name: "Accent",
           HTML: " btn-accent",
-          widget: `"btn-accent"`
+          widget: `"accent"`
         },
         {
           name: "Warning",
           HTML: " btn-warning",
-          widget: `"btn-warning"`
+          widget: `"warning"`
         },
         {
           name: "Success",
           HTML: " btn-success",
-          widget: `"btn-success"`
+          widget: `"success"`
         },
         {
           name: "Danger",
           HTML: " btn-danger",
-          widget: `"btn-danger"`
+          widget: `"danger"`
         },
         {
           name: "Info",
           HTML: " btn-info",
-          widget: `"btn-info"`
+          widget: `"info"`
         }
       ]
     },
@@ -68,39 +68,51 @@ class Buttons {
         {
           name: "Large",
           HTML: " btn-lg",
-          widget: `"btn-lg"`
+          widget: `"large"`
         },
         {
           name: "Small",
           HTML: " btn-sm",
-          widget: `"btn-sm"`
+          widget: `"small"`
         },
         {
           name: "Extra small",
           HTML: " btn-xs",
-          widget: `"btn-xs"`
+          widget: `"extra-small"`
         }
       ]
     },
     {
-      name: "State",
-      mergeField: "#state#",
+      name: "active",
+      mergeField: "#active#",
       selectedOption: ko.observable(),
       options: [
         {
-          name: "Default",
+          name: "false",
           HTML: "",
-          widget: ""
+          widget: `false`
         },
         {
-          name: "Active",
+          name: "true",
           HTML: " active",
-          widget: `"active"`
+          widget: `true`
+        }
+      ]
+    },
+    {
+      name: "disabled",
+      mergeField: "#disabled#",
+      selectedOption: ko.observable(),
+      options: [
+        {
+          name: "false",
+          HTML: "",
+          widget: `false`
         },
         {
-          name: "Disabled",
+          name: "true",
           HTML: " disabled",
-          widget: `"disabled"`
+          widget: `true`
         }
       ]
     }
@@ -114,11 +126,18 @@ class Buttons {
         codeBases: [
           {
             name: 'HTML',
-            code: `<button class="btn#theme##size##state#">Press me</button>`
+            code: `<button class="btn#theme##size##active##disabled#">Press me</button>`
           },
           {
             name: 'widget',
-            code: `<!-- ko widget: { kind: 'button', config: {"content": 'Press me widget'#theme##size##state#}} --> <!-- /ko -->`
+            code: `<!-- ko widget: 
+{ 
+  kind: 'button', 
+  config: 
+  {
+    "content": 'Press me widget'#theme##size##active##disabled#
+  }
+} --> <!-- /ko -->`
           }
 
         ],
@@ -129,11 +148,18 @@ class Buttons {
         codeBases: [
           {
             name: 'HTML',
-            code: `<button class="btn#theme##size##state#">Messages <span class="badge">4</span></button>`
+            code: `<button class="btn#theme##size##active##disabled#">Messages <span class="badge">4</span></button>`
           },
           {
             name: 'widget',
-            code: `<!-- ko widget: { kind: 'button', config: {"content": 'Messages', "badge": "42"#theme##size##state#}} --> <!-- /ko -->`
+            code: `<!-- ko widget: 
+{ 
+  kind: 'button', 
+  config: {
+    "content": 'Messages', 
+    "badge": "42"#theme##size##active##disabled#
+  }
+} --> <!-- /ko -->`
           }
 
         ],
@@ -146,7 +172,7 @@ class Buttons {
             name: 'HTML',
             code: `
 <div class="btn-group">
-  <button type="button" class="btn dropdown-toggle #theme##size##state#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <button type="button" class="btn dropdown-toggle #theme##size##active##disabled#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Action <span class="caret"></span>
   </button>
   <ul class="dropdown-menu">
@@ -163,25 +189,24 @@ class Buttons {
             code: `<!-- ko widget: { kind: 'dropdown_button', 
             config: {
               button: {
-                content: "Hello"#theme##size##state#
+                content: "Hello"#theme##size##active##disabled#
               },
               menu: {
                 items: [
                   { 
-                      content: "item1",
-                      action: function() {
-                        alert("action 1")
-                      }
+                    content: "item1",
+                    action: function() {
+                      alert("action 1")
+                    }
                   },
                   { 
-                      content: "item2",
-                      action: function() {
-                        alert("action 2")
-                      }
+                    content: "item2",
+                    action: function() {
+                      alert("action 2")
+                    }
                   }
                 ]
               }
-          
             }
           } --> <!-- /ko -->`
           }
@@ -195,8 +220,8 @@ class Buttons {
             name: 'HTML',
             code: `
 <div class="btn-group">
-  <button type="button" class="btn#theme##size##state#">Action</button>
-  <button type="button" class="btn dropdown-toggle#theme##size##state#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <button type="button" class="btn#theme##size##active##disabled#">Action</button>
+  <button type="button" class="btn dropdown-toggle#theme##size##active##disabled#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <span class="caret"></span>
     <span class="sr-only">Toggle Dropdown</span>
   </button>
@@ -211,28 +236,27 @@ class Buttons {
           },
           {
             name: 'widget',
-            code: `<!-- ko widget: { kind: 'splitbutton', 
+            code: `<!-- ko widget: { kind: 'split_button', 
             config: {
               button: {
-                content: "Hello"#theme##size##state#
+                content: "Hello"#theme##size##active##disabled#
               },
               menu: {
                 items: [
                   { 
-                      content: "item1",
-                      action: function() {
-                        alert("action 1")
-                      }
+                    content: "item1",
+                    action: function() {
+                      alert("action 1")
+                    }
                   },
                   { 
-                      content: "item2",
-                      action: function() {
-                        alert("action 2")
-                      }
+                    content: "item2",
+                    action: function() {
+                      alert("action 2")
+                    }
                   }
                 ]
               }
-          
             }
           } --> <!-- /ko -->`
           }
@@ -240,6 +264,120 @@ class Buttons {
         modifiers: this.buttonMods
       }
     ]);
+
+    this.component.description = `<p class="font-up-2">Buttons are used to invoke an event</p>`;
+
+    this.component.reference = {
+      about: `<p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur</p>`,
+      cssOptions: [
+        {
+          type: 'Theme',
+          selectors: '.btn-default<br/>.btn-primary<br/>.btn-accent<br/>.btn-warning<br/>.btn-success<br/>.btn-danger<br/>.btn-info',
+          description: 'Sets the main styling for the component'
+        },
+        {
+          type: 'Size',
+          selectors: '.btn-large<br/>.btn-sm<br/>.btn-xs',
+          description: 'Sets the size of the component'
+        },
+        {
+          type: 'State',
+          selectors: '.active<br/>.disabled',
+          description: 'Provides a look and feel for button states'
+        }
+      ],
+      widgetOptions: [
+        {
+          kind: 'button',
+          description: 'Standard button component',
+          options: [
+            {
+              name: 'content',
+              description: 'String which is data bound as the text content for the button',
+              dataType: 'string',
+              values:  'any',
+              optional: false
+            },
+            {
+              name: 'badge',
+              description: 'Optional string value which, if included, adds a badge component into the button with the string bound as the text for the badge',
+              dataType: 'string',
+              values:  'any',
+              optional: true
+            },
+            {
+              name: 'theme',
+              description: 'Sets the css theme selector',
+              dataType: 'string',
+              values:  'default<br/>primary<br/>accent<br/>warning<br/>success<br/>danger<br/>info',
+              optional: true
+            },
+            {
+              name: 'size',
+              description: 'Sets the css size selector',
+              dataType: 'string',
+              values:  'large<br/>small<br/>extra-small',
+              optional: true
+            },
+            {
+              name: 'active',
+              description: 'Sets the button active state',
+              dataType: 'boolean',
+              values:  'any',
+              optional: true
+            },
+            {
+              name: 'disabled',
+              description: 'Sets the button disabled state',
+              dataType: 'boolean',
+              values:  'any',
+              optional: true
+            }
+          ]
+        },
+        {
+          kind: 'dropdown_button',
+          description: 'Button which displays a menu with a choice of actions to invoke.',
+          options: [
+            {
+              name: 'button',
+              description: 'Widget configuration for a button (as above)',
+              dataType: 'Button',
+              values:  'any',
+              optional: false
+            },
+            {
+              name: 'menu',
+              description: 'An array of items with a content string and action associated to them. The items will be displayed in the dropdown menu when the dropdown button is actived.',
+              dataType: 'Array<MenuItemComponentConfiguration>',
+              values:  'any',
+              optional: false
+            }
+          ]
+        },
+        {
+          kind: 'split_button',
+          description: 'Button which has a main action plus a dropdown of additional actions to invoke.',
+          options: [
+            {
+              name: 'button',
+              description: 'Widget configuration for a button (as above)',
+              dataType: 'Button',
+              values:  'any',
+              optional: false
+            },
+            {
+              name: 'menu',
+              description: 'An array of items with a content string and action associated to them. The items will be displayed in the dropdown menu when the dropdown button is actived.',
+              dataType: 'Array<MenuItemComponentConfiguration>',
+              values:  'any',
+              optional: false
+            }
+          ]
+        }
+
+      ]
+    }
 
   }
 

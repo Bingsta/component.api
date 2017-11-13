@@ -9,43 +9,43 @@
 
 @primary-dark:  #093b58;
 @primary:       #13547a;
-@primary-light:  #b4c3cc;
-@primary-alpha: hsla(202, 84%, 48%, 0.3);
+@primary-light: #B9CCD8;
+@primary-alpha: rgba(19, 84, 122, 0.3);
 
 @accent-dark:   #872901;
 @accent:        #fe4d01;
-@accent-light:  #ffc9b2;
-@accent-alpha:  hsla(18, 100%, 100%, 0.3);
+@accent-light:  #FFCAB3;
+@accent-alpha:  rgba(254, 77, 1, 0.3);
 
 @success-dark:  #0f8860;
 @success:       #33cc99;
-@success-light: #c1f0e0;
-@success-alpha: hsla(160, 75%, 80%, 0.3);
+@success-light: #C2F0E1;
+@success-alpha: rgba(51, 204, 153, 0.3);
 
 @warning-dark:  #af7622;
 @warning:       #ffb64a;
-@warning-light: #ffe9c8;
-@warning-alpha: hsla(36, 71%, 100%, 0.3);
+@warning-light: #FFEAC9;
+@warning-alpha: rgba(255, 182, 74, 0.3);
 
 @error-dark:    #b04648;
 @error:         #f95d61;
-@error-light:   #fdcecf;
-@error-alpha:   hsla(358, 63%, 98%, 0.3);
+@error-light:   #FECFD0;
+@error-alpha:   rgba(249, 93, 97, 0.3);
 
 @info-dark:     #406a9a;
 @info:          #5692d6;
-@info-light:    #ccdef3;
-@info-alpha:    hsla(212, 60%, 84%, 0.3);
+@info-light:    #CDDFF3;
+@info-alpha:    rgba(86, 146, 214, 0.3);
 
-@grey-darkest-alpha: hsla(0, 0%, 0%, 0.65);
+@grey-darkest-alpha: rgba(0, 0, 0, 0.65);
 @grey-dark:     #898989;
-@grey-dark-alpha: hsla(0, 0%, 0%, 0.47);
+@grey-dark-alpha: rgba(0, 0, 0, 0.47);
 @grey:          #cccccc;
-@grey-alpha:    hsla(0, 0%, 0%, 0.2);
+@grey-alpha:    rgba(0, 0, 0, 0.2);
 @grey-light:    #ebebeb;
-@grey-light-alpha: hsla(0, 0%, 0%, 0.08);
+@grey-light-alpha: rgba(0, 0, 0, 0.08);
 @grey-lightest: #f2f2f2;
-@grey-lightest-alpha: hsla(0, 0%, 0%, 0.05);
+@grey-lightest-alpha: rgba(0, 0, 0, 0.05);
 
 
 @gray-base:              @grey;
@@ -203,13 +203,13 @@
 //** Default background color used for all tables.
 @table-bg:                      transparent;
 //** Background color used for `.table-striped`.
-@table-bg-accent:               #f9f9f9;
+@table-bg-accent:               @grey-lightest-alpha;
 //** Background color used for `.table-hover`.
-@table-bg-hover:                #f5f5f5;
-@table-bg-active:               @table-bg-hover;
+@table-bg-hover:                @info-alpha;
+@table-bg-active:               @info-alpha;
 
 //** Border color for table and cell borders.
-@table-border-color:            #ddd;
+@table-border-color:            @grey-alpha;
 
 
 //== Buttons
@@ -583,21 +583,21 @@
 //
 //## Define colors for form feedback states and, by default, alerts.
 
-@state-success-text:             #3c763d;
-@state-success-bg:               #dff0d8;
-@state-success-border:           darken(spin(@state-success-bg, -10), 5%);
+@state-success-text:             @success-dark;
+@state-success-bg:               @success-alpha;
+@state-success-border:           @success-dark;
 
-@state-info-text:                #31708f;
-@state-info-bg:                  #d9edf7;
-@state-info-border:              darken(spin(@state-info-bg, -10), 7%);
+@state-info-text:                @info-dark;
+@state-info-bg:                  @info-alpha;
+@state-info-border:              @info-dark;
 
-@state-warning-text:             #8a6d3b;
-@state-warning-bg:               #fcf8e3;
-@state-warning-border:           darken(spin(@state-warning-bg, -10), 5%);
+@state-warning-text:             @warning-dark;
+@state-warning-bg:               @warning-alpha;
+@state-warning-border:           @warning-dark;
 
-@state-danger-text:              #a94442;
-@state-danger-bg:                #f2dede;
-@state-danger-border:            darken(spin(@state-danger-bg, -10), 5%);
+@state-danger-text:              @error-dark;
+@state-danger-bg:                @error-alpha;
+@state-danger-border:            @error-dark;
 
 
 //== Tooltips

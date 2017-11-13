@@ -237,7 +237,6 @@ body{
   height:~"calc(100% - @{cl-header-height})";
   align-items: stretch;
   padding-bottom:@padding-base-vertical;
-  
 }
 
 .cl-notes {
@@ -254,6 +253,7 @@ body{
   max-height:100%;
   width:~"calc(100% - @{cl-article-aside-width})";
   padding:@padding-large-vertical @padding-large-horizontal;
+  max-width:1200px;
   overflow:auto;
   //border-left:1px solid @grey-light-alpha;
   
@@ -280,15 +280,22 @@ h4.cl-heading{
 }
 
 .cls-article__section {
-    padding:@padding-large-vertical 0;
+    padding:@padding-large-vertical 0; 
+    > h3 {
+      margin-top:2.4rem;
+    }
+}
+
+.cls-article__section + .cls-article__section {
+  margin-top:2.4rem;
 }
 
 .cl-preview__item {
   border:1px solid rgba(0,0,0,0.13);
   padding:@padding-large-vertical @padding-large-horizontal;
   background-color:rgba(0,0,0,0.01);
-  overflow:auto;
   .modal {
+    overflow:auto;
     position: relative;
     top: auto;
     right: auto;

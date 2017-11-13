@@ -53,11 +53,12 @@ class Alerts {
           },
           {
             name: 'widget',
-            code: `
-            <!-- ko widget: { 
-             kind: 'alert', 
-             config: {"content": "<strong>Alert example.</strong> This is an example of an alert."#theme#}
-           } --> <!-- /ko -->`
+            code: `<!-- ko widget: { 
+  kind: 'alert', 
+  config: {
+    "content": "<strong>Alert example.</strong> This is an example of an alert."#theme#
+  }
+} --> <!-- /ko -->`
           }
 
         ],
@@ -79,17 +80,51 @@ class Alerts {
             name: 'widget',
             code:`
             <!-- ko widget: { 
-             kind: 'alert', 
-             config: {
-              "content": "<strong>Alert example.</strong> This is an example of an dismissable alert.",
-              "dismissable": true#theme#
-            }
-           } --> <!-- /ko -->`
+  kind: 'alert', 
+  config: {
+    "content": "<strong>Alert example.</strong> This is an example of an dismissable alert.",
+    "dismissable": true#theme#
+  }
+} --> <!-- /ko -->`
           }
         ],
         modifiers: this.mods
       }
-    ])
+    ]);
+    
+    this.component.reference = {
+      about: `<p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur</p>`,
+      cssOptions: [
+        {
+          type: 'Theme',
+          selectors: '.alert-warning<br/>.alert-success<br/>.alert-danger<br/>.alert-info',
+          description: 'Sets the main styling for the component'
+        }
+      ],
+      widgetOptions: [
+        {
+          kind: 'alert',
+          description: 'Standard alert component',
+          options: [
+            {
+              name: 'content',
+              description: 'HTML string which is data bound as the HTML content for the alert box',
+              dataType: 'string',
+              values:  'any',
+              optional: false
+            },
+            {
+              name: 'theme',
+              description: 'Sets the css theme selector',
+              dataType: 'string',
+              values:  'alert-warning<br/>alert-success<br/>alert-danger<br/>alert-info',
+              optional: true
+            }
+          ]
+        }
+
+      ]
+    }
   }
 
   activate() {

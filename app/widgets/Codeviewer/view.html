@@ -1,82 +1,94 @@
 <article class="cl-article">
   <div class="cl-article__content">
-    
-    <section class="cls-article__section  cl-description">
-      <p class="font-up-2">Modals are used to display content in a layer above the app. This paradigm is used in cases such as the creation or editing of a record, as well as various types of messaging and wizards.</p>
-    </section>
 
-    <section class="cls-article__section  cl-preview">
-      <h2 class="cl-heading">EXAMPLE <small></small></h2>
-      <div class="cl-preview__item" id="preview" data-bind="html:previewStr">
-
+    <section class="cls-article__section">
+      <h2 class="cl-heading">DESCRIPTION <small></small></h2>
+      <div class="cl-description" data-bind="html:component.description">
+       
       </div>
     </section>
 
-    <section class="cls-article__section  cl-article__guide">
-      <pre class="language-css  cls-article__code" data-bind="css:{ 'cls-article__code--closed': !codeViewOpen() }"><code class="language-css" data-bind="html:codeStr" id="codeView" >
-        </code></pre>
-        <div class="cls-article__code-controls">
-          <div class="code-controls__copy-button">
-              <button class="btn btn-primary" id="copy-button" data-clipboard-target="#codeView"><i class="icon icon-embed2"></i> Copy code</button>
-          </div>
-          <div class="code-controls__height-toggle">
-              <a href="#" javascript="return void(0);" data-bind="click:toggleCode">
-                <!-- ko if:codeViewOpen() --><i class="icon-arrow-up3"></i> Show less<!-- /ko -->
-                <!-- ko if:!codeViewOpen() --><i class="icon-arrow-down3"></i> Show more<!-- /ko -->
-              </a>
-          </div>
+    <section class="cls-article__section">
+      <div class="cl-preview">
+        <h2 class="cl-heading">EXAMPLE <small></small></h2>
+        <div class="cl-preview__item" id="preview" data-bind="html:previewStr">
+
         </div>
+      </div>
+
+      <div class="cl-article__guide">
+        <pre class="language-css  cls-article__code" data-bind="css:{ 'cls-article__code--closed': !codeViewOpen() }"><code class="language-css" data-bind="html:codeStr" id="codeView" >
+          </code></pre>
+          <div class="cls-article__code-controls">
+            <div class="code-controls__copy-button">
+                <button class="btn btn-primary" id="copy-button" data-clipboard-target="#codeView"><i class="icon icon-embed2"></i> Copy code</button>
+            </div>
+            <div class="code-controls__height-toggle">
+                <a href="#" javascript="return void(0);" data-bind="click:toggleCode">
+                  <!-- ko if:codeViewOpen() --><i class="icon-arrow-up3"></i> Show less<!-- /ko -->
+                  <!-- ko if:!codeViewOpen() --><i class="icon-arrow-down3"></i> Show more<!-- /ko -->
+                </a>
+            </div>
+          </div>
+      </div>
     </section>
 
+    <!-- ko if: component.reference -->
+      <section class="cls-article__section  cl-article-guide" data-bind="with: component.reference">
+        <h2 class="cl-heading">CSS REFERENCE <small></small></h2>
+        <h3 class="cl-heading">ABOUT</h3>
+        <div class="font-up-1" data-bind="html: about">
 
-    <h2 class="cl-heading">REFERENCE <small></small></h2>
+        </div>
+        <!-- ko if: cssOptions -->
+            <h3 class="cl-heading">CSS classes</h3>
+            <table class="table table-striped font-up-1">
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Description</th>
+                  <th>Selectors</th>
+                </tr>
+              </thead>
+              <tbody data-bind="foreach: cssOptions">
+                <tr>
+                  <td data-bind="text: type"></td>
+                  <td data-bind="text: description"></td>
+                  <td><code data-bind="html: selectors"></code></td>
+                </tr>
+              </tbody>
+            </table>
+        <!-- /ko -->
 
-    <section class="cls-article__section  cl-article__guide">
-        <h3>OPTIONS</h3>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Summary</th>
-              <th>Data type</th>
-              <th>Optional/Required</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>id</td>
-              <td>Adds the element ID to the parent element</td>
-              <td>string</td>
-              <td>Optional</td>
-            </tr>
-            <tr>
-              <td>title</td>
-              <td>Will display as the title of the modal in the modal header.</td>
-              <td>string</td>
-              <td>Required</td>
-            </tr>
-            <tr>
-              <td>bodyView</td>
-              <td>A view model which will compose as the view for the main body of the modal</td>
-              <td><a href="http://durandaljs.com/documentation/Using-Composition.html" target="_new">viewmodel</a></td>
-              <td>Required</td>
-            </tr>
-            <tr>
-              <td>footerView</td>
-              <td>A view model which will compose as the view for the footer of the modal</td>
-              <td><a href="http://durandaljs.com/documentation/Using-Composition.html" target="_new">viewmodel</a></td>
-              <td>Optional</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-    </section>
-    
+        <!-- ko if: widgetOptions -->
+            <h2 class="cl-heading">WIDGET REFERENCE</h2>
+            <!-- ko foreach: widgetOptions -->
+              <h3 class="cl-heading" >Kind: '<span data-bind="text: kind"></span>'</h3>
+              <p class="font-up-1" data-bind="text:description"></p>
+              <table class="table table-striped font-up-1">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Data type</th>
+                    <th>Values</th>
+                    <th>Optional?</th>
+                  </tr>
+                </thead>
+                <tbody data-bind="foreach: options">
+                  <tr>
+                    <td data-bind="text: name"></td>
+                    <td data-bind="text: description"></td>
+                    <td data-bind="text: dataType"></td>
+                    <td><code data-bind="html: values"></code></td>
+                    <td data-bind="html: optional ? 'Optional' : 'Required'"></td>
+                  </tr>
+                </tbody>
+              </table>
+            <!-- /ko -->
+        <!-- /ko -->
+      </section>
+    <!-- /ko -->
     
   </div>
 

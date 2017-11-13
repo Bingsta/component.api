@@ -511,15 +511,19 @@ class Inputs {
     form: 'inputtest',
     tabindex: 1,
     datalist: {
-      id:'testy',
+      id:'data-list-test',
       options: [
-        { value: 'Option 1' },
-        { value: 'Option 2' },
-        { value: 'Option 3' },
-        { value: 'Option 5' },
-        { value: 'Option 4' },
-        { value: 'Option 6' },
-        { value: 'Option 7' }
+        { value: 'Bugs Bunny' },
+        { value: 'Homer Simpson' },
+        { value: 'Mickey Mouse' },
+        { value: 'Bart Simpson' },
+        { value: 'Charile Brown' },
+        { value: 'Fred Flintstone' },
+        { value: 'Wile E. Coyote' },
+        { value: 'Eric Cartman' },
+        { value: 'Daffy Duck' },
+        { value: 'Porky Pig' },
+        { value: 'Scooby Doo' }
       ]
     }#type##autofocus##disabled##required##spellcheck##readonly##addon#
   } 
