@@ -70,10 +70,10 @@ class Tabs {
             {
               name: "HTML",
               code: `<ul class="nav nav-tabs #theme#">
-  <li class="active"><a href="#"><span class="nav-tabs__title">Home</span></a></li>
-  <li><a href="#"><span class="nav-tabs__title">Menu 1</span></a></li>
-  <li><a href="#"><span class="nav-tabs__title">Menu 2</span></a></li>
-  <li><a href="#"><span class="nav-tabs__title">Menu 3</span></a></li>
+  <li class="active"><a href="javascript:void(0);"><span class="nav-tabs__title">Home</span></a></li>
+  <li><a href="javascript:void(0);"><span class="nav-tabs__title">Menu 1</span></a></li>
+  <li><a href="javascript:void(0);"><span class="nav-tabs__title">Menu 2</span></a></li>
+  <li><a href="javascript:void(0);"><span class="nav-tabs__title">Menu 3</span></a></li>
 </ul>`
             },
             {
@@ -140,7 +140,7 @@ class Tabs {
                 {
                   name: "Secondary",
                   HTML: "nav-tabs--secondary",
-                  widget: `"nav-tabs--secondary"`
+                  widget: `"secondary"`
                 }
               ]
             }
@@ -152,10 +152,10 @@ class Tabs {
               {
                 name: "HTML",
                 code: `<ul class="nav nav-tabs #theme#">
-      <li class="active"><a href="#"><span class="nav-tabs__title">Home</span>  <span class="badge">4</span></a></li>
-      <li><a href="#"><span class="nav-tabs__title">Menu 1</span>  <span class="badge">4</span></a></li>
-      <li><a href="#"><span class="nav-tabs__title">Menu 2</span>  <span class="badge">4</span></a></li>
-      <li><a href="#"><span class="nav-tabs__title">Menu 3</span>  <span class="badge">4</span></a></li>
+      <li class="active"><a href="javascript:void(0)"><span class="nav-tabs__title">Home</span>  <span class="badge">4</span></a></li>
+      <li><a href="javascript:void(0)"><span class="nav-tabs__title">Menu 1</span>  <span class="badge">4</span></a></li>
+      <li><a href="javascript:void(0)"><span class="nav-tabs__title">Menu 2</span>  <span class="badge">4</span></a></li>
+      <li><a href="javascript:void(0)"><span class="nav-tabs__title">Menu 3</span>  <span class="badge">4</span></a></li>
   </ul>`
               },
               {
@@ -222,13 +222,103 @@ class Tabs {
                   {
                     name: "Secondary",
                     HTML: "nav-tabs--secondary",
-                    widget: `"nav-tabs--secondary"`
+                    widget: `"secondary"`
                   }
                 ]
               }
             ]
           }
-      ])
+      ]);
+
+      
+      this.component.reference = {
+        about: `<p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur</p>`,
+        cssOptions: [
+          {
+            type: 'Theme',
+            selectors: '.nav-tabs--secondary',
+            description: 'Sets the main styling for the component. The default styling is the primary style.'
+          }
+        ],
+        widgetOptions: [
+          {
+            kind: 'tabs',
+            description: 'Standard tabs widget',
+            options: [
+              {
+                name: 'theme',
+                description: 'Sets the css theme selector',
+                dataType: 'string',
+                values:  'secondary',
+                optional: true
+              },
+              {
+                name: 'items',
+                description: 'An array of objects which represent the individual tabs.',
+                dataType: 'Array<<a href="#TabConfiguration">TabConfiguration</a>>',
+                values:  '-',
+                optional: true
+              }
+            ]
+          }
+
+        ],
+        objectReference: [
+          {
+            name: 'TabConfiguration',
+            description: "Object which represents an individual tab",
+            options: [
+              {
+                name: 'title',
+                description: 'Text which appears on the tab',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'Content view',
+                description: 'A view model which gets bound as the view for the tab content.',
+                dataType: '<a href="#ViewModel">ViewModel</a>',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'active',
+                description: 'Boolean to indicate if the tab is currently active or not.',
+                dataType: 'boolean',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'badge',
+                description: 'Binds as text to a badge component inside the tab. If ommitted or "0" badge does not appear.',
+                dataType: 'boolean',
+                values: 'any',
+                optional: true
+              }
+            ]
+          },{
+            name: 'ViewModel',
+            description: "A durandal view-model object bound using durandal composition. See <a href=\"http://durandaljs.com/documentation/Using-Composition.html\" target=\"_new\">using composition</a>",
+            options: [
+              {
+                name: 'view',
+                description: 'HTML which gets bound to the view by durandals \'composition\'. If you pass in a string it is interperated as a view locator. If you pass in a HTMLElement it is rendered as the view.',
+                dataType: 'string or HTMLElement',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'model',
+                description: 'A view model which gets bound to the view.',
+                dataType: 'any',
+                values: 'any',
+                optional: true
+              }
+            ]
+          }
+        ]
+      }
     }
 
     activate() {

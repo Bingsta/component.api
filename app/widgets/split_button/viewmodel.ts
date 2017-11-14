@@ -1,7 +1,7 @@
 import * as ko from 'knockout';
 import * as system from 'durandal/system';
 import * as app from 'durandal/app';
-import { DropdownButtonComponentConfiguration } from 'interfaces';
+import { DropdownButtonComponentConfiguration } from '../../interfaces';
 
 class Splitbutton {
 
@@ -21,7 +21,7 @@ class Splitbutton {
           //add computed
           this.themeCSS = ko.computed(() => {
             //return the theme css
-            switch(this.config().theme) {
+            switch(this.config().button.theme) {
               case 'primary':
               return 'btn-primary';
               case 'accent':
@@ -41,7 +41,7 @@ class Splitbutton {
     
           this.sizeCSS = ko.computed(() => {
             //return the size css
-            switch(this.config().size) {
+            switch(this.config().button.size) {
               case 'large':
               return 'btn-lg';
               case 'small':

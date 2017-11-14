@@ -1,5 +1,5 @@
 <div  class="alert"  data-bind="
-attr: { class: 'alert ' + config().theme + (config().dismissable ? ' alert-dismissable' : '') }">
+attr: { class: 'alert ' + themeCSS() + (config().dismissable ? ' alert-dismissable' : '') }">
   <!-- ko if:config().dismissable -->
     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
   <!-- /ko -->

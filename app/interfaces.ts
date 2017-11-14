@@ -15,6 +15,13 @@ export interface Reference {
   about?: string
   cssOptions?: Array<CssClass>
   widgetOptions?: Array<WidgetReference>
+  objectReference: Array<ObjectReference>
+}
+
+export interface ObjectReference {
+  name: string
+  description: string
+  options: Array<WidgetOption>
 }
 
 export interface CssClass {
@@ -62,7 +69,7 @@ export interface ComponentModifierOption {
 }
 
 export interface ViewModel {
-  view: any
+  view?: any
   model?: any
 }
 
@@ -154,8 +161,6 @@ export interface InputFieldConfiguration {
 
 export interface TextAreaConfiguration extends BaseInputConfiguration {
   rows: number
-  name: string
-  form: string
   spellcheck?: boolean
   maxlength?: number
 }
@@ -184,7 +189,7 @@ export interface SelectInputConfiguration {
   name: string
   form: string
   tabindex:number
-  options: Array<optionConfiguration>
+  options: Array<OptionConfiguration>
   size?: number
   disabled?: boolean
   required?: boolean
@@ -196,7 +201,7 @@ export interface SelectFieldConfiguration {
   label: string
   input: SelectInputConfiguration
 }
-export interface optionConfiguration {
+export interface OptionConfiguration {
   title: string
   value: string
 }
@@ -204,7 +209,7 @@ export interface optionConfiguration {
 export interface CheckboxRadioGroupConfiguration{
   name: string
   form: string
-  options: Array<CheckboxRadioConfiguarion>
+  options: Array<CheckboxRadioConfiguration>
 }
 
 export interface CheckboxRadioGroupFieldConfiguration  {
@@ -212,7 +217,7 @@ export interface CheckboxRadioGroupFieldConfiguration  {
   input: CheckboxRadioGroupConfiguration
 }
 
-export interface CheckboxRadioConfiguarion {
+export interface CheckboxRadioConfiguration {
   id: string
   title: string
   tabindex: number
@@ -246,7 +251,7 @@ export interface FixedTextFieldConfiguration {
 
 export interface DataListOptionConfiguration {
   value: string
-  label: string
+  label?: string
 } 
 
 export interface DatalistConfiguration {

@@ -1,6 +1,7 @@
 <div class="dropdown">
   <button type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
-  data-bind="attr: {class: 'btn dropdown-toggle ' + config().button.theme + ' ' + config().button.size + ' ' + config().button.state } ">
+  data-bind="attr: {class: 'btn dropdown-toggle ' + themeCSS() + ' ' + sizeCSS() },
+  css: { active: config().button.active, disabled: config().button.disabled } ">
     <span data-bind="html: config().button.content"></span>
     <span class="caret"></span>
   </button>

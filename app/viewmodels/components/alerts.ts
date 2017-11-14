@@ -21,22 +21,22 @@ class Alerts {
         {
           name: "Warning",
           HTML: " alert-warning",
-          widget: `"alert-warning"`
+          widget: `"warning"`
         },
         {
           name: "Success",
           HTML: " alert-success",
-          widget: `"alert-success"`
+          widget: `"success"`
         },
         {
           name: "Danger",
           HTML: " alert-danger",
-          widget: `"alert-danger"`
+          widget: `"danger"`
         },
         {
           name: "Info",
           HTML: " alert-info",
-          widget: `"alert-info"`
+          widget: `"info"`
         }
       ]
     }
@@ -117,13 +117,14 @@ class Alerts {
               name: 'theme',
               description: 'Sets the css theme selector',
               dataType: 'string',
-              values:  'alert-warning<br/>alert-success<br/>alert-danger<br/>alert-info',
+              values:  'warning<br/>success<br/>danger<br/>info',
               optional: true
             }
           ]
         }
 
-      ]
+      ],
+      objectReference:[]
     }
   }
 

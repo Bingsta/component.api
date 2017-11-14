@@ -35,13 +35,13 @@
 
     <!-- ko if: component.reference -->
       <section class="cls-article__section  cl-article-guide" data-bind="with: component.reference">
-        <h2 class="cl-heading">CSS REFERENCE <small></small></h2>
-        <h3 class="cl-heading">ABOUT</h3>
+        
+        <h2 class="cl-heading">ABOUT</h2>
         <div class="font-up-1" data-bind="html: about">
 
         </div>
-        <!-- ko if: cssOptions -->
-            <h3 class="cl-heading">CSS classes</h3>
+        <!-- ko if: cssOptions.length > 0 -->
+          <h2 class="cl-heading">CSS REFERENCE <small></small></h2>
             <table class="table table-striped font-up-1">
               <thead>
                 <tr>
@@ -60,15 +60,16 @@
             </table>
         <!-- /ko -->
 
-        <!-- ko if: widgetOptions -->
+        <!-- ko if: widgetOptions.length > 0 -->
             <h2 class="cl-heading">WIDGET REFERENCE</h2>
             <!-- ko foreach: widgetOptions -->
-              <h3 class="cl-heading" >Kind: '<span data-bind="text: kind"></span>'</h3>
-              <p class="font-up-1" data-bind="text:description"></p>
+              <h3 class="cl-heading" >Kind: <span data-bind="text: kind"></span></h3>
+              <p class="font-up-1" data-bind="html:description"></p>
+              <h3 class="cl-heading">Config:</h3>
               <table class="table table-striped font-up-1">
                 <thead>
                   <tr>
-                    <th>Type</th>
+                    <th>Key</th>
                     <th>Description</th>
                     <th>Data type</th>
                     <th>Values</th>
@@ -78,8 +79,8 @@
                 <tbody data-bind="foreach: options">
                   <tr>
                     <td data-bind="text: name"></td>
-                    <td data-bind="text: description"></td>
-                    <td data-bind="text: dataType"></td>
+                    <td data-bind="html: description"></td>
+                    <td data-bind="html: dataType"></td>
                     <td><code data-bind="html: values"></code></td>
                     <td data-bind="html: optional ? 'Optional' : 'Required'"></td>
                   </tr>
@@ -87,6 +88,36 @@
               </table>
             <!-- /ko -->
         <!-- /ko -->
+
+        
+        <!-- ko if: objectReference.length > 0 -->
+        <h2 class="cl-heading">OBJECT REFERENCE</h2>
+        <!-- ko foreach: objectReference -->
+          <h3 class="cl-heading" >Object name: <a data-bind="text: name, attr: { name: name }"></a></h3>
+          <p class="font-up-1" data-bind="html:description"></p>
+          <h3 class="cl-heading">Attributes:</h3>
+          <table class="table table-striped font-up-1">
+            <thead>
+              <tr>
+                <th>Key</th>
+                <th>Description</th>
+                <th>Data type</th>
+                <th>Values</th>
+                <th>Optional?</th>
+              </tr>
+            </thead>
+            <tbody data-bind="foreach: options">
+              <tr>
+                <td data-bind="text: name"></td>
+                <td data-bind="html: description"></td>
+                <td data-bind="html: dataType"></td>
+                <td><code data-bind="html: values"></code></td>
+                <td data-bind="html: optional ? 'Optional' : 'Required'"></td>
+              </tr>
+            </tbody>
+          </table>
+        <!-- /ko -->
+    <!-- /ko -->
       </section>
     <!-- /ko -->
     

@@ -175,7 +175,24 @@ class Tags {
                 }
               ]
             }
-      ])
+      ]);
+      
+      this.component.reference = {
+        about: `<p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur</p>`,
+        cssOptions: [
+          {
+            type: 'Theme',
+            selectors: '.tags-default<br/>.tags-primary<br/>.tags-accent<br/>.tags-warning<br/>.tags-success<br/>.tags-danger<br/>.tags-info',
+            description: 'Sets the main styling for the component'
+          }
+        ],
+        widgetOptions: [
+
+        ],
+        objectReference: [
+
+        ]
+      };
     }
 
     activate() {

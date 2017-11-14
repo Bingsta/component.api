@@ -6,6 +6,7 @@ import { TabComponentConfiguration, TabItemComponentConfiguration } from 'interf
 class Tabs {
 
   public config: KnockoutObservable<TabComponentConfiguration>;
+  public themeCSS: KnockoutComputed<string>;
 
   constructor() {
 
@@ -18,6 +19,17 @@ class Tabs {
       console.log(settings.config);
 
       this.config = ko.observable(settings.config);
+
+      //add computed
+      this.themeCSS = ko.computed(() => {
+        //return the theme css
+        switch(this.config().theme) {
+          case 'secondary':
+          return 'nav-tabs--secondary';
+          default:
+          return '';
+        }
+      });
 
     }
     else {

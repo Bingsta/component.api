@@ -722,7 +722,570 @@ class Inputs {
           ],
           modifiers: this.dateOptions
         }
-      ])
+      ]);
+      
+      this.component.reference = {
+        about: `<p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur</p>`,
+        cssOptions: [
+        ],
+        widgetOptions: [
+          {
+            kind: 'inputs/text-input',
+            description: 'asdasdasd',
+            options: [
+              {
+                name: 'type',
+                description: 'Selects the HTML input type value.',
+                dataType: 'string',
+                values: 'text<br/>email<br/>search</br>number</br>range</br>password</br>tel</br>url</br>color</br>file</br>',
+                optional: false
+              },
+              {
+                name: 'id',
+                description: 'Text which is bound as the HTML element ID',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'name',
+                description: 'Text which is bound as the HTML input name attribute',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'form',
+                description: 'Text which is bound as the HTML input form attribute',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'tabindex',
+                description: 'Text which is bound as the HTML input tabindex attribute',
+                dataType: 'number',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'value',
+                description: 'Text which is bound as the HTML input value attribute',
+                dataType: 'string',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'placeholder',
+                description: 'Sets the placeholder or hint text.',
+                dataType: 'string',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'autofocus',
+                description: 'Forces focus to the input element when initially loaded',
+                dataType: 'boolean',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'disabled',
+                description: 'Disables the input element',
+                dataType: 'boolean',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'required',
+                description: 'Marks the input element as a required field',
+                dataType: 'boolean',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'readonly',
+                description: 'Prevents the value text from being edited.',
+                dataType: 'boolean',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'spellcheck',
+                description: 'Enabled/disables the input spellchecker.',
+                dataType: 'boolean',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'maxlength',
+                description: 'Add a limit to the number of characters that can be entered',
+                dataType: 'number',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'pattern',
+                description: 'Regular expression string which is used to validate the input.',
+                dataType: 'string',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'addon',
+                description: 'Adds an icon add on to the input.',
+                dataType: 'boolean',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'step',
+                description: 'Only used for type="number". Forces entry in multiples of the entered value. E.g. 10,20,30,40... etc.',
+                dataType: 'number',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'datalist',
+                description: 'An object representing a datalist object which will be associated to the input element. Datalists can be used to provide autocomplete functionality.',
+                dataType: '<a href="#DataListConfiguration">DataListConfiguration</a>',
+                values: 'any',
+                optional: true
+              }
+            ]
+          },{
+            kind: 'inputs/textarea-input',
+            description: 'asdasdasd',
+            options: [
+              {
+                name: 'id',
+                description: 'Text which is bound as the HTML element ID',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'name',
+                description: 'Text which is bound as the HTML input name attribute',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'form',
+                description: 'Text which is bound as the HTML input form attribute',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'tabindex',
+                description: 'Text which is bound as the HTML input tabindex attribute',
+                dataType: 'number',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'rows',
+                description: 'Sets the number of rows that appear without a scrollbar. ',
+                dataType: 'number',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'value',
+                description: 'Text which is bound as the HTML input value attribute',
+                dataType: 'string',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'autofocus',
+                description: 'Forces focus to the input element when initially loaded',
+                dataType: 'boolean',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'disabled',
+                description: 'Disables the input element',
+                dataType: 'boolean',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'required',
+                description: 'Marks the input element as a required field',
+                dataType: 'boolean',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'readonly',
+                description: 'Prevents the value text from being edited.',
+                dataType: 'boolean',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'spellcheck',
+                description: 'Enabled/disables the input spellchecker.',
+                dataType: 'boolean',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'maxlength',
+                description: 'Add a limit to the number of characters that can be entered',
+                dataType: 'number',
+                values: 'any',
+                optional: true
+              }
+            ]
+          },{
+            kind: 'inputs/select-input',
+            description: 'asdasdasd',
+            options: [
+              {
+                name: 'id',
+                description: 'Text which is bound as the HTML element ID',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'name',
+                description: 'Text which is bound as the HTML input name attribute',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'form',
+                description: 'Text which is bound as the HTML input form attribute',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'options',
+                description: 'An array of objects representing select options',
+                dataType: 'Array<<a href="#OptionConfiguration">OptionConfiguration</a>>',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'tabindex',
+                description: 'Text which is bound as the HTML input tabindex attribute',
+                dataType: 'number',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'mulitple',
+                description: 'Sets whether options select is a single select or multiple select. Defaults to a single select.',
+                dataType: 'boolean',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'autofocus',
+                description: 'Forces focus to the input element when initially loaded',
+                dataType: 'boolean',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'disabled',
+                description: 'Disables the input element',
+                dataType: 'boolean',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'required',
+                description: 'Marks the input element as a required field',
+                dataType: 'boolean',
+                values: 'any',
+                optional: true
+              }
+            ]
+          },{
+            kind: 'inputs/radio-group-input',
+            description: 'asdasdasd',
+            options: [
+              {
+                name: 'name',
+                description: 'Text which is bound as the HTML input name attribute for each radio input',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'form',
+                description: 'Text which is bound as the HTML input form attribute for each radio input',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'options',
+                description: 'An array of objects representing radio inputs',
+                dataType: 'Array<<a href="#CheckboxRadioConfiguration">CheckboxRadioConfiguration</a>>',
+                values: 'any',
+                optional: false
+              }
+            ]
+          },{
+            kind: 'inputs/checkbox-group-input',
+            description: 'asdasdasd',
+            options: [
+              {
+                name: 'name',
+                description: 'Text which is bound as the HTML input name attribute for each checkbox input',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'form',
+                description: 'Text which is bound as the HTML input form attribute for each checkbox input',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'options',
+                description: 'An array of objects representing checkbox inputs',
+                dataType: 'Array<<a href="#CheckboxRadioConfiguration">CheckboxRadioConfiguration</a>>',
+                values: 'any',
+                optional: false
+              }
+            ]
+          },
+          {
+            kind: 'inputs/date-input',
+            description: 'asdasdasd',
+            options: [
+              {
+                name: 'type',
+                description: 'Selects the HTML input type value.',
+                dataType: 'string',
+                values: 'date<br/>time<br/>datetime-local</br>month</br>week',
+                optional: false
+              },
+              {
+                name: 'id',
+                description: 'Text which is bound as the HTML element ID',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'name',
+                description: 'Text which is bound as the HTML input name attribute',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'form',
+                description: 'Text which is bound as the HTML input form attribute',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'tabindex',
+                description: 'Text which is bound as the HTML input tabindex attribute',
+                dataType: 'number',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'value',
+                description: 'Text which is bound as the HTML input value attribute',
+                dataType: 'string',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'placeholder',
+                description: 'Sets the placeholder or hint text.',
+                dataType: 'string',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'autofocus',
+                description: 'Forces focus to the input element when initially loaded',
+                dataType: 'boolean',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'disabled',
+                description: 'Disables the input element',
+                dataType: 'boolean',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'required',
+                description: 'Marks the input element as a required field',
+                dataType: 'boolean',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'readonly',
+                description: 'Prevents the value text from being edited.',
+                dataType: 'boolean',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'max',
+                description: 'Sets a maximum value that can be entered.',
+                dataType: 'date',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'min',
+                description: 'Sets a minimum value that can be entered.',
+                dataType: 'date',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'addon',
+                description: 'Adds an icon add on to the input.',
+                dataType: 'boolean',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'step',
+                description: 'Only used for type="number". Forces entry in multiples of the entered value. E.g. 10,20,30,40... etc.',
+                dataType: 'number',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'datalist',
+                description: 'An object representing a datalist object which will be associated to the input element. Datalists can be used to provide autocomplete functionality.',
+                dataType: '<a href="#DataListConfiguration">DataListConfiguration</a>',
+                values: 'any',
+                optional: true
+              }
+            ]
+          }
+        ],
+        objectReference: [
+          {
+            name: 'DataListConfiguration',
+            description: 'blah blah',
+            options: [
+              {
+                name: 'id',
+                description: 'Set the HTML element ID value and links to the input element by setting the input element list value',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'options',
+                description: 'An array of objects representing data list options',
+                dataType: 'Array<<a href="#DataListOptionConfiguration">DataListOptionConfiguration</a>>',
+                values: 'any',
+                optional: false
+              }
+            ]
+          },
+          {
+            name: 'DataListOptionConfiguration',
+            description: 'blah blah',
+            options: [
+              {
+                name: 'value',
+                description: 'The value of the option',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              }
+            ]
+          },
+          {
+            name: 'OptionConfiguration',
+            description: 'blah blah',
+            options: [
+              {
+                name: 'title',
+                description: 'Text value bound as the text for the option',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'value',
+                description: 'Text value bound as the value attribute for the option',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              }
+            ]
+          },
+          {
+            name: 'CheckboxRadioConfiguration',
+            description: 'blah blah',
+            options: [
+              {
+                name: 'id',
+                description: 'Text which is bound as the HTML element ID',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'title',
+                description: 'Text value bound as the text for a label element associated to the checkbox/radio input',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'tabindex',
+                description: 'Text which is bound as the HTML input tabindex attribute',
+                dataType: 'number',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'checked',
+                description: 'Set whether the checkbox/radio input is checked or not. Defaults to false.',
+                dataType: 'boolean',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'autofocus',
+                description: 'Forces focus to the input element when initially loaded',
+                dataType: 'boolean',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'disabled',
+                description: 'Disables the input element',
+                dataType: 'boolean',
+                values: 'any',
+                optional: true
+              }
+            ]
+          }
+        ]
+      };
     }
 
     activate() {

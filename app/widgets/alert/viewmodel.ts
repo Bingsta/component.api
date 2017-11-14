@@ -6,6 +6,7 @@ import { AlertComponentConfiguration } from 'interfaces';
 class Alert {
 
   public config: KnockoutObservable<AlertComponentConfiguration>;
+  public themeCSS: KnockoutComputed<string>;
 
   constructor() {
     
@@ -15,12 +16,21 @@ class Alert {
     //add configuration file
     if(settings.config){
       this.config = ko.observable(settings.config);
-      console.log("Alert component>>>");
-      console.log(settings.config);
-      //set default theme
-      if(!this.config().theme) {
-        this.config().theme = 'alert-warning';
-      } 
+      
+      //add computed
+      this.themeCSS = ko.computed(() => {
+        //return the theme css
+        switch(this.config().theme) {
+          case 'warning':
+          return 'alert-warning';
+          case 'success':
+          return 'alert-success';
+          case 'danger':
+          return 'alert-danger';
+          default:
+          return 'alert-info';
+        }
+      });
 
     }
     else{

@@ -1,7 +1,7 @@
 import * as ko from 'knockout';
 import * as system from 'durandal/system';
 import * as app from 'durandal/app';
-import { CheckboxRadioGroupFieldConfiguration, CheckboxRadioConfiguarion } from 'interfaces';
+import { CheckboxRadioGroupFieldConfiguration, CheckboxRadioConfiguration } from 'interfaces';
 
 class GroupInputField {
 

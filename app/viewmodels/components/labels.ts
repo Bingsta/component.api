@@ -69,12 +69,31 @@ class Labels {
             }
           ]
         }
-      ])
-    }
+      ]);
 
-    activate() {
-        
-    }
+      
+    this.component.reference = {
+      about: `<p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur</p>`,
+      cssOptions: [
+        {
+          type: 'Theme',
+          selectors: '.label-default<br/>.label-primary<br/>.label-accent<br/>.label-warning<br/>.label-success<br/>.label-danger<br/>.label-info',
+          description: 'Sets the main styling for the component'
+        }
+      ],
+      widgetOptions: [
+
+      ],
+      objectReference: [
+
+      ]
+    };
+
+  }
+
+  activate() {
+      
+  }
 }
 
 export = Labels;

@@ -41,7 +41,7 @@ class Button {
 
       this.sizeCSS = ko.computed(() => {
         //return the size css
-        switch(this.config().size) {
+        switch(this.config().size.toLowerCase()) {
           case 'large':
           return 'btn-lg';
           case 'small':
