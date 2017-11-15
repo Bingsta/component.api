@@ -34,38 +34,45 @@
     </section>
 
     <!-- ko if: component.reference -->
-      <section class="cls-article__section  cl-article-guide" data-bind="with: component.reference">
-        
-        <h2 class="cl-heading">ABOUT</h2>
-        <div class="font-up-1" data-bind="html: about">
+      <!-- ko with: component.reference -->
+        <section class="cls-article__section  cl-article-guide">
+          
+          <h2 class="cl-heading">ABOUT</h2>
+          <div class="font-up-1" data-bind="html: about">
 
-        </div>
+          </div>
+        </section>
+
         <!-- ko if: cssOptions.length > 0 -->
-          <h2 class="cl-heading">CSS REFERENCE <small></small></h2>
-            <table class="table table-striped font-up-1">
-              <thead>
-                <tr>
-                  <th>Type</th>
-                  <th>Description</th>
-                  <th>Selectors</th>
-                </tr>
-              </thead>
-              <tbody data-bind="foreach: cssOptions">
-                <tr>
-                  <td data-bind="text: type"></td>
-                  <td data-bind="text: description"></td>
-                  <td><code data-bind="html: selectors"></code></td>
-                </tr>
-              </tbody>
-            </table>
+          <section class="cls-article__section  cl-article-guide">
+            <h2 class="cl-heading">CSS REFERENCE <small></small></h2>
+              <table class="table table-striped font-up-1">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Selectors</th>
+                  </tr>
+                </thead>
+                <tbody data-bind="foreach: cssOptions">
+                  <tr>
+                    <td data-bind="text: type"></td>
+                    <td data-bind="text: description"></td>
+                    <td><code data-bind="html: selectors"></code></td>
+                  </tr>
+                </tbody>
+              </table>
+          </section>
         <!-- /ko -->
 
         <!-- ko if: widgetOptions.length > 0 -->
+          <section class="cls-article__section  cl-article-guide">
             <h2 class="cl-heading">WIDGET REFERENCE</h2>
             <!-- ko foreach: widgetOptions -->
-              <h3 class="cl-heading" >Kind: <span data-bind="text: kind"></span></h3>
+            <section class="cls-article__sub-section cl-article-guide">
+              <h3 class="cl-heading" ><span data-bind="text: kind"></span></h3>
               <p class="font-up-1" data-bind="html:description"></p>
-              <h3 class="cl-heading">Config:</h3>
+              <h4 class="cl-heading">Config:</h4>
               <table class="table table-striped font-up-1">
                 <thead>
                   <tr>
@@ -86,39 +93,46 @@
                   </tr>
                 </tbody>
               </table>
+            </section>
             <!-- /ko -->
+          </section>
         <!-- /ko -->
 
         
         <!-- ko if: objectReference.length > 0 -->
-        <h2 class="cl-heading">OBJECT REFERENCE</h2>
-        <!-- ko foreach: objectReference -->
-          <h3 class="cl-heading" >Object name: <a data-bind="text: name, attr: { name: name }"></a></h3>
-          <p class="font-up-1" data-bind="html:description"></p>
-          <h3 class="cl-heading">Attributes:</h3>
-          <table class="table table-striped font-up-1">
-            <thead>
-              <tr>
-                <th>Key</th>
-                <th>Description</th>
-                <th>Data type</th>
-                <th>Values</th>
-                <th>Optional?</th>
-              </tr>
-            </thead>
-            <tbody data-bind="foreach: options">
-              <tr>
-                <td data-bind="text: name"></td>
-                <td data-bind="html: description"></td>
-                <td data-bind="html: dataType"></td>
-                <td><code data-bind="html: values"></code></td>
-                <td data-bind="html: optional ? 'Optional' : 'Required'"></td>
-              </tr>
-            </tbody>
-          </table>
-        <!-- /ko -->
+        
+        <section class="cls-article__section  cl-article-guide">
+          <h2 class="cl-heading">OBJECT REFERENCE</h2>
+          <!-- ko foreach: objectReference -->
+          <section class="cls-article__sub-section cl-article-guide">
+            <h3 class="cl-heading" ><a data-bind="text: name, attr: { name: name }"></a></h3>
+            <p class="font-up-1" data-bind="html:description"></p>
+            <h4 class="cl-heading">Attributes:</h4>
+            <table class="table table-striped font-up-1">
+              <thead>
+                <tr>
+                  <th>Key</th>
+                  <th>Description</th>
+                  <th>Data type</th>
+                  <th>Values</th>
+                  <th>Optional?</th>
+                </tr>
+              </thead>
+              <tbody data-bind="foreach: options">
+                <tr>
+                  <td data-bind="text: name"></td>
+                  <td data-bind="html: description"></td>
+                  <td data-bind="html: dataType"></td>
+                  <td><code data-bind="html: values"></code></td>
+                  <td data-bind="html: optional ? 'Optional' : 'Required'"></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <!-- /ko -->
+        </section>
+      <!-- /ko -->
     <!-- /ko -->
-      </section>
     <!-- /ko -->
     
   </div>

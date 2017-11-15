@@ -1,16 +1,16 @@
-@tag-height: 2.4rem;
-@tag-border-radius: calc(@tag-height/2);
-@tag-padding: 1rem;
-@tag-font-size: 1.2rem;
+@pill-height: 2.4rem;
+@pill-border-radius: calc(@pill-height/2);
+@pill-padding: 1rem;
+@pill-font-size: 1.2rem;
 
-.tags{
+.pill{
     display:inline-flex;
     justify-content: center;
     align-items: center;
     font-size:@font-size-base;
     line-height:@line-height-small;
-    //height:@tag-height;
-    border-radius: @tag-border-radius;
+    //height:@pill-height;
+    border-radius: @pill-border-radius;
     color:@faded-text;
     background-color:@grey-light-alpha;
     padding:@padding-small-vertical @padding-small-horizontal;
@@ -23,7 +23,7 @@
         font-size:1.4rem;
     }
 
-    &.tags-dismissable .icon:last-child {
+    &.pill-dismissable .icon:last-child {
         color:@subtle-text;
         cursor: pointer;
         &:hover {
@@ -32,40 +32,40 @@
     }
 }
 
-.tags-primary{
+.pill-primary{
     background-color:@brand-primary;
     color:@inverse-text-color;
 }
 
-.tags-accent {
+.pill-accent {
     background-color:@brand-accent;
     color:@inverse-text-color;
 }
 
-.tags-success {
+.pill-success {
     background-color:@brand-success;
     color:@inverse-text-color;
 }
 
-.tags-warning {
+.pill-warning {
     background-color:@brand-warning;
     color:@inverse-text-color;
 }
 
-.tags-info {
+.pill-info {
     background-color:@brand-info;
     color:@inverse-text-color;
 }
 
-.tags-danger {
+.pill-danger {
     background-color: @brand-danger;
     color:@inverse-text-color;
 }
 
-.tags-danger, .tags-info, .tags-warning, .tags-success, .tags-accent, .tags-primary {
+.pill-danger, .pill-info, .pill-warning, .pill-success, .pill-accent, .pill-primary {
     color:@inverse-text-color;
 
-    &.tags-dismissable .icon:last-child {
+    &.pill-dismissable .icon:last-child {
         color:@inverse-faded-text;
         cursor: pointer;
         &:hover {

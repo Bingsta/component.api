@@ -18,6 +18,24 @@ class Splitbutton {
         if (settings.config) {
           this.config = ko.observable(settings.config);
           
+            //check config values
+          if(!this.config().button.content){
+            console.error('Missing required content value on button');
+            throw "Missing required content value on button";
+          }
+          if(!this.config().button.id){
+            console.error('Missing required ID value on button');
+            this.config().button.id = '';
+          }
+          if(!this.config().menu){
+            console.error('Missing required menu object on dropdown button');
+            throw "Missing required menu object on dropdown button";
+          }
+
+          //set labelledby value for the menu
+          this.config().menu.labelledby = this.config().button.id + "__menu";
+          
+
           //add computed
           this.themeCSS = ko.computed(() => {
             //return the theme css

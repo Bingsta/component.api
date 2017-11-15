@@ -41,7 +41,7 @@ export class Shell {
       { route: 'components/labels',       moduleId: 'viewmodels/components/labels',       title: "Labels",        nav: true },
       { route: 'components/badges',       moduleId: 'viewmodels/components/badges',       title: "Badges",        nav: true },
       { route: 'components/tabs',         moduleId: 'viewmodels/components/tabs',         title: "Tabs",          nav: true },
-      { route: 'components/tags',         moduleId: 'viewmodels/components/tags',         title: "Tags",          nav: true },
+      { route: 'components/pills',        moduleId: 'viewmodels/components/pills',        title: "Pills",         nav: true },
       { route: 'components/inputs',       moduleId: 'viewmodels/components/inputs',       title: "Inputs",        nav: true },
       { route: 'components/input-fields', moduleId: 'viewmodels/components/input-fields', title: "Input fields",  nav: true },
       { route: 'components/pagination',   moduleId: 'viewmodels/components/pagination',   title: "Pagination",    nav: true },

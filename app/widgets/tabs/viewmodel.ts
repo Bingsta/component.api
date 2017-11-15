@@ -20,6 +20,12 @@ class Tabs {
 
       this.config = ko.observable(settings.config);
 
+      this.config().items.forEach((item) => {
+        if(!item.badge) {
+          item.badge = '';
+        }
+      });
+
       //add computed
       this.themeCSS = ko.computed(() => {
         //return the theme css

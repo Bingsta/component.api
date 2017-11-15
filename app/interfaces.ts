@@ -82,7 +82,9 @@ export interface ModalComponentConfiguration {
 }
 
 export interface ButtonComponentConfiguration {
+  id: string
   content: string
+  action: Function
   badge?: string
   theme?: string
   size?: string
@@ -107,11 +109,13 @@ export interface BadgeComponentConfiguration {
 
 export interface MenuItemComponentConfiguration {
   content: string
-  action: Function
+  action?: Function
+  disabled?: boolean
 }
 
 export interface MenuComponentConfiguration {
   items: Array<MenuItemComponentConfiguration>
+  labelledby: string
 }
 
 export interface DropdownButtonComponentConfiguration {

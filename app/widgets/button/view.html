@@ -1,6 +1,11 @@
 <button class="btn" data-bind="
-attr:{ class: 'btn ' + themeCSS() + ' ' + sizeCSS() },
-css: { active: config().active, disabled: config().disabled } ">
+attr:{ 
+  class: 'btn ' + themeCSS() + ' ' + sizeCSS(),
+  id: config().id,
+  disabled: config().disabled
+},
+css: { active: config().active, disabled: config().disabled },
+click: config().action ">
 <span data-bind="text: config().content"></span>
 <!--ko if: config().badge -->
 <span class="badge" data-bind="text: config().badge"></span>

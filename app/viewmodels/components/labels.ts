@@ -88,6 +88,8 @@ class Labels {
 
       ]
     };
+    
+    this.component.description = `<p class="font-up-2">Labels hold small amounts of information.</p>`;
 
   }
 

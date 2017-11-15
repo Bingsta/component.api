@@ -4,7 +4,11 @@
     config: config().button
   }--><!-- /ko -->
   <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-  data-bind="attr: { class: 'btn dropdown-toggle ' + themeCSS() + ' ' + sizeCSS() },
+  data-bind="attr: { 
+    class: 'btn dropdown-toggle ' + themeCSS() + ' ' + sizeCSS(),
+    id: config().menu.labelledby, 
+    disabled: config().button.disabled 
+  },
   css: { active: config().button.active, disabled: config().button.disabled } ">
     <span class="caret"></span>
     <span class="sr-only">Toggle Dropdown</span>

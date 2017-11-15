@@ -1286,6 +1286,9 @@ class Inputs {
           }
         ]
       };
+
+      this.component.description = `<p class="font-up-2">Basic input components which allow the user to enter different types of information.</p>`;
+      
     }
 
     activate() {

@@ -68,11 +68,11 @@
 @bold:      700;
 
 
-@cl-menubar-width: 20rem;
+@cl-menubar-width: 24rem;
 @cl-header-color: @primary;
 @cl-header-height: 8rem;
 
-@cl-article-aside-width: 20rem;
+@cl-article-aside-width: 40rem;
 
 @padding-base-vertical:     0.6rem;
 @padding-base-horizontal:   1.2rem;
@@ -118,7 +118,7 @@ body{
   width:@cl-menubar-width;
   min-width:@cl-menubar-width;
 
-  //background-color:@grey-light-alpha;
+  background-color:@grey-lightest-alpha;
 }
 .cl-menu{
   margin:0;
@@ -131,7 +131,7 @@ body{
   box-sizing:border-box;
   width:100%;
   padding:@padding-small-vertical @padding-small-horizontal;
-  
+  font-size: @font-regular;
   border-top:1px solid transparent;
   border-bottom:1px solid transparent;
 
@@ -253,7 +253,6 @@ body{
   max-height:100%;
   width:~"calc(100% - @{cl-article-aside-width})";
   padding:@padding-large-vertical @padding-large-horizontal;
-  max-width:1200px;
   overflow:auto;
   //border-left:1px solid @grey-light-alpha;
   
@@ -263,7 +262,7 @@ body{
 }
 
 h1.cl-heading{
-  font-size:2.4rem;
+  font-size:3rem;
   font-weight:@light;
 }
 h2.cl-heading{
@@ -271,7 +270,7 @@ h2.cl-heading{
   font-weight:@semi-bold;
 }
 h3.cl-heading{
-  font-size:1.4rem;
+  font-size:1.6rem;
   font-weight:@semi-bold;
 }
 h4.cl-heading{
@@ -282,12 +281,15 @@ h4.cl-heading{
 .cls-article__section {
     padding:@padding-large-vertical 0; 
     > h3 {
-      margin-top:2.4rem;
     }
 }
 
 .cls-article__section + .cls-article__section {
-  margin-top:2.4rem;
+  margin-top:1.2rem;
+}
+
+.cls-article__sub-section {
+  padding-top:1.2rem;
 }
 
 .cl-preview__item {
@@ -384,6 +386,7 @@ h4.cl-heading{
   padding: 0rem 1rem;
   margin:2rem 0;
   overflow:auto;
+  font-size: @font-regular;
 }
 
 
@@ -392,9 +395,9 @@ h4.cl-heading{
 }
 
 .colour-pallet-item{
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 2rem;
 }
 
 .primary-bg {

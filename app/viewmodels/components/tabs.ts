@@ -84,7 +84,6 @@ class Tabs {
     items: [
       {
         title: 'Home',
-        badge: '',
         contentView: {
           view: $("<div><h2>Example tab content</h2><p data-bind='html: content'></p></div>").get(0),
           model: {
@@ -95,7 +94,6 @@ class Tabs {
       },
       {
         title: 'Menu 1',
-        badge: '',
         contentView: {
           view:  $("<div><h2>Example tab content</h2><p>Tab content for tab 2... This example has no binding just a HTML string.</p></div>").get(0),
           model: {}
@@ -104,7 +102,6 @@ class Tabs {
       },
       {
         title: 'Menu 2',
-        badge: '',
         contentView: {
           view:  $("<div><h2>Tab 3</h2><p>Tab content for tab 2... This example has no binding just a HTML string.</p></div>").get(0),
           model: {}
@@ -113,7 +110,6 @@ class Tabs {
       },
       {
         title: 'Menu 3',
-        badge: '',
         contentView: {
           view:  $("<div><h2>Tab 4</h2><p>Tab content for tab 2... This example has no binding just a HTML string.</p></div>").get(0),
           model: {}
@@ -230,6 +226,7 @@ class Tabs {
           }
       ]);
 
+      this.component.description = `<p class="font-up-2">A tab keeps related content in a single container that is shown and hidden through navigation.</p>`;
       
       this.component.reference = {
         about: `<p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur</p>`,

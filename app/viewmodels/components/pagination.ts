@@ -45,9 +45,12 @@ class Pagination {
 </nav>`
             }
           ],
-          modifiers:[]
+          modifiers:[],
         }
       ]);
+
+      this.component.description = `<p class="font-up-2">Pagination controls for tables of data, search results etc.</p>`;
+      
     }
 
     activate() {

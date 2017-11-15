@@ -1,4 +1,19 @@
 
-    <ul class="dropdown-menu" data-bind="foreach:config().items">
-      <li><a data-bind="html: content, click: action"></a></li>
+    <ul class="dropdown-menu" data-bind="attr: { 'aria-labelledby': config().labelledby }, foreach: config().items">
+
+      <!--  If there's an action, create a menu link --> 
+      <!-- ko if: action -->
+        <li data-bind="css:{ disabled: disabled }"><a data-bind="html: content, click: $parent.ClickHandler"></a></li>
+      <!-- /ko -->
+      
+      <!--  If there's no action, create a header or divider --> 
+      <!-- ko ifnot: action -->
+        <!-- ko if:content == "-" -->
+          <li role="separator" class="divider"></li>
+        <!-- /ko -->
+        <!-- ko if:content != "-" -->
+          <li class="dropdown-header" data-bind="html:content"></li>
+        <!-- /ko -->
+      <!-- /ko -->
+
     </ul>

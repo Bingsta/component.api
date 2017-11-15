@@ -627,7 +627,439 @@ class InputFields {
           ],
           modifiers: []
         }
-      ])
+      ]);
+
+      this.component.reference = {
+        about: "doakspdoak",
+        cssOptions: [],
+        widgetOptions: [
+          {
+            kind: 'input/text-input-field',
+            description: 'dajsdhaksjdh',
+            options:[
+              {
+                name: 'label',
+                description: 'Sets the title text associated to the input. Rendered in label element linked to the input.',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'input',
+                description: 'Configuration object for an \'input\\text-input\' widget.',
+                dataType: '<a href="#/components/inputs">InputConfiguration</a>',
+                values: 'any',
+                optional: false
+              }
+            ]
+          },
+          {
+            kind: 'input/number-input-field',
+            description: 'dajsdhaksjdh',
+            options:[
+              {
+                name: 'label',
+                description: 'Sets the title text associated to the input. Rendered in label element linked to the input.',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'input',
+                description: 'Configuration object for an \'input\\text-input\' widget.',
+                dataType: '<a href="#/components/inputs">InputConfiguration</a>',
+                values: 'any',
+                optional: false
+              }
+            ]
+          },
+          {
+            kind: 'input/email-input-field',
+            description: 'dajsdhaksjdh',
+            options:[
+              {
+                name: 'label',
+                description: 'Sets the title text associated to the input. Rendered in label element linked to the input.',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'input',
+                description: 'Configuration object for an \'input\\text-input\' widget.',
+                dataType: '<a href="#/components/inputs">InputConfiguration</a>',
+                values: 'any',
+                optional: false
+              }
+            ]
+          },
+          {
+            kind: 'input/search-input-field',
+            description: 'dajsdhaksjdh',
+            options:[
+              {
+                name: 'label',
+                description: 'Sets the title text associated to the input. Rendered in label element linked to the input.',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'input',
+                description: 'Configuration object for an \'input\\text-input\' widget.',
+                dataType: '<a href="#/components/inputs">InputConfiguration</a>',
+                values: 'any',
+                optional: false
+              }
+            ]
+          },
+          {
+            kind: 'input/telephone-input-field',
+            description: 'dajsdhaksjdh',
+            options:[
+              {
+                name: 'label',
+                description: 'Sets the title text associated to the input. Rendered in label element linked to the input.',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'input',
+                description: 'Configuration object for an \'input\\text-input\' widget.',
+                dataType: '<a href="#/components/inputs">InputConfiguration</a>',
+                values: 'any',
+                optional: false
+              }
+            ]
+          },
+          {
+            kind: 'input/password-input-field',
+            description: 'dajsdhaksjdh',
+            options:[
+              {
+                name: 'label',
+                description: 'Sets the title text associated to the input. Rendered in label element linked to the input.',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'input',
+                description: 'Configuration object for an \'input\\text-input\' widget.',
+                dataType: '<a href="#/components/inputs">InputConfiguration</a>',
+                values: 'any',
+                optional: false
+              }
+            ]
+          },
+          {
+            kind: 'input/range-input-field',
+            description: 'dajsdhaksjdh',
+            options:[
+              {
+                name: 'label',
+                description: 'Sets the title text associated to the input. Rendered in label element linked to the input.',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'input',
+                description: 'Configuration object for an \'input\\text-input\' widget.',
+                dataType: '<a href="#/components/inputs">InputConfiguration</a>',
+                values: 'any',
+                optional: false
+              }
+            ]
+          },
+          {
+            kind: 'input/file-input-field',
+            description: 'dajsdhaksjdh',
+            options:[
+              {
+                name: 'label',
+                description: 'Sets the title text associated to the input. Rendered in label element linked to the input.',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'input',
+                description: 'Configuration object for an \'input\\text-input\' widget.',
+                dataType: '<a href="#/components/inputs">InputConfiguration</a>',
+                values: 'any',
+                optional: false
+              }
+            ]
+          },
+          {
+            kind: 'input/textarea-input-field',
+            description: 'dajsdhaksjdh',
+            options:[
+              {
+                name: 'label',
+                description: 'Sets the title text associated to the input. Rendered in label element linked to the input.',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'input',
+                description: 'Configuration object for an \'input\\textarea-input\' widget.',
+                dataType: '<a href="#/components/inputs">TextAreaConfiguration</a>',
+                values: 'any',
+                optional: false
+              }
+            ]
+          },
+          {
+            kind: 'input/date-input-field',
+            description: 'dajsdhaksjdh',
+            options:[
+              {
+                name: 'label',
+                description: 'Sets the title text associated to the input. Rendered in label element linked to the input.',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'input',
+                description: 'Configuration object for an \'input\\date-input\' widget.',
+                dataType: '<a href="#/components/inputs">DateInputConfiguration</a>',
+                values: 'any',
+                optional: false
+              }
+            ]
+          },
+          {
+            kind: 'input/date-time-input-field',
+            description: 'dajsdhaksjdh',
+            options:[
+              {
+                name: 'label',
+                description: 'Sets the title text associated to the input. Rendered in label element linked to the input.',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'input',
+                description: 'Configuration object for an \'input\\date-input\' widget.',
+                dataType: '<a href="#/components/inputs">DateInputConfiguration</a>',
+                values: 'any',
+                optional: false
+              }
+            ]
+          },
+          {
+            kind: 'input/time-input-field',
+            description: 'dajsdhaksjdh',
+            options:[
+              {
+                name: 'label',
+                description: 'Sets the title text associated to the input. Rendered in label element linked to the input.',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'input',
+                description: 'Configuration object for an \'input\\date-input\' widget.',
+                dataType: '<a href="#/components/inputs">DateInputConfiguration</a>',
+                values: 'any',
+                optional: false
+              }
+            ]
+          },
+          {
+            kind: 'input/month-input-field',
+            description: 'dajsdhaksjdh',
+            options:[
+              {
+                name: 'label',
+                description: 'Sets the title text associated to the input. Rendered in label element linked to the input.',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'input',
+                description: 'Configuration object for an \'input\\date-input\' widget.',
+                dataType: '<a href="#/components/inputs">DateInputConfiguration</a>',
+                values: 'any',
+                optional: false
+              }
+            ]
+          },
+          {
+            kind: 'input/week-input-field',
+            description: 'dajsdhaksjdh',
+            options:[
+              {
+                name: 'label',
+                description: 'Sets the title text associated to the input. Rendered in label element linked to the input.',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'input',
+                description: 'Configuration object for an \'input\\date-input\' widget.',
+                dataType: '<a href="#/components/inputs">DateInputConfiguration</a>',
+                values: 'any',
+                optional: false
+              }
+            ]
+          },
+          {
+            kind: 'input/from-to-input-field',
+            description: 'dajsdhaksjdh',
+            options:[
+              {
+                name: 'label',
+                description: 'Sets the title text associated to the input. Rendered in label element linked to the input.',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'input',
+                description: 'Configuration object for an \'input\\text-input\' widget.',
+                dataType: '<a href="#FromToInputConfiguration">FromToInputConfiguration</a>',
+                values: 'any',
+                optional: false
+              }
+            ]
+          },
+          {
+            kind: 'input/select-input-field',
+            description: 'dajsdhaksjdh',
+            options:[
+              {
+                name: 'label',
+                description: 'Sets the title text associated to the input. Rendered in label element linked to the input.',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'input',
+                description: 'Configuration object for an \'input\\select-input\' widget.',
+                dataType: '<a href="#/components/inputs">SelectInputConfiguration</a>',
+                values: 'any',
+                optional: false
+              }
+            ]
+          },
+          {
+            kind: 'input/radio-group-input-field',
+            description: 'dajsdhaksjdh',
+            options:[
+              {
+                name: 'label',
+                description: 'Sets the title text associated to the input. Rendered in label element linked to the input.',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'input',
+                description: 'Configuration object for an \'input\\radio-group-input\' widget.',
+                dataType: '<a href="#/components/inputs">CheckboxRadioGroupConfiguration</a>',
+                values: 'any',
+                optional: false
+              }
+            ]
+          },
+          {
+            kind: 'input/checkbox-group-input-field',
+            description: 'dajsdhaksjdh',
+            options:[
+              {
+                name: 'label',
+                description: 'Sets the title text associated to the input. Rendered in label element linked to the input.',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'input',
+                description: 'Configuration object for an \'input\\checkbox-group-input\' widget.',
+                dataType: '<a href="#/components/inputs">CheckboxRadioGroupConfiguration</a>',
+                values: 'any',
+                optional: false
+              }
+            ]
+          },
+          {
+            kind: 'input/fixed-text-field',
+            description: 'dajsdhaksjdh',
+            options:[
+              {
+                name: 'label',
+                description: 'Sets the title text associated to the input. Rendered in label element linked to the input.',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'text',
+                description: 'Text to be displayed.',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              }
+            ]
+          }
+        ],
+        objectReference: [
+          {
+            name: 'FromToInputConfiguration',
+            description: 'Configuration object for the input side of a from - to field',
+            options: [
+              {
+                name: 'from',
+                description: 'Configuration object for the "from" input field',
+                dataType: '<a href="#FromToItem">FromToItem</a>',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'to',
+                description: 'Configuration object for the "to" input field',
+                dataType: '<a href="#FromToItem">FromToItem</a>',
+                values: 'any',
+                optional: false
+              }
+            ]
+          },
+          {
+            name: 'FromToItem',
+            description: 'Configuration object for an individual to/from input',
+            options: [
+              {
+                name: 'label',
+                description: 'Text string rendered as a label element linked to the input field',
+                dataType: 'string',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'input',
+                description: 'Widget object for a \'inputs\\date-input\' widget',
+                dataType: '<a href="#/components/inputs">date-input widget</a>',
+                values: 'any',
+                optional: false
+              }
+            ]
+          }
+        ]
+      };
+
+      this.component.description = `<p class="font-up-2">Input fields are the building blocks of forms. They contain label and input elements.</p>`;
+      
     }
 
     activate() {

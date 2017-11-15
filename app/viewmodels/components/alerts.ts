@@ -91,6 +91,8 @@ class Alerts {
         modifiers: this.mods
       }
     ]);
+
+    this.component.description = `<p class="font-up-2">Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.</p>`;
     
     this.component.reference = {
       about: `<p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur</p>`,

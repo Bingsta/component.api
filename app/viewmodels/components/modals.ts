@@ -74,7 +74,76 @@ class Modal {
           ],
           modifiers: []
         }
-      ])
+      ]);
+
+      
+      
+      this.component.reference = {
+        about: `<p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur</p>`,
+        cssOptions: [
+        ],
+        widgetOptions: [
+          {
+            kind: 'modal',
+            description: 'Standard tabs widget',
+            options: [
+              {
+                name: 'id',
+                description: 'Sets a HTML ID to the base element.',
+                dataType: 'string',
+                values:  'any',
+                optional: true
+              },
+              {
+                name: 'title',
+                description: 'Text string which appears as the modal title in the modal header.',
+                dataType: 'string',
+                values:  'any',
+                optional: false
+              },
+              {
+                name: 'bodyView',
+                description: 'A viewmodel which gets bound as the body content of the modal',
+                dataType: '<a href="#ViewModel">ViewModel</a>',
+                values: 'any',
+                optional: false
+              },
+              {
+                name: 'footerView',
+                description: 'A viewmodel which gets bound as the content of the footer of the modal',
+                dataType: '<a href="#ViewModel">ViewModel</a>',
+                values: 'any',
+                optional: false
+              }
+            ]
+          }
+
+        ],
+        objectReference: [
+          {
+            name: 'ViewModel',
+            description: "A durandal view-model object bound using durandal composition. See <a href=\"http://durandaljs.com/documentation/Using-Composition.html\" target=\"_new\">using composition</a>",
+            options: [
+              {
+                name: 'view',
+                description: 'HTML which gets bound to the view by durandals \'composition\'. If you pass in a string it is interperated as a view locator. If you pass in a HTMLElement it is rendered as the view.',
+                dataType: 'string or HTMLElement',
+                values: 'any',
+                optional: true
+              },
+              {
+                name: 'model',
+                description: 'A view model which gets bound to the view.',
+                dataType: 'any',
+                values: 'any',
+                optional: true
+              }
+            ]
+          }
+        ]
+      };
+      
+      this.component.description = `<p class="font-up-2">Modals are used to display content in a layer above the app. This paradigm is used in cases such as the creation or editing of a record, as well as various types of messaging and wizards.</p>`;
     }
 
     activate() {

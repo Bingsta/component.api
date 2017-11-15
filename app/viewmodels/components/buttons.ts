@@ -135,7 +135,11 @@ class Buttons {
   kind: 'button', 
   config: 
   {
-    "content": 'Press me widget'#theme##size##active##disabled#
+    content: 'Press me widget'#theme##size##active##disabled#,
+    id: 'widget-button-example',
+    action: function() {
+      alert('Button pressed action!');
+    }
   }
 } --> <!-- /ko -->`
           }
@@ -156,8 +160,12 @@ class Buttons {
 { 
   kind: 'button', 
   config: {
-    "content": 'Messages', 
-    "badge": "42"#theme##size##active##disabled#
+    content: 'Messages', 
+    id: 'widget-button-messages-example',
+    badge: "42"#theme##size##active##disabled#,
+    action: function() {
+      alert('Button pressed action!');
+    }
   }
 } --> <!-- /ko -->`
           }
@@ -172,10 +180,11 @@ class Buttons {
             name: 'HTML',
             code: `
 <div class="btn-group">
-  <button type="button" class="btn dropdown-toggle #theme##size##active##disabled#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <button type="button" id="html-dropdown-button" class="btn dropdown-toggle #theme##size##active##disabled#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Action <span class="caret"></span>
   </button>
-  <ul class="dropdown-menu">
+  <ul class="dropdown-menu" aria-lablledby="html-dropdown-button" >
+    <li class="dropdown-header">Dropdown header</li>
     <li><a href="#">Action</a></li>
     <li><a href="#">Another action</a></li>
     <li><a href="#">Something else here</a></li>
@@ -189,20 +198,40 @@ class Buttons {
             code: `<!-- ko widget: { kind: 'dropdown_button', 
             config: {
               button: {
-                content: "Hello"#theme##size##active##disabled#
+                content: "Dropdown button"#theme##size##active##disabled#,
+                id: 'widget-dropdown-button'
               },
               menu: {
                 items: [
                   { 
-                    content: "item1",
+                    content: "Dropdown header"
+                  },
+                  { 
+                    content: "Action",
                     action: function() {
                       alert("action 1")
                     }
                   },
                   { 
-                    content: "item2",
+                    content: "Another action",
                     action: function() {
                       alert("action 2")
+                    },
+                    disabled: true
+                  },
+                  { 
+                    content: "Something else here",
+                    action: function() {
+                      alert("action 3")
+                    }
+                  },
+                  { 
+                    content: "-"
+                  },
+                  { 
+                    content: "Seperated link",
+                    action: function() {
+                      alert("action 4")
                     }
                   }
                 ]
@@ -239,20 +268,43 @@ class Buttons {
             code: `<!-- ko widget: { kind: 'split_button', 
             config: {
               button: {
-                content: "Hello"#theme##size##active##disabled#
+                content: "Main action"#theme##size##active##disabled#,
+                id: 'widget-split-button-example',
+                action: function() {
+                  alert('Button pressed action!');
+                }
               },
               menu: {
                 items: [
                   { 
-                    content: "item1",
+                    content: "Dropdown header"
+                  },
+                  { 
+                    content: "Action",
                     action: function() {
                       alert("action 1")
                     }
                   },
                   { 
-                    content: "item2",
+                    content: "Another action",
                     action: function() {
                       alert("action 2")
+                    },
+                    disabled: true
+                  },
+                  { 
+                    content: "Something else here",
+                    action: function() {
+                      alert("action 3")
+                    }
+                  },
+                  { 
+                    content: "-"
+                  },
+                  { 
+                    content: "Seperated link",
+                    action: function() {
+                      alert("action 4")
                     }
                   }
                 ]
@@ -265,7 +317,7 @@ class Buttons {
       }
     ]);
 
-    this.component.description = `<p class="font-up-2">Buttons are used to invoke an event</p>`;
+    this.component.description = `<p class="font-up-2">Buttons are used to invoke a events</p>`;
 
     this.component.reference = {
       about: `<p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur</p>`,
@@ -292,9 +344,23 @@ class Buttons {
           description: 'Standard button component',
           options: [
             {
+              name: 'id',
+              description: 'Text which is bound as the HTML id attribute for the button element',
+              dataType: 'string',
+              values:  'any',
+              optional: false
+            },
+            {
               name: 'content',
               description: 'String which is data bound as the text content for the button',
               dataType: 'string',
+              values:  'any',
+              optional: false
+            },
+            {
+              name: 'action',
+              description: 'Function to be invoked on button click event',
+              dataType: 'Function',
               values:  'any',
               optional: false
             },
@@ -348,8 +414,8 @@ class Buttons {
             },
             {
               name: 'menu',
-              description: 'An array of items with a content string and action associated to them. The items will be displayed in the dropdown menu when the dropdown button is actived.',
-              dataType: 'Array<MenuItemComponentConfiguration>',
+              description: 'A configuration object for the menu to be displayed.',
+              dataType: '<a href="#MenuComponentConfiguration">MenuComponentConfiguration</a>',
               values:  'any',
               optional: false
             }
@@ -368,8 +434,8 @@ class Buttons {
             },
             {
               name: 'menu',
-              description: 'An array of items with a content string and action associated to them. The items will be displayed in the dropdown menu when the dropdown button is actived.',
-              dataType: 'Array<MenuItemComponentConfiguration>',
+              description: 'A configuration object for the menu to be displayed.',
+              dataType: '<a href="#MenuComponentConfiguration">MenuComponentConfiguration</a>',
               values:  'any',
               optional: false
             }
@@ -377,7 +443,55 @@ class Buttons {
         }
 
       ],
-      objectReference:[]
+      objectReference:[
+        {
+          name: 'MenuComponentConfiguration',
+          description: 'Configuration object for a dropdown menu',
+          options: [
+            {
+              name: 'items',
+              description: 'An array of objects representing items in the menu.',
+              dataType: 'Array<<a href="#MenuItemComponentConfiguration">MenuItemComponentConfiguration</a>>',
+              values: 'any',
+              optional: false
+            },
+            {
+              name: 'labelledby',
+              description: 'Element ID of the obect the menu relates to e.g. the id of the button which invoked the menu.',
+              dataType: 'string',
+              values: 'any',
+              optional: false
+            }
+          ]
+        },
+        {
+          name: 'MenuItemComponentConfiguration',
+          description: 'Configuration object for a dropdown menu item',
+          options: [
+            {
+              name: 'content',
+              description: 'Text string which will be displayed as the label for the menu item. If value is a single dash "-" with no action value, the item is displayed as a "divider".',
+              dataType: 'string',
+              values: 'any text or "-"',
+              optional: false
+            },
+            {
+              name: 'action',
+              description: 'Function to be invoked when the menu item is clicked. If omitted the menu item is assmued to be a "dropdown-header" or a "divider" if a "-" is in the content value',
+              dataType: 'Function',
+              values: 'any',
+              optional: true
+            },
+            {
+              name: 'disabled',
+              description: 'Disables the menu item action and styles the item as disabled.',
+              dataType: 'boolean',
+              values: 'any',
+              optional: true
+            }
+          ]
+        }
+      ]
     }
 
   }

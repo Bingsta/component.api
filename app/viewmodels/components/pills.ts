@@ -9,19 +9,19 @@ import {
   ComponentModifierOption
 } from 'interfaces';
 
-class Tags {
+class pill {
 
     public component: Component2;
 
     constructor() {
  
-      this.component = new Component2("tags", [
+      this.component = new Component2("pill", [
         {
           name: "Base",
           codeBases: [
             {
               name: "HTML",
-              code: `<span class="tags #theme#">Tag example</span>`
+              code: `<span class="pill #theme#">Pill example</span>`
             }
           ],
           modifiers: [
@@ -32,49 +32,49 @@ class Tags {
               options: [
                 {
                   name: "Default",
-                  HTML: "tags-default",
-                  widget: `"tags-default"`
+                  HTML: "pill-default",
+                  widget: `"pill-default"`
                 },
                 {
                   name: "Primary",
-                  HTML: "tags-primary",
-                  widget: `"tags-primary"`
+                  HTML: "pill-primary",
+                  widget: `"pill-primary"`
                 },
                 {
                   name: "Accent",
-                  HTML: "tags-accent",
-                  widget: `"tags-accent"`
+                  HTML: "pill-accent",
+                  widget: `"pill-accent"`
                 },
                 {
                   name: "Success",
-                  HTML: "tags-success",
-                  widget: `"tags-success"`
+                  HTML: "pill-success",
+                  widget: `"pill-success"`
                 },
                 {
                   name: "Warning",
-                  HTML: "tags-warning",
-                  widget: `"tags-warning"`
+                  HTML: "pill-warning",
+                  widget: `"pill-warning"`
                 },
                 {
                   name: "Danger",
-                  HTML: "tags-danger",
-                  widget: `"tags-danger"`
+                  HTML: "pill-danger",
+                  widget: `"pill-danger"`
                 },
                 {
                   name: "Info",
-                  HTML: "tags-info",
-                  widget: `"tags-info"`
+                  HTML: "pill-info",
+                  widget: `"pill-info"`
                 }
               ]
             }
           ]
         },
         {
-            name: "Tag with icon",
+            name: "Pill with icon",
             codeBases: [
               {
                 name: "HTML",
-                code: `<span class="tags #theme#"><i class="icon icon-checkmark3"></i> <span>Tag example</span></span>`
+                code: `<span class="pill #theme#"><i class="icon icon-checkmark3"></i> <span>Pill example</span></span>`
               }
             ],
             modifiers: [
@@ -85,49 +85,49 @@ class Tags {
                 options: [
                     {
                       name: "Default",
-                      HTML: "tags-default",
-                      widget: `"tags-default"`
+                      HTML: "pill-default",
+                      widget: `"pill-default"`
                     },
                     {
                       name: "Primary",
-                      HTML: "tags-primary",
-                      widget: `"tags-primary"`
+                      HTML: "pill-primary",
+                      widget: `"pill-primary"`
                     },
                     {
                       name: "Accent",
-                      HTML: "tags-accent",
-                      widget: `"tags-accent"`
+                      HTML: "pill-accent",
+                      widget: `"pill-accent"`
                     },
                     {
                       name: "Success",
-                      HTML: "tags-success",
-                      widget: `"tags-success"`
+                      HTML: "pill-success",
+                      widget: `"pill-success"`
                     },
                     {
                       name: "Warning",
-                      HTML: "tags-warning",
-                      widget: `"tags-warning"`
+                      HTML: "pill-warning",
+                      widget: `"pill-warning"`
                     },
                     {
                       name: "Danger",
-                      HTML: "tags-danger",
-                      widget: `"tags-danger"`
+                      HTML: "pill-danger",
+                      widget: `"pill-danger"`
                     },
                     {
                       name: "Info",
-                      HTML: "tags-info",
-                      widget: `"tags-info"`
+                      HTML: "pill-info",
+                      widget: `"pill-info"`
                     }
                 ]
               }
             ]
           },
           {
-              name: "Dismissable tag",
+              name: "Dismissable pill",
               codeBases: [
                 {
                   name: "HTML",
-                  code: `<span class="tags tags-dismissable #theme#"><span>Tag example</span> <i class="icon icon-cross3" data-bind="click:function(){alert('Test');}"></i></span>`
+                  code: `<span class="pill pill-dismissable #theme#"><span>Pill example</span> <i class="icon icon-cross3" data-bind="click:function(){alert('Test');}"></i></span>`
                 }
               ],
               modifiers: [
@@ -138,38 +138,38 @@ class Tags {
                   options: [
                       {
                         name: "Default",
-                        HTML: "tags-default",
-                        widget: `"tags-default"`
+                        HTML: "pill-default",
+                        widget: `"pill-default"`
                       },
                       {
                         name: "Primary",
-                        HTML: "tags-primary",
-                        widget: `"tags-primary"`
+                        HTML: "pill-primary",
+                        widget: `"pill-primary"`
                       },
                       {
                         name: "Accent",
-                        HTML: "tags-accent",
-                        widget: `"tags-accent"`
+                        HTML: "pill-accent",
+                        widget: `"pill-accent"`
                       },
                       {
                         name: "Success",
-                        HTML: "tags-success",
-                        widget: `"tags-success"`
+                        HTML: "pill-success",
+                        widget: `"pill-success"`
                       },
                       {
                         name: "Warning",
-                        HTML: "tags-warning",
-                        widget: `"tags-warning"`
+                        HTML: "pill-warning",
+                        widget: `"pill-warning"`
                       },
                       {
                         name: "Danger",
-                        HTML: "tags-danger",
-                        widget: `"tags-danger"`
+                        HTML: "pill-danger",
+                        widget: `"pill-danger"`
                       },
                       {
                         name: "Info",
-                        HTML: "tags-info",
-                        widget: `"tags-info"`
+                        HTML: "pill-info",
+                        widget: `"pill-info"`
                       }
                   ]
                 }
@@ -182,7 +182,7 @@ class Tags {
         cssOptions: [
           {
             type: 'Theme',
-            selectors: '.tags-default<br/>.tags-primary<br/>.tags-accent<br/>.tags-warning<br/>.tags-success<br/>.tags-danger<br/>.tags-info',
+            selectors: '.pill-default<br/>.pill-primary<br/>.pill-accent<br/>.pill-warning<br/>.pill-success<br/>.pill-danger<br/>.pill-info',
             description: 'Sets the main styling for the component'
           }
         ],
@@ -193,10 +193,13 @@ class Tags {
 
         ]
       };
+
+      this.component.description = `<p class="font-up-2">A pill represents an object that can be viewed with or without an icon.</p>`;
+      
     }
 
     activate() {
     }
 }
 
-export = Tags;
+export = pill;

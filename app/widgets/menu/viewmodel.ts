@@ -14,18 +14,40 @@ class Menu {
   activate(settings: any) {
     //add configuration file
     if (settings.config) {
-      //this.config = ko.observable(settings.config);
-      console.log("menu component>>>");
-      console.log(settings.config);
-
+      
       this.config = ko.observable(settings.config);
+
+      if(!this.config().labelledby) {
+        console.error('Missing labelledby value on menu component');
+        this.config().labelledby = '';
+      }
+
+      this.config().items.forEach((item, index) => {
+        if(!item.action){
+          item.action = null;
+        }
+
+        if(!item.content){
+          item.content = '';
+        }
+
+        if(!item.disabled){
+          item.disabled = false;
+        }
+
+      });
 
     }
     else {
-      throw "Missing configuration file"
+      throw "Missing configuration file";
     }
   }
 
+  public ClickHandler(item: MenuItemComponentConfiguration):void {
+    if(!item.disabled){
+      item.action();
+    }
+  }
 
 }
 

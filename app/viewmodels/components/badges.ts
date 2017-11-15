@@ -146,6 +146,9 @@ class Badges {
           modifiers:this.buttonMods
         }
       ]);
+      
+      this.component.description = `<p class="font-up-2">Badges are labels which hold small amounts of information. Associate them to badges and links to show counts or states.</p>`;
+      
     }
 
     activate() {

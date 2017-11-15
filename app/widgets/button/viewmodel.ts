@@ -15,8 +15,23 @@ class Button {
   
   activate(settings:any) {
     //add configuration file
+
+    //check required values
     if(settings.config){
       this.config = ko.observable(settings.config);
+
+      if(!this.config().content){
+        console.error('Missing required content value on button');
+        throw "Missing required content value on button"
+      }
+      if(!this.config().id){
+        console.error('Missing required ID value on button');
+        this.config().id = '';
+      }
+      if(!this.config().action){
+        console.error('Missing required content value on button');
+        throw "Missing required content value on button"
+      }
 
       //add computed
       this.themeCSS = ko.computed(() => {
@@ -41,7 +56,7 @@ class Button {
 
       this.sizeCSS = ko.computed(() => {
         //return the size css
-        switch(this.config().size.toLowerCase()) {
+        switch(this.config().size) {
           case 'large':
           return 'btn-lg';
           case 'small':
