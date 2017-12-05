@@ -4,23 +4,53 @@
 
 
 .breadcrumb {
-  padding: @breadcrumb-padding-vertical @breadcrumb-padding-horizontal;
-  margin-bottom: @line-height-computed;
+  display:flex;
+  padding: 0;
   list-style: none;
   background-color: @breadcrumb-bg;
-  border-radius: @border-radius-base;
+  //border-radius: @border-radius-base;
 
   > li {
-    display: inline-block;
+
+    a {
+      color:@inverse-text-color;
+    }
 
     + li:before {
+      font-family: 'rezi-icomoon';
       content: "@{breadcrumb-separator}\00a0"; // Unicode space added since inline-block means non-collapsing white-space
-      padding: 0 5px;
+      padding: 0 0.5rem;
       color: @breadcrumb-color;
     }
   }
 
   > .active {
     color: @breadcrumb-active-color;
+  }
+
+  > .previous{
+    flex:1;
+    text-align: right;
+    
+    &:before {
+      font-family: 'rezi-icomoon';
+      content: "\00a0"; // Unicode space added since inline-block means non-collapsing white-space
+      padding: 0 0.5rem;
+      color: @breadcrumb-color;
+    }
+  } 
+  > .next {
+    padding: 0 0 0 1rem;
+    
+    &:before {
+      content: none;
+    }
+
+    &:after {
+      font-family: 'rezi-icomoon';
+      content: "\00a0"; // Unicode space added since inline-block means non-collapsing white-space
+      padding: 0 0 0 0.5rem;
+      color: @breadcrumb-color;
+    }
   }
 }

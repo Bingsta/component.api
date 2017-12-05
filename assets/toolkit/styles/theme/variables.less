@@ -7,7 +7,7 @@
 //
 //## Gray and brand colors for use across Bootstrap.
 
-@primary-dark:  #093b58;
+@primary-dark:  darken(@primary, 100%);
 @primary:       #13547a;
 @primary-light: #B9CCD8;
 @primary-alpha: rgba(19, 84, 122, 0.3);
@@ -880,13 +880,13 @@
 @breadcrumb-padding-vertical:   0.8rem;
 @breadcrumb-padding-horizontal: 1.5rem;
 //** Breadcrumb background color
-@breadcrumb-bg:                 #f5f5f5;
+@breadcrumb-bg:                 @primary;
 //** Breadcrumb text color
-@breadcrumb-color:              #ccc;
+@breadcrumb-color:              @inverse-text-color;
 //** Text color of current page in the breadcrumb
-@breadcrumb-active-color:       @gray-light;
+@breadcrumb-active-color:       rgba(255,255,255,0.5);
 //** Textual separator for between breadcrumb elements
-@breadcrumb-separator:          "/";
+@breadcrumb-separator:          "";
 
 
 //== Carousel

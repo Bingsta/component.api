@@ -249,3 +249,20 @@ table {
     }
   }
 }
+
+.table--left-right {
+  width:100%;
+  >tbody {
+    >tr {
+      display:flex;
+      height:3rem;
+      align-items: center;
+      > td:first-child {
+        flex:1;
+      }
+      >td:last-child {
+        color:@faded-text;
+      }
+    }
+  }
+}

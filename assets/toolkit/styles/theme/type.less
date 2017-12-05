@@ -218,6 +218,12 @@ dt {
 }
 dd {
   margin-left: 0; // Undo browser default
+  color:@faded-text;
+}
+
+.dl--left-right {
+  display: grid;
+  grid-template-columns: auto auto;
 }
 
 // Horizontal description lists
@@ -375,4 +381,57 @@ address {
 }
 .font-up-10 {
   font-size: @icon-font-size-up-10;
+}
+
+
+
+//
+// icon & text
+// ---------------------------------------------------
+.text-icon {
+  display:inline-flex;
+  align-items: flex-start;
+  >.icon {
+    display:inline-block;
+    width: 2.4rem;
+    height:2.4rem;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  }
+  >.text {
+    color:@faded-text;
+    line-height: 2.4rem;
+  }
+  .text-icon__link {
+    color:@faded-text;
+  }
+}
+
+
+
+//
+// Contact block
+// ----------------------------------------------------
+.contact {
+  .contact__row {
+    height:3rem;
+    display:flex;
+    align-items: flex-start;
+  }
+  .contact__name {
+    font-size:@icon-font-size-up-1;
+  }
+  .contact__phone {
+    width:12.4rem;
+  }
+}
+
+
+
+//
+// Group contacts block
+// -----------------------------------------------------
+.group-contacts__name {
+  font-size:@icon-font-size-up-2;
 }

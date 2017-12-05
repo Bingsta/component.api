@@ -46,6 +46,9 @@ export class Shell {
       { route: 'components/input-fields', moduleId: 'viewmodels/components/input-fields', title: "Input fields",  nav: true },
       { route: 'components/pagination',   moduleId: 'viewmodels/components/pagination',   title: "Pagination",    nav: true },
       { route: 'components/modals',       moduleId: 'viewmodels/components/modals',       title: "Modals",        nav: true },
+      { route: 'components/data-list',    moduleId: 'viewmodels/components/data-list',    title: "Data lists",    nav: true },
+      { route: 'components/breadcrumb',   moduleId: 'viewmodels/components/breadcrumb',   title: "Breadcrumb",    nav: true },
+      { route: 'components/contacts',     moduleId: 'viewmodels/components/contacts',     title: "Contacts",      nav: true },
       { route: 'layouts/forms',           moduleId: 'viewmodels/layouts/forms',           title: "Forms",         nav: true }
     ]).buildNavigationModel();;
 

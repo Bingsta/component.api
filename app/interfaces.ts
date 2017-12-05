@@ -262,3 +262,14 @@ export interface DatalistConfiguration {
   id: string
   options:Array<DataListOptionConfiguration>
 }
+
+export interface ContactBlockConfiguration {
+  contact: ContactConfiguration
+}
+
+export interface ContactConfiguration {
+  id: string
+  name: string
+  telephone: string
+  email: string
+}
