@@ -3,11 +3,9 @@ import * as system from 'durandal/system';
 import * as app from 'durandal/app';
 import { ContactBlockConfiguration, ContactConfiguration } from 'interfaces';
 
-class Contact {
+class ContactBlock {
 
   public config: KnockoutObservable<ContactBlockConfiguration>;
-  public themeCSS: KnockoutComputed<string>;
-
   public contact: KnockoutObservable<ContactConfiguration>;
 
   constructor() {
@@ -29,21 +27,6 @@ class Contact {
         throw "Missing contact information. Requires an object or id string."
       }
 
-      //add computed
-      this.themeCSS = ko.computed(() => {
-        //return the theme css
-        switch(this.config().theme) {
-          case 'warning':
-          return 'alert-warning';
-          case 'success':
-          return 'alert-success';
-          case 'danger':
-          return 'alert-danger';
-          default:
-          return 'alert-info';
-        }
-      });
-
     }
     else{
       throw "Missing configuration file"
@@ -51,14 +34,21 @@ class Contact {
   }
 
   private getContact(id:string): ContactConfiguration {
-    return {
-      id: '983292',
-      name: 'Testy Test',
-      telephone: '072872367',
-      email: 'testy.test@test.email.com'
+    let contactFound: boolean = true;
+
+    if(contactFound) {
+      return {
+        id: '983292',
+        name: 'Testy Test',
+        telephone: '072872367',
+        email: 'testy.test@test.email.com'
+      }
+    }
+    else {
+      throw "Unable to find contact by id"
     }
   }
 
 }
 
-export = Contact;
+export = ContactBlock;

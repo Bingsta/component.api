@@ -264,7 +264,8 @@ export interface DatalistConfiguration {
 }
 
 export interface ContactBlockConfiguration {
-  contact: ContactConfiguration
+  contact?: ContactConfiguration
+  id?: string
 }
 
 export interface ContactConfiguration {
@@ -272,4 +273,16 @@ export interface ContactConfiguration {
   name: string
   telephone: string
   email: string
+}
+
+export interface GroupContactBlockConfiguration {
+  id?: string
+  group: GroupConfiguration
+}
+
+export interface GroupConfiguration {
+  id: string
+  name: string
+  icon: string
+  contacts: Array<ContactConfiguration>
 }

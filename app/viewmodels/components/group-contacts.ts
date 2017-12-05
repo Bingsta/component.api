@@ -22,13 +22,26 @@ class ContactBlock {
           {
             name: 'widget',
             code: `<!-- ko widget: {
-  kind: 'contact_block',
+  kind: 'group_contact_block',
   config: {
-    contact: {
-      id: '9999999',
-      name: 'Object Test',
-      telephone: '07111111',
-      email: 'object.test@anemail.com'
+    group: {
+      id: '48737492',
+      name: 'Mr & Mrs Group Object Test',
+      icon: 'icon-couplemalefemale',
+      contacts: [
+        {
+          id: '983292',
+          name: 'Testy Test',
+          telephone: '072872367',
+          email: 'testy.test@test.email.com'
+        },
+        {
+          id: '8794539',
+          name: 'Other Test',
+          telephone: '072872367',
+          email: 'other.test@test.email.com'
+        }
+      ]
     }
   }
 }--><!-- /ko -->`
@@ -36,7 +49,7 @@ class ContactBlock {
           {
             name: 'widget',
             code: `<!-- ko widget: {
-  kind: 'contact_block',
+  kind: 'group_contact_block',
   config: {
     id: '7834982'
   }
@@ -58,18 +71,18 @@ class ContactBlock {
       widgetOptions: [
         {
           kind: 'contact_block',
-          description: 'Contact details components',
+          description: 'Group contact details components',
           options: [
             {
               name: 'contact',
-              description: 'Object representing the contact to be displayed.',
-              dataType: 'ContactConfiguration',
+              description: 'Object representing the group to be displayed.',
+              dataType: 'GroupConfiguration',
               values:  'any',
               optional: true
             },
             {
               name: 'id',
-              description: 'ID of the contact you want to display. If you pass through an ID instead of a contact object the component will look up the contact object from the data point.',
+              description: 'ID of the group you want to display. If you pass through an ID instead of a contact object the component will look up the group object from the data point.',
               dataType: 'string',
               values:  'any',
               optional: true

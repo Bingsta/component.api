@@ -127,7 +127,7 @@ class Alerts {
 
       ],
       objectReference:[]
-    }
+    };
   }
 
   activate() {

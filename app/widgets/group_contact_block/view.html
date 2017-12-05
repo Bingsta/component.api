@@ -1,0 +1,14 @@
+<div class="group-contacts" data-bind="with:group">
+    
+  <div class="group-contacts__name text-icon"><i data-bind="attr: {class: 'icon  group-contacts__icon  ' + icon}"></i><span class="text" data-bind="text: name"></span></div>
+  
+  <!-- ko foreach: contacts -->
+    <!-- ko widget: {
+      kind: 'contact_block',
+      config: {
+        contact: $data
+      }
+    }--><!-- /ko -->
+  <!-- /ko -->
+
+</div>
