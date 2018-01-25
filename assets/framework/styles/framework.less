@@ -1,43 +1,63 @@
+//
+// Variables
+// --------------------------------------------------
 
 
-@primary-dark:  #093b58;
-@primary:       #13547a;
-@primary-light: #b4c3cc;
-@primary-alpha: hsla(202, 84%, 48%, 0.3);
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
 
-@accent-dark:   #872901;
-@accent:        #fe4d01;
-@accent-light:  #ffc9b2;
-@accent-alpha:  hsla(18, 100%, 100%, 0.3);
+@primary-darkest: #122e6a;
+@primary-dark:    #204085;
+@primary:         #385797;
+@primary-light:   #637FBA;
+@primary-lightest:#A6B8E0;
+@primary-alpha:   rgba(56, 87, 151, 0.5);
 
-@success-dark:  #0f8860;
-@success:       #33cc99;
-@success-light: #c1f0e0;
-@success-alpha: hsla(160, 75%, 80%, 0.3);
+@accent-darkest:  #9b2e00;
+@accent-dark:     #c53b00;
+@accent:          #fe4d01;
+@accent-light:    #ff753a;
+@accent-lightest: #ff9264; 
+@accent-alpha:    rgba(254, 77, 1, 0.5);
 
-@warning-dark:  #af7622;
-@warning:       #ffb64a;
-@warning-light: #ffe9c8;
-@warning-alpha: hsla(36, 71%, 100%, 0.3);
+@success-darkest: #00693f;
+@success-dark:    #008650;
+@success:         #01ad68;
+@success-light:   #36C28A;
+@success-lightest:#8DD6B9;
+@success-alpha:   rgba(1, 173, 104, 0.5);
 
-@error-dark:    #b04648;
-@error:         #f95d61;
-@error-light:   #fdcecf;
-@error-alpha:   hsla(358, 63%, 98%, 0.3);
+@warning-darkest: #D16B00;
+@warning-dark:    #ED7D07;
+@warning:         #ff9e38;
+@warning-light:   #FFBE7A;
+@warning-lightest:#FFDDB8;
+@warning-alpha:   rgba(255, 158, 56, 0.5);
 
-@info-dark:     #406a9a;
-@info:          #5692d6;
-@info-light:    #ccdef3;
-@info-alpha:    hsla(212, 60%, 84%, 0.3);
+@error-darkest:   #b41212;
+@error-dark:      #DB1F1F;
+@error:           #f65151;
+@error-light:     #FF8080;
+@error-lightest:  #FFB8B8;
+@error-alpha:     rgba(246, 81, 81, 0.5);
 
+@info-darkest:    #075276;
+@info-dark:       #0b6e9e;
+@info:            #2c7fa7;
+@info-light:      #5BA4C7;
+@info-lightest:   #9BD0EB;
+@info-alpha:      rgba(44, 127, 167, 0.5);
+
+@grey-darkest-alpha: rgba(0, 0, 0, 0.65);
 @grey-dark:     #898989;
-@grey-dark-alpha: hsla(0, 0%, 0%, 0.47);
+@grey-dark-alpha: rgba(0, 0, 0, 0.47);
 @grey:          #cccccc;
-@grey-alpha:    hsla(0, 0%, 0%, 0.2);
+@grey-alpha:    rgba(0, 0, 0, 0.2);
 @grey-light:    #ebebeb;
-@grey-light-alpha: hsla(0, 0%, 0%, 0.08);
+@grey-light-alpha: rgba(0, 0, 0, 0.08);
 @grey-lightest: #f2f2f2;
-@grey-lightest-alpha: hsla(0, 0%, 0%, 0.05);
+@grey-lightest-alpha: rgba(0, 0, 0, 0.05);
 
 //#TYPOGRAPHY
 @font-colour:         hsla(0, 0%, 0%, 0.85);
@@ -99,24 +119,64 @@ body{
   box-sizing: border-box;
   height:100%;
 }
+
+
+//MAIN APP LAYOUT
+.cl-page-header {
+  grid-area: header;
+  display:grid;
+  grid-template-columns: 24rem auto;
+}
+.cl-menubar {
+  grid-area: menubar; 
+}
+
+.cl-main{
+  grid-area: main;
+}
+
+
 .cl-app{
-  display:flex;
-  flex-direction: row;
+  display:grid;
+  grid-template-columns: 24rem auto;
+  grid-template-rows: 8rem auto;
+  grid-template-areas: 
+  "header header"
+  "menubar main";
 
   box-sizing: border-box;
   height:100%;
+}
 
-  //font-size: 1.4rem;
+// #CL-HEADER
+.cl-page-header__menu-header{
+  //height:@cl-header-height;
+  background-color:@primary-darkest;
+  color:@font-colour-invert;
+  background-image: url("../images/pm logo-white.png");
+  background-position: 10px center;
+  background-repeat: no-repeat;
+}
+
+.cl-page-header__heading {
+  border-left:1px solid @grey-light-alpha;
+  padding:@padding-large-vertical @padding-large-horizontal @padding-small-vertical;
+  background-color:@cl-header-color;
+  color:@font-colour-invert;
+
+  h1 small{
+    color:@font-colour-invert-faded;
+  }
 }
 
 //#CL-MENUBAR
 .cl-menubar {
-  overflow-y: auto;
-  position:relative;
+  //overflow-y: auto;
+  //position:relative;
 
   box-sizing: border-box;
-  width:@cl-menubar-width;
-  min-width:@cl-menubar-width;
+  // width:@cl-menubar-width;
+  // min-width:@cl-menubar-width;
 
   background-color:@grey-lightest-alpha;
 }
@@ -175,22 +235,12 @@ body{
   width:0;
 }
 
-.cl-menubar__header{
-  height:@cl-header-height;
-  background-color:@primary-dark;
-  color:@font-colour-invert;
-  background-image: url("../images/pm logo-white.png");
-  background-position: 10px center;
-  background-repeat: no-repeat;
-}
 
 //#CL-MAIN
 .cl-main {
   position:relative;
-  flex:1;
-  width:100%;
-  max-width:~"calc(100% - @{cl-menubar-width})";
   box-sizing: border-box;
+  overflow:hidden;
 }
 .cl-loader {
   position:absolute;
@@ -208,33 +258,21 @@ body{
   background-color:rgba(255,255,255,0.65);
   color:rgba(0,0,0,0.65);
 }
+
 .cl-main__content {
   box-sizing:border-box;
   width:100%;
   height:100%;
 }
+
 .cl-main-section {
   height:100%;
   overflow-y: auto;
 }
-.cl-page-header {
-  display:flex;
-  align-items:flex-end;
 
-  min-height:@cl-header-height;
-  padding:@padding-large-vertical @padding-large-horizontal @padding-small-vertical;
-  border-left:1px solid @grey-light-alpha;
-
-  background-color:@cl-header-color;
-  color:@font-colour-invert;
-  h1 small{
-    color:@font-colour-invert-faded;
-  }
-}
 .cl-article{
   display:flex;
   position:relative;
-  height:~"calc(100% - @{cl-header-height})";
   align-items: stretch;
   padding-bottom:@padding-base-vertical;
 }
@@ -371,7 +409,6 @@ h4.cl-heading{
 
 .cl-article__aside {
   width: 25%; //@cl-article-aside-width;
-  border-left:2px solid rgba(0,0,0,0.13);
   box-sizing: border-box;
   height:100%;
   padding: @padding-large-vertical @padding-large-horizontal;

@@ -1,8 +1,15 @@
 <div class="cl-app">
-  <nav class="cl-menubar" role="menubar">
-    <div class="cl-menubar__header">
 
+  <header class="cl-page-header">
+    <div class="cl-page-header__menu-header"></div>
+    <div class="cl-page-header__heading">
+      <h1 class="cl-heading" data-bind="text: router.activeInstruction().config.title">
+        
+      </h1>
     </div>
+  </header>
+
+  <nav class="cl-menubar" role="menubar">
     <div class="cl-menubar__body" data-bind="foreach: navigationSection">
       <div class="cl-accordian__item"  data-bind="css:{ 'cl-accordian__item--open': open() }">
         <div class="cl-accordian__header  grid  grid__row--center"  data-bind="click: function(){open(!open());}">
@@ -24,7 +31,6 @@
   </nav>
 
   <main class="cl-main">
-    
     <div class="cl-loader" data-bind="visible: router.isNavigating">
       Loading...
     </div>
